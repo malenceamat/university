@@ -1,0 +1,38 @@
+<header class="header navbar navbar-expand-lg position-absolute navbar-sticky">
+    <div class="container px-3">
+        <a href="index.html" class="navbar-brand pe-3">
+            <img src="assets/img/svg/inverse.svg" width="47" alt="digital.mai.ru">
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Меню</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html#start" class="nav-link" data-scroll>О цифровой кафедре</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#forwhom" class="nav-link" data-scroll >Для кого</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#programs" class="nav-link" data-scroll>Программы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#stages" class="nav-link" data-scroll>Этапы обучения</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#partners" class="nav-link" data-scroll>Партнёры</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="https://my.mai.ru" class="btn btn-primary fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
+            &nbsp;Подать заявку
+        </a>
+    </div>
+</header>

@@ -1,0 +1,13 @@
+@extends('site.main')
+@section('content')
+    @include('user.banner')
+    @include('user.program')
+    @include('user.cards')
+    @include('user.stages')
+    @include('user.conditions')
+    @include('user.additionaly')
+    @include('user.blog')
+    @include('user.victory')
+    @include('user.partners')
+    @include('user.email')
+@endsection
