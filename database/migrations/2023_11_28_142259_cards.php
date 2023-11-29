@@ -16,11 +16,11 @@ class Cards extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
+            $table->string('head')->nullable();
+            $table->string('underhead')->nullable();
             $table->string('text')->nullable();
-            $table->string('button')->nullable();
-            $table->string('underbutton')->nullable();
-            $table->string('textmoredetails')->nullable();
-            $table->timestamps();
+            $table->string('qualification')->nullable();
+            $table->string('more')->nullable();
         });
     }
 
