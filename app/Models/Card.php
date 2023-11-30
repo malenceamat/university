@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = ['image' ,'head', 'underhead', 'basic', 'qualification', 'more'];
+
+    public function TextInCards()
+    {
+        return $this->hasMany(TextInCards::class);
+    }
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CardsController;
+use App\Http\Controllers\TextController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('site.general');
 });
-Route::get('/admin', function () {
-    return view('admin.main');
-});
+
+
+
+/*Route::resource('admin', CardsController::class);*/
+Route::get('admin',[TextController::class,'index']);
+
+Route::post('admin/insert',[TextController::class,'insert'])->name('admin.insert');
+
+Route::post('/admin',[TextController::class, 'save']);

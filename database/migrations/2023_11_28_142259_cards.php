@@ -18,9 +18,10 @@ class Cards extends Migration
             $table->string('image')->nullable();
             $table->string('head')->nullable();
             $table->string('underhead')->nullable();
-            $table->string('text')->nullable();
+            $table->string('basic')->nullable();
             $table->string('qualification')->nullable();
             $table->string('more')->nullable();
+            $table->timestamps();
         });
     }
 

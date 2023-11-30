@@ -31,6 +31,9 @@
 
     <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
 
 
 </head>
@@ -41,14 +44,14 @@
 
 @include('admin.navbar')
 
-<!--  BEGIN MAIN CONTAINER  -->
+
 <div class="main-container " id="container">
 
     <div class="overlay"></div>
     <div class="search-overlay"></div>
 
     @include('admin.sidebar')
-    <!--  BEGIN CONTENT AREA  -->
+
     <div id="content" class="main-content">
         <div class="container">
 
@@ -62,7 +65,8 @@
                             <div class="widget-header"></div>
                             <div class="widget-content widget-content-area">
                                 <div class="profile-image">
-                                    <form action="" method="POST" enctype="multipart/form-data">
+                                    <form action="/admin" method="POST" enctype="multipart/form-data" id="save">
+                                        @csrf
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <input type="file" name="image" placeholder="Выбрать изображение" id="image" class="form-control file-upload-input">
@@ -83,25 +87,25 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="head">Заголовок</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Заголовок" id="head">
+                                                                        <input type="text" class="form-control mb-3" placeholder="Заголовок" id="head" name="head">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="underhead">Подтекст заголовка</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Подтекст заголовка" id="underhead">
+                                                                        <input type="text" class="form-control mb-3" placeholder="Подтекст заголовка" id="underhead" name="underhead">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="text">Основной текст</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Основной текст" id="text">
+                                                                        <input type="text" class="form-control mb-3" placeholder="Основной текст" id="basic" name="basic">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label for="qualification">Текст квалификации</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Текст квалификации" id="qualification">
+                                                                        <input type="text" class="form-control mb-3" placeholder="Текст квалификации" id="qualification" name="qualification">
                                                                     </div>
                                                                 </div>
 
@@ -116,33 +120,39 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="widget-content widget-content-area">
+
                                                                                 <div id="editor-container">
-                                                                                    <label for="more"> </label>
-                                                                                    <textarea type="text" class="form-control mb-3" id="more"></textarea>
+                                                                                    <textarea name="more" style="display:none" id="hiddenArea"></textarea>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
 
-
-
+                                                                <div class="table-responsive">
+                                                                    <span id="result"></span>
+                                                                    <table class="table table-bordered table-striped" id="user_table">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>Text</th>
+                                                                            <th><button type="button" name="add" id="add" class="btn btn-outline-secondary btn-rounded mb-2 me-4">Добавить строку</button></th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="container">
                                             <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать</button>
                                         </div>
                                     </form>
-
-
-
-
-
                             </div>
                         </div>
                     </div>
@@ -195,10 +205,86 @@
                 ['bold', 'italic', 'underline']
             ]
         },
-        placeholder: 'Введите текст',
-        theme: 'snow'  // or 'bubble'
-    });
 
+        placeholder: 'Введите текст',
+        theme: 'snow'
+
+
+    });
+    $(document).ready(function(){
+        $("#save").on("submit", function () {
+            let value = $('.ql-editor').html();
+            $(this).append("<textarea name='more' style='display:none'>"+value+"</textarea>");
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+
+        var count = 1;
+
+        dynamic_field(count);
+
+        function dynamic_field(number)
+        {
+            html = '<tr>';
+            html += '<td><input type="text" name="text[]" class="form-control" /></td>';
+
+            if(number >= 1)
+            {
+                html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td>';
+                $('tbody').append(html);
+            }
+            else
+            {
+                html += '<th><button type="button" name="add" id="add" class="btn btn-success">Add</button></th></tr>';
+                $('tbody').html(html);
+            }
+        }
+
+        $(document).on('click', '#add', function(){
+            count++;
+            dynamic_field(count);
+        });
+
+        $(document).on('click', '.remove', function(){
+            count--;
+            $(this).closest("tr").remove();
+        });
+
+        $('#dynamic_form').on('submit', function(event){
+            event.preventDefault();
+            $.ajax({
+                url:'{{ route("admin.insert") }}',
+                method:'post',
+                data:$(this).serialize(),
+                dataType:'json',
+                beforeSend:function(){
+                    $('#save').attr('disabled','disabled');
+                },
+                success:function(data)
+                {
+                    if(data.error)
+                    {
+                        var error_html = '';
+                        for(var count = 0; count < data.error.length; count++)
+                        {
+                            error_html += '<p>'+data.error[count]+'</p>';
+                        }
+                        $('#result').html('<div class="alert alert-danger">'+error_html+'</div>');
+                    }
+                    else
+                    {
+                        dynamic_field(1);
+                        $('#result').html('<div class="alert alert-success">'+data.success+'</div>');
+                    }
+                    $('#save').attr('disabled', false);
+                }
+            })
+        });
+
+    });
 </script>
 </body>
 </html>
