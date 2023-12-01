@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Http\Requests\TextRequest;
 use App\Models\Card;
 use App\Models\TextInCards;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Validator;
 
 class TextController extends Controller
 {
     public function index()
     {
-        return view('admin.main');
+        return view('admin.cards');
     }
     function insert(Request $request)
     {
@@ -38,25 +41,17 @@ class TextController extends Controller
             ]);
         }
     }
-    public function save(Request $req)
+    public function save(TextRequest $req)
     {
+        $data = $req->all();
         $bit_data = [];
-        foreach ($req->text as $text) {
+        foreach ($data['text'] as $text) {
             $bit_data[] = ['text' => $text];
         }
-        $req->image = Storage //todo
-        Card::create($req->all())->TextInCards()->createMany($bit_data);
-        return view //todo
+        $data['image'] = Storage::put('image', $req->file('image'));
+        Card::create($data)->TextInCards()->createMany($bit_data);
 
-
-
-
-
-
-
-
-
-
+        return view('admin.cards');
     }
 }
 

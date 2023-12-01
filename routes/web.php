@@ -18,11 +18,8 @@ Route::get('/', function () {
     return view('site.general');
 });
 
+Route::get('/cards',[TextController::class,'index']);
 
+Route::post('cards/insert',[TextController::class,'insert'])->name('admin.insert');
 
-/*Route::resource('admin', CardsController::class);*/
-Route::get('admin',[TextController::class,'index']);
-
-Route::post('admin/insert',[TextController::class,'insert'])->name('admin.insert');
-
-Route::post('/admin',[TextController::class, 'save']);
+Route::post('/cards',[TextController::class, 'save']);

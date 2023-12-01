@@ -31,129 +31,71 @@
 
     <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-
-
-
+    <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
 </head>
 <body class="layout-boxed">
-
-
-
-
 @include('admin.navbar')
-
-
 <div class="main-container " id="container">
 
     <div class="overlay"></div>
     <div class="search-overlay"></div>
 
-    @include('admin.sidebar')
 
+
+
+
+
+@include('admin.sidebar')
     <div id="content" class="main-content">
         <div class="container">
+            <div class="row layout-top-spacing">
+                <div id="fuSingleFile" class="col-lg-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        @if ($errors->any())
 
-
-
-
-
-                <div class="row layout-top-spacing">
-                    <div id="fuSingleFile" class="col-lg-12 layout-spacing">
-                        <div class="statbox widget box box-shadow">
-                            <div class="widget-header"></div>
-                            <div class="widget-content widget-content-area">
-                                <div class="profile-image">
-                                    <form action="/admin" method="POST" enctype="multipart/form-data" id="save">
-                                        @csrf
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <input type="file" name="image" placeholder="Выбрать изображение" id="image" class="form-control file-upload-input">
-                                            @error('image')
-                                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mb-2">
-                                        <img id="preview-image-before-upload" src={{asset("images/product_image_not_found.gif")}} alt="" style="max-height: 250px;" alt="">
-                                    </div>
-                                        <div class="tab-content" id="animateLineContent-4">
-                                            <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel" aria-labelledby="animated-underline-home-tab">
-                                                <div class="row">
-                                                    <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
-                                                        <div class="form">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="head">Заголовок</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Заголовок" id="head" name="head">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="underhead">Подтекст заголовка</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Подтекст заголовка" id="underhead" name="underhead">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="text">Основной текст</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Основной текст" id="basic" name="basic">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="qualification">Текст квалификации</label>
-                                                                        <input type="text" class="form-control mb-3" placeholder="Текст квалификации" id="qualification" name="qualification">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div id="basic" class="row layout-spacing layout-top-spacing">
-                                                                    <div class="col-lg-12">
-                                                                        <div class="statbox widget box box-shadow">
-                                                                            <div class="widget-header">
-                                                                                <div class="row">
-                                                                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                                                                        <h4> Текст в кнопке "Подробнее" </h4>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="widget-content widget-content-area">
-
-                                                                                <div id="editor-container">
-                                                                                    <textarea name="more" style="display:none" id="hiddenArea"></textarea>
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="table-responsive">
-                                                                    <span id="result"></span>
-                                                                    <table class="table table-bordered table-striped" id="user_table">
-                                                                        <thead>
-                                                                        <tr>
-                                                                            <th>Text</th>
-                                                                            <th><button type="button" name="add" id="add" class="btn btn-outline-secondary btn-rounded mb-2 me-4">Добавить строку</button></th>
-                                                                        </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="container">
-                                            <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать</button>
-                                        </div>
-                                    </form>
+                            <div class="alert alert-danger mt-1 mb-1">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
+                        @endif
+                        <br>
+                        <div class="widget-header"></div>
+                        <div class="widget-content widget-content-area">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                @yield('cards')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -162,32 +104,19 @@
     </div>
 </div>
 
+
+
 <script type="text/javascript">
-
-    $(document).ready(function () {
-
-
-        $('#image').change(function(){
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-
-                $('#preview-image-before-upload').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(this.files[0]);
-
+        $(document).ready(function () {
+            $('#image').change(function(){
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $('#preview-image-before-upload').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            });
         });
-
-    });
-
 </script>
-
-
-<!-- END MAIN CONTAINER -->
-
-<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
 <script src={{asset("../src/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <script src={{asset("../src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js")}}></script>
 <script src={{asset("../src/plugins/src/mousetrap/mousetrap.min.js")}}></script>
@@ -197,94 +126,83 @@
 
 <script src={{asset("../src/assets/js/scrollspyNav.js")}}></script>
 <script src={{asset("../src/plugins/src/editors/quill/quill.js")}}></script>
-
 <script> quill = new Quill('#editor-container', {
-        modules: {
-            toolbar: [
-                [{ header: [1, 2, false] }],
-                ['bold', 'italic', 'underline']
-            ]
-        },
-
-        placeholder: 'Введите текст',
-        theme: 'snow'
-
-
-    });
-    $(document).ready(function(){
-        $("#save").on("submit", function () {
-            let value = $('.ql-editor').html();
-            $(this).append("<textarea name='more' style='display:none'>"+value+"</textarea>");
+            modules: {
+                toolbar: [
+                    [{ header: [1, 2, false] }],
+                    ['bold', 'italic', 'underline']
+                ]
+            },
+            placeholder: 'Введите текст',
+            theme: 'snow'
         });
-    });
+        $(document).ready(function(){
+            $("#save").on("submit", function () {
+                let value = $('.ql-editor').html();
+                $(this).append("<textarea name='more' style='display:none'>"+value+"</textarea>");
+            });
+        });
 </script>
 
 <script>
-    $(document).ready(function(){
-
-        var count = 1;
-
-        dynamic_field(count);
-
-        function dynamic_field(number)
-        {
-            html = '<tr>';
-            html += '<td><input type="text" name="text[]" class="form-control" /></td>';
-
-            if(number >= 1)
-            {
-                html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td>';
-                $('tbody').append(html);
-            }
-            else
-            {
-                html += '<th><button type="button" name="add" id="add" class="btn btn-success">Add</button></th></tr>';
-                $('tbody').html(html);
-            }
-        }
-
-        $(document).on('click', '#add', function(){
-            count++;
+        $(document).ready(function(){
+            var count = 1;
             dynamic_field(count);
-        });
-
-        $(document).on('click', '.remove', function(){
-            count--;
-            $(this).closest("tr").remove();
-        });
-
-        $('#dynamic_form').on('submit', function(event){
-            event.preventDefault();
-            $.ajax({
-                url:'{{ route("admin.insert") }}',
-                method:'post',
-                data:$(this).serialize(),
-                dataType:'json',
-                beforeSend:function(){
-                    $('#save').attr('disabled','disabled');
-                },
-                success:function(data)
+            function dynamic_field(number)
+            {
+                html = '<tr>';
+                html += '<td><input type="text" name="text[]" class="form-control" /></td>';
+                if(number >= 1)
                 {
-                    if(data.error)
-                    {
-                        var error_html = '';
-                        for(var count = 0; count < data.error.length; count++)
-                        {
-                            error_html += '<p>'+data.error[count]+'</p>';
-                        }
-                        $('#result').html('<div class="alert alert-danger">'+error_html+'</div>');
-                    }
-                    else
-                    {
-                        dynamic_field(1);
-                        $('#result').html('<div class="alert alert-success">'+data.success+'</div>');
-                    }
-                    $('#save').attr('disabled', false);
+                    html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td>';
+                    $('tbody').append(html);
                 }
-            })
-        });
+                else
+                {
+                    html += '<th><button type="button" name="add" id="add" class="btn btn-success">Add</button></th></tr>';
+                    $('tbody').html(html);
+                }
+            }
+            $(document).on('click', '#add', function(){
+                count++;
+                dynamic_field(count);
+            });
+            $(document).on('click', '.remove', function(){
+                count--;
+                $(this).closest("tr").remove();
+            });
+            $('#dynamic_form').on('submit', function(event){
+                event.preventDefault();
+                $.ajax({
+                    url:'{{ route("admin.insert") }}',
+                    method:'post',
+                    data:$(this).serialize(),
+                    dataType:'json',
+                    beforeSend:function(){
+                        $('#save').attr('disabled','disabled');
+                    },
+                    success:function(data)
+                    {
+                        if(data.error)
+                        {
+                            var error_html = '';
+                            for(var count = 0; count < data.error.length; count++)
+                            {
+                                error_html += '<p>'+data.error[count]+'</p>';
+                            }
+                            $('#result').html('<div class="alert alert-danger">'+error_html+'</div>');
+                        }
+                        else
+                        {
+                            dynamic_field(1);
+                            $('#result').html('<div class="alert alert-success">'+data.success+'</div>');
+                        }
+                        $('#save').attr('disabled', false);
+                    }
+                })
+            });
 
-    });
-</script>
+        });
+    </script>
 </body>
 </html>
