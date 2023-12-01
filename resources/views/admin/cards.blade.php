@@ -10,6 +10,7 @@
 
 
 @section('cards')
+
                             <div class="profile-image">
                                 <form action="/cards" method="post" enctype="multipart/form-data" id="save">
                                     @csrf
@@ -92,10 +93,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="container">
-                                        <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать</button>
-                                    </div>
+                                            <div class="container">
+                                                <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
+                                            </div>
                                 </form>
+
                             </div>
+
 @endsection
 

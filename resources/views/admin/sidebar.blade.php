@@ -33,7 +33,7 @@
                 </a>
                 <ul class="collapse submenu list-unstyled show" id="layouts" data-bs-parent="#accordionExample">
                     <li class="active">
-                        <a href="/admin"> Карточка </a>
+                        <a href="/allcards"> Карточки </a>
                     </li>
                 </ul>
             </li>

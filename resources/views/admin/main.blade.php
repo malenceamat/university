@@ -51,6 +51,7 @@
             <div class="row layout-top-spacing">
                 <div id="fuSingleFile" class="col-lg-12 layout-spacing">
                     <div class="statbox widget box box-shadow">
+
                         @if ($errors->any())
 
                             <div class="alert alert-danger mt-1 mb-1">
@@ -62,7 +63,9 @@
                             </div>
                         @endif
                         <br>
+
                         <div class="widget-header"></div>
+
                         <div class="widget-content widget-content-area">
 
 
@@ -97,6 +100,7 @@
 
 
                         </div>
+
                     </div>
                 </div>
             </div>
