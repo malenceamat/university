@@ -48,7 +48,7 @@ class TextController extends Controller
         foreach ($data['text'] as $text) {
             $bit_data[] = ['text' => $text];
         }
-        $data['image'] = Storage::put('image', $req->file('image'));
+        $data['image'] = Storage::disk('public')->put('image', $req->file('image'));
         Card::create($data)->TextInCards()->createMany($bit_data);
 
         return view('admin.cards');

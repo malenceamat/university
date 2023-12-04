@@ -32,6 +32,7 @@
     <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
     <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
+
 </head>
 <body class="layout-boxed">
 @include('admin.navbar')
@@ -76,12 +77,13 @@
 
 
 
+                            @yield('allcards')
 
 
 
 
 
-                                @yield('cards')
+                            @yield('cards')
 
 
 
