@@ -16,3 +16,9 @@ Route::post('cards/insert',[TextController::class,'insert'])->name('admin.insert
 Route::post('/cards',[TextController::class, 'save']);
 
 Route::get('/allcards',[CardsController::class, 'index']);
+
+Route::delete('/editcards/{delete}',[CardsController::class, 'delete']);
+
+Route::post('/editcards/{update}',[CardsController::class,'edit']);
+
+Route::post('/editcards',[CardsController::class,'update']);

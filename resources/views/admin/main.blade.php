@@ -76,7 +76,7 @@
 
 
 
-
+                            @yield('editcards')
                             @yield('allcards')
 
 
@@ -152,7 +152,7 @@
 
 <script>
         $(document).ready(function(){
-            var count = 1;
+            let count = 1;
             dynamic_field(count);
             function dynamic_field(number)
             {
@@ -163,11 +163,7 @@
                     html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td>';
                     $('tbody').append(html);
                 }
-                else
-                {
-                    html += '<th><button type="button" name="add" id="add" class="btn btn-success">Add</button></th></tr>';
-                    $('tbody').html(html);
-                }
+
             }
             $(document).on('click', '#add', function(){
                 count++;
@@ -209,6 +205,9 @@
             });
 
         });
+
+
+
     </script>
 </body>
 </html>
