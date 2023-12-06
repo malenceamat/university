@@ -35,6 +35,21 @@
                     <li class="active">
                         <a href="/allcards"> Карточки </a>
                     </li>
+                    <li class="">
+                        <a href="/allcards"> Этапы обучения </a>
+                    </li>
+                    <li class="">
+                        <a href="/allcards"> Условия отбора </a>
+                    </li>
+                    <li class="">
+                        <a href="/allcards"> Дополнительный ассессмент </a>
+                    </li>
+                    <li class="">
+                        <a href="/allcards"> Команда </a>
+                    </li>
+                    <li class="">
+                        <a href="/allcards"> Информация </a>
+                    </li>
                 </ul>
             </li>
         </ul>
