@@ -22,11 +22,6 @@ class CardsController extends Controller
         $delete->delete();
         return redirect('/allcards');
     }
-    public function edit($id)
-    {
-        $edit = Card::with('TextInCards')->find($id);
-        return view('admin.cards.editcards',compact('edit'));
-    }
     public function update(Request $req)
     {
         $data = Card::find($req->id);

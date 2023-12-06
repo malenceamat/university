@@ -169,14 +169,11 @@
             </div>
             @if(isset($card->id))
                 <div class="container">
-                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">
-                        Редактировать
-                    </button>
+                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Редактировать</button>
                 </div>
             @else
                 <div class="container">
-                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать
-                    </button>
+                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать</button>
                 </div>
             @endif
         </form>
@@ -185,7 +182,7 @@
             <form method="POST" action="/cards/{{$card->id}}">
                 @csrf
                 {{method_field('DELETE')}}
-                <button class="btn btn-danger mb-2 me-4">Удалить карточку</button>
+                <button class="btn btn-danger mb-2 me-4">Удалить</button>
             </form>
             </div>
         @endif

@@ -32,11 +32,11 @@
                     </div>
                 </a>
                 <ul class="collapse submenu list-unstyled show" id="layouts" data-bs-parent="#accordionExample">
-                    <li class="active">
+                    <li class="{{ (request()->is('allcards')) ? 'active' : '' }}">
                         <a href="/allcards"> Карточки </a>
                     </li>
-                    <li class="">
-                        <a href="/allcards"> Этапы обучения </a>
+                    <li class="{{ (request()->is('stages')) ? 'active' : '' }}">
+                        <a href="/allstages"> Этапы обучения </a>
                     </li>
                     <li class="">
                         <a href="/allcards"> Условия отбора </a>

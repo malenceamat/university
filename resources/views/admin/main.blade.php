@@ -57,13 +57,10 @@
 
 
 
-                            @yield('editcards')
+
                             @yield('allcards')
-
-
-
-
-
+                            @yield('stages')
+                            @yield('allstages')
                             @yield('cards')
 
 
