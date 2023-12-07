@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Controllers\Helpers\BaseHelperController;
 use App\Http\Requests\TextRequest;
 use App\Models\Card;
 use App\Models\TextInCards;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Validator;
+use Str;
 
 class TextController extends Controller
 {
@@ -19,13 +21,19 @@ class TextController extends Controller
     }
     public function save(TextRequest $req)
     {
+        $helper = new BaseHelperController(); // 1
+
         $data = $req->all();
         $bit_data = [];
         foreach ($data['text'] as $text) {
             $bit_data[] = ['text' => $text];
         }
-        $data['image'] = Storage::disk('public')->put('image', $req->file('image'));
-        Card::create($data)->TextInCards()->createMany($bit_data);
+
+        $data['image'] = $helper->store_base64_image($req['image']); // 2
+
+
+
+        Card::create($data)->TextInCards()->createMany($bit_data); // 3
 
         return redirect('/allcards');
     }

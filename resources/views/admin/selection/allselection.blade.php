@@ -1,11 +1,14 @@
 @extends('admin.main')
-@section('allcards')
+
+
+@section('allselection')
     <style>
         .card
         {
             width: 100%;
             height: 100%;
             object-fit: none;
+
         }
         img{
             width: 100%;
@@ -29,30 +32,32 @@
             pointer-events: none;
         }
     </style>
-<form action="/cards">
-    @csrf
-    <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Создать карточку</button>
-</form>
-        <div class="col-xxl-12">
-            <div class="row">
-                @foreach($card as $data)
+
+
+    <form action="/selection">
+        @csrf
+        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Создать отбор</button>
+    </form>
+    <div class="col-xxl-12">
+        <div class="row">
+            @foreach($selection as $data)
                 <div class="col-sm-3" style="padding: 10px">
                     <div class="card">
                         <img src="{{asset('/storage/'. $data['image'])}}"  alt="...">
                         <div class="card-body">
                             <h5 class="card-title mb-3">{{$data->head}}</h5>
                         </div>
-                            <div>
-                                <form method="get" action="/cards/{{$data->id}}">
-                                    @csrf
-                                    <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Редактировать</button>
-                                </form>
-                            </div>
+                        <div>
+                            <form method="get" action="/selection/{{$data->id}}">
+                                @csrf
+                                <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Редактировать</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
+    </div>
+
+
 @endsection
-
-

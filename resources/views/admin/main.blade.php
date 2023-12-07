@@ -57,12 +57,15 @@
 
 
 
-
+                            @yield('selection')
                             @yield('allcards')
                             @yield('stages')
                             @yield('allstages')
                             @yield('cards')
-
+                            @yield('allselection')
+                            @yield('additional')
+                            @yield('team')
+                            @yield('allteam')
 
 
 

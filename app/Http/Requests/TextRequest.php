@@ -24,19 +24,23 @@ class TextRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => ['required','mimes:jpeg,png,jpg,gif'],
+            'image' => ['required'],
             'head' => ['required','string','max:255'],
             'underhead' => ['required','string','max:255'],
             'basic' => ['required','string','max:255'],
             'qualification' => ['required','string','max:255'],
             'more' => ['required','string','max:255']
+
+
+
+
         ];
     }
     public function messages()
     {
         return [
             'image.required' => 'Изображение обязательно',
-            'head.required' => 'Заголовок обязателен',
+            'head.required' => 'Название команды обязательно',
             'underhead.required' => 'Подтекст заголовка обязателен',
             'basic.required' => 'Основной текст обязателен',
             'qualification.required' => 'Текст квалификации обязателен',

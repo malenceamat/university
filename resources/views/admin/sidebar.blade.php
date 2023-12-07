@@ -5,8 +5,8 @@
         <div class="navbar-nav theme-brand flex-row  text-center">
             <div class="nav-logo">
                 <div class="nav-item theme-logo">
-                    <a href="./index.html">
-                        <img src="../src/assets/img/logo.svg" class="navbar-logo" alt="logo">
+                    <a href="">
+                        <img src={{asset("../src/assets/img/logo.svg")}} class="navbar-logo" alt="logo">
                     </a>
                 </div>
                 <div class="nav-item theme-text">
@@ -35,17 +35,17 @@
                     <li class="{{ (request()->is('allcards')) ? 'active' : '' }}">
                         <a href="/allcards"> Карточки </a>
                     </li>
-                    <li class="{{ (request()->is('stages')) ? 'active' : '' }}">
+                    <li class="{{ (request()->is('allstages')) ? 'active' : '' }}">
                         <a href="/allstages"> Этапы обучения </a>
                     </li>
-                    <li class="">
-                        <a href="/allcards"> Условия отбора </a>
+                    <li class="{{ (request()->is('allselection')) ? 'active' : '' }}">
+                        <a href="/allselection"> Условия отбора </a>
                     </li>
-                    <li class="">
-                        <a href="/allcards"> Дополнительный ассессмент </a>
+                    <li class="{{ (request()->is('additional')) ? 'active' : '' }}">
+                        <a href="/additional"> Доп. Ассессмент </a>
                     </li>
-                    <li class="">
-                        <a href="/allcards"> Команда </a>
+                    <li class="{{ (request()->is('allteam')) ? 'active' : '' }}">
+                        <a href="/allteam"> Команда </a>
                     </li>
                     <li class="">
                         <a href="/allcards"> Информация </a>
