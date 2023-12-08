@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdditionalRequest extends FormRequest
+class ResultRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,7 @@ class AdditionalRequest extends FormRequest
     public function rules()
     {
         return [
+
             'head' => ['required','string','max:255'],
             'text' => ['required', 'string','max:255']
 
@@ -32,6 +33,7 @@ class AdditionalRequest extends FormRequest
     public function messages()
     {
         return [
+
             'head.required' => 'Основной текст обязателен',
             'text.required' => 'Вспомогательный текст обязателен'
 

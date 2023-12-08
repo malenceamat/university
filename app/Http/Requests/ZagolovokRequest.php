@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdditionalRequest extends FormRequest
+class ZagolovokRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-   /* public function authorize()
+    /*public function authorize()
     {
         return false;
     }*/
@@ -26,12 +26,12 @@ class AdditionalRequest extends FormRequest
         return [
             'head' => ['required','string','max:255'],
             'text' => ['required', 'string','max:255']
-
         ];
     }
     public function messages()
     {
         return [
+
             'head.required' => 'Основной текст обязателен',
             'text.required' => 'Вспомогательный текст обязателен'
 

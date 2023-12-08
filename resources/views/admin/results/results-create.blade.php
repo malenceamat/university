@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 
-@section('additional')
+@section('result')
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/filepond.min.css")}}>
@@ -31,7 +31,7 @@
                     <div class="col-lg-10 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
-                        <img id="itn-croppie-result" src="{{asset('/storage/'.$additional['image'])}}"
+                        <img id="itn-croppie-result" src="{{asset('/storage/'.$result['image'])}}"
                              class="col-lg-6 col-sm-12 pl-0">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
@@ -57,7 +57,7 @@
                                             <label for="head">Основной текст</label>
                                             <input type="text" class="form-control mb-3"
                                                    placeholder="Основной текст" id="head" name="head"
-                                                   value="{{$additional['head']}}">
+                                                   value="{{$result['head']}}">
                                         </div>
                                     </div>
                                     <div class="container">
@@ -66,10 +66,10 @@
                                             <input type="text" class="form-control mb-3"
                                                    placeholder="Вспомогательный текст"
                                                    id="text" name="text"
-                                                   value="{{$additional['text']}}">
+                                                   value="{{$result['text']}}">
                                         </div>
                                     </div>
-                                    <input type="hidden" name="id" value="{{$additional['id']}}">
+                                    <input type="hidden" name="id" value="{{$result['id']}}">
                                 </div>
                             </div>
                         </div>

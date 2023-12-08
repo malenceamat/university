@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Additional extends Model
+class partner extends Model
 {
     use HasFactory;
-protected $table = 'additionals';
-    protected $fillable = ['image' ,'head', 'text'];
+
+    protected $fillable = ['image'];
 }

@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 
-@section('additional')
+@section('contact')
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/filepond.min.css")}}>
@@ -24,14 +24,14 @@
 
 
     <div class="profile-image">
-        <form action="{{Route ('results')}}" method="POST" enctype="multipart/form-data" id="save">
+        <form action="{{Route ('contact')}}" method="POST" enctype="multipart/form-data" id="save">
             @csrf
             <div class="col-md-12">
                 <div class="mb-3">
                     <div class="col-lg-10 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
-                        <img id="itn-croppie-result" src="{{asset('/storage/'.$additional['image'])}}"
+                        <img id="itn-croppie-result" src="{{asset('/storage/'.$contact['image'])}}"
                              class="col-lg-6 col-sm-12 pl-0">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
@@ -54,29 +54,44 @@
                                 <div class="row">
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="head">Основной текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Основной текст" id="head" name="head"
-                                                   value="{{$additional['head']}}">
+                                            <label for="e-text">Почта</label>
+                                            <input id="e-text" type="email" name="email" value="{{$contact['email']}}" placeholder="email@mail.com" class="form-control" required>
+
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="text">Вспомогательный текст</label>
+                                            <label for="text">Основной текст</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Вспомогательный текст"
+                                                   placeholder="Основной текст"
                                                    id="text" name="text"
-                                                   value="{{$additional['text']}}">
+                                                   value="{{$contact['text']}}">
                                         </div>
                                     </div>
-                                    <input type="hidden" name="id" value="{{$additional['id']}}">
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="buttontext">Текст кнопки</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Текст кнопки"
+                                                   id="buttontext" name="buttontext"
+                                                   value="{{$contact['buttontext']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="button">Ссылка в кнопке</label>
+                                            <input id="button" type="url" name="button"  value="{{$contact['button']}}" placeholder="https://www.google.ru/" class="form-control" required>
+
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="id" value="{{$contact['id']}}">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container mt-5">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
             </div>
         </form>

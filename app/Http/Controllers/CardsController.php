@@ -34,6 +34,8 @@ class CardsController extends Controller
         if($req['image']){
             if($req['image']!=$data['image']){
                 Storage::disk('public')->delete('image', $data['image']);
+
+
                 $image = preg_replace('#^data:image/\w+;base64,#i', '', $req['image']);
                 $image = str_replace(' ', '+', $image);
                 $fileName = "image/" . Str::random(20) . '.png';

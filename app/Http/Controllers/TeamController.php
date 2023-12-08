@@ -6,6 +6,8 @@ use App\Http\Controllers\Helpers\BaseHelperController;
 use App\Http\Requests\TeamRequest;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Str;
 
 class TeamController extends Controller
 {
@@ -35,6 +37,19 @@ class TeamController extends Controller
         $team -> fio = $req->fio;
         $team -> job = $req->job;
         $team -> merits = $req->merits;
+        if($req['image']){
+            if($req['image']!=$team['image']){
+                Storage::disk('public')->delete('image', $team['image']);
+
+
+                $image = preg_replace('#^data:image/\w+;base64,#i', '', $req['image']);
+                $image = str_replace(' ', '+', $image);
+                $fileName = "image/" . Str::random(20) . '.png';
+
+                Storage::disk('public')->put($fileName, base64_decode($image));
+                $team['image'] = $fileName;
+            }
+        }
         $team->save();
         return redirect('allteam');
     }

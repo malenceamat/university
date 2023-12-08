@@ -1,7 +1,8 @@
+
 @extends('admin.main')
 
 
-@section('additional')
+@section('banner')
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/filepond.min.css")}}>
@@ -24,14 +25,14 @@
 
 
     <div class="profile-image">
-        <form action="{{Route ('results')}}" method="POST" enctype="multipart/form-data" id="save">
+        <form action="{{Route ('banner')}}" method="POST" enctype="multipart/form-data" id="save">
             @csrf
             <div class="col-md-12">
                 <div class="mb-3">
                     <div class="col-lg-10 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
-                        <img id="itn-croppie-result" src="{{asset('/storage/'.$additional['image'])}}"
+                        <img id="itn-croppie-result" src="{{asset('/storage/'.$banner['image'])}}"
                              class="col-lg-6 col-sm-12 pl-0">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
@@ -54,29 +55,65 @@
                                 <div class="row">
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="head">Основной текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Основной текст" id="head" name="head"
-                                                   value="{{$additional['head']}}">
+                                            <label for="emailbutton">Ссылка в кнопке</label>
+                                            <input id="emailbutton" type="url" name="emailbutton"  value="{{$banner['emailbutton']}}" placeholder="https://www.google.ru/" class="form-control" required>
+
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="text">Вспомогательный текст</label>
+                                            <label for="button">Текст кнопки</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Вспомогательный текст"
-                                                   id="text" name="text"
-                                                   value="{{$additional['text']}}">
+                                                   placeholder="Текст кнопки"
+                                                   id="button" name="button"
+                                                   value="{{$banner['button']}}">
                                         </div>
                                     </div>
-                                    <input type="hidden" name="id" value="{{$additional['id']}}">
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="colortext">Цветной текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Цветной текст"
+                                                   id="colortext" name="colortext"
+                                                   value="{{$banner['colortext']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="text">Обычный текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Обычный текст"
+                                                   id="text" name="text"
+                                                   value="{{$banner['text']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="smalltext">Маленький текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Маленький текст"
+                                                   id="smalltext" name="smalltext"
+                                                   value="{{$banner['smalltext']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="bigtext">Основной текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Основной текст"
+                                                   id="bigtext" name="bigtext"
+                                                   value="{{$banner['bigtext']}}">
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" name="id" value="{{$banner['id']}}">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container mt-5">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
             </div>
         </form>

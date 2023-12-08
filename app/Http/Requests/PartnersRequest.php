@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdditionalRequest extends FormRequest
+class PartnersRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-   /* public function authorize()
+    /*public function authorize()
     {
         return false;
     }*/
@@ -24,17 +24,13 @@ class AdditionalRequest extends FormRequest
     public function rules()
     {
         return [
-            'head' => ['required','string','max:255'],
-            'text' => ['required', 'string','max:255']
-
+            'image' => ['required']
         ];
     }
     public function messages()
     {
         return [
-            'head.required' => 'Основной текст обязателен',
-            'text.required' => 'Вспомогательный текст обязателен'
-
+            'image.required' => 'Изображение обязательно'
         ];
     }
 }

@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Additional extends Model
+class Possibilities extends Model
 {
     use HasFactory;
-protected $table = 'additionals';
-    protected $fillable = ['image' ,'head', 'text'];
+
+    protected $table = 'possibilities';
+
+    protected $fillable = ['image','text'];
 }

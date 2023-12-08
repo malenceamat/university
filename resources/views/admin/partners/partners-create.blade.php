@@ -1,37 +1,57 @@
 @extends('admin.main')
 
 
-@section('additional')
+
+
+
+
+
+
+
+
+
+@section('partners')
+
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/filepond.min.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/FilePondPluginImagePreview.min.css")}}>
 
-    <link href={{asset("../src/assets/css/light/scrollspyNav.css")}} rel="stylesheet" type="text/css"/>
-    <link href={{asset("../src/plugins/css/light/filepond/custom-filepond.css")}} rel="stylesheet" type="text/css"/>
+    <link href={{asset("../src/assets/css/light/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("../src/plugins/css/light/filepond/custom-filepond.css")}} rel="stylesheet" type="text/css" />
 
-    <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css"/>
-    <link href={{asset("../src/plugins/css/dark/filepond/custom-filepond.css")}} rel="stylesheet" type="text/css"/>
+    <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("../src/plugins/css/dark/filepond/custom-filepond.css")}} rel="stylesheet" type="text/css" />
     <script src={{asset("https://code.jquery.com/jquery-3.5.1.min.js")}}></script>
     <script src={{asset("https://code.jquery.com/jquery-3.6.0.min.js")}}></script>
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/light/editors/quill/quill.snow.css")}}>
 
-    <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css"/>
+    <link href={{asset("../src/assets/css/dark/scrollspyNav.css")}} rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
     <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
     <link rel="stylesheet" href={{asset("croppie.css")}} />
 
 
 
+
+
+
+
+
     <div class="profile-image">
-        <form action="{{Route ('results')}}" method="POST" enctype="multipart/form-data" id="save">
+        <form @if (isset($partners->id)) action="{{url('partners/edit')}}"
+              @else action="{{url('partners/save')}}" @endif method="post"
+              enctype="multipart/form-data" id="save">
             @csrf
+            @if($partners->id)
+                @method('post')
+            @endif
             <div class="col-md-12">
                 <div class="mb-3">
-                    <div class="col-lg-10 col-sm-12 mt-3 pl-0">
+                    <div class="col-lg-5 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
-                        <img id="itn-croppie-result" src="{{asset('/storage/'.$additional['image'])}}"
+                        <img id="itn-croppie-result" src="{{asset('/storage/'.$partners['image'])}}"
                              class="col-lg-6 col-sm-12 pl-0">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
@@ -40,49 +60,61 @@
                         <div class="itn-croppie" style="display: none"></div>
                         <div class="col-12 pl-0">
                             <a id="itn-croppie-save" class="btn btn-dark" style="display: none">Обрезать</a>
+                            <a id="itn-croppie-rotate" class="btn btn-dark"
+                               style="display: none">Повернуть</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="tab-content" id="animateLineContent-4">
-                <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel"
-                     aria-labelledby="animated-underline-home-tab">
-                    <div class="row">
-                        <div class="container">
-                            <div class="form">
-                                <div class="row">
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="head">Основной текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Основной текст" id="head" name="head"
-                                                   value="{{$additional['head']}}">
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="text">Вспомогательный текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Вспомогательный текст"
-                                                   id="text" name="text"
-                                                   value="{{$additional['text']}}">
-                                        </div>
-                                    </div>
-                                    <input type="hidden" name="id" value="{{$additional['id']}}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+            @if(isset($partners->id))
+
+            @else
+                <div class="container">
+                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать</button>
                 </div>
-            </div>
-            <div class="container">
-                <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
-            </div>
+            @endif
         </form>
+        @if(isset($partners->id))
+            <div class="" style="float: right;height: auto">
+                <form method="POST" action="/partners/{{$partners->id}}">
+                    @csrf
+                    {{method_field('DELETE')}}
+                    <button class="btn btn-danger mb-2 me-4">Удалить</button>
+                </form>
+            </div>
+        @endif
     </div>
 
+
+
+
+
+
+
+
+    <script src={{asset("../src/assets/js/scrollspyNav.js")}}></script>
+    <script src={{asset("../src/plugins/src/editors/quill/quill.js")}}></script>
+    <script> quill = new Quill('#editor-container', {
+            modules: {
+                toolbar: [
+                    [{ header: [1, 2, false] }],
+                    ['bold', 'italic', 'underline']
+                ]
+            },
+            placeholder: 'Введите текст',
+            theme: 'snow'
+        });
+        $(document).ready(function(){
+            $("#save").on("submit", function () {
+                let value = $('.ql-editor').html();
+                $(this).append("<textarea name='more' style='display:none'>"+value+"</textarea>");
+            });
+        });
+    </script>
     <script src={{asset("croppie.js")}}></script>
+
     <script>
         let uploadCrop = $('.itn-croppie').croppie({
             enableExif: true,
@@ -141,5 +173,32 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            let count = {{ (request()->is('cards')) ? '1' : '0' }};
+            dynamic_field(count);
+
+            function dynamic_field(number) {
+                html = '<tr>';
+                html += '<td><input type="text" name="text[]" class="form-control" /></td>';
+                if (number >= 1) {
+                    html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td>';
+                    $('thead').append(html);
+                }
+            }
+
+            $(document).on('click', '#add', function () {
+                count++;
+                dynamic_field(count);
+            });
+            $(document).on('click', '.remove', function () {
+                count--;
+                $(this).closest("tr").remove();
+            });
+        });
+    </script>
+
+
 
 @endsection
+

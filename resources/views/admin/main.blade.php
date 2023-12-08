@@ -66,6 +66,17 @@
                             @yield('additional')
                             @yield('team')
                             @yield('allteam')
+                            @yield('result')
+                            @yield('partners')
+                            @yield('allpartners')
+                            @yield('contact')
+                            @yield('zagolovok')
+                            @yield('audience')
+                            @yield('statistics')
+                            @yield('allstatistics')
+                            @yield('possibilities')
+                            @yield('allpossibilities')
+                            @yield('banner')
 
 
 
