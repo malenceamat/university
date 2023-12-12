@@ -22,6 +22,8 @@ class Banners extends Migration
             $table->string('text')->nullable();
             $table->string('smalltext')->nullable();
             $table->string('bigtext')->nullable();
+            $table->string('secondbutton')->nullable();
+            $table->string('urlsecondbutton')->nullable();
             $table->timestamps();
         });
     }

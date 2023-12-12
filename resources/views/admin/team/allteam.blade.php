@@ -45,7 +45,7 @@
                     <div class="card">
                         <img src="{{asset('/storage/'. $data['image'])}}"  alt="...">
                         <div class="card-body">
-                            <h5 class="card-title mb-3">{{$data->head}}</h5>
+                            <h5 class="card-title mb-3">{{$data->fio}}</h5>
                         </div>
                         <div>
                             <form method="get" action="/team/{{$data->id}}">

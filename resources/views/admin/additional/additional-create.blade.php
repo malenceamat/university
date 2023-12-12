@@ -24,7 +24,7 @@
 
 
     <div class="profile-image">
-        <form action="{{Route ('results')}}" method="POST" enctype="multipart/form-data" id="save">
+        <form action="{{Route ('additional')}}" method="POST" enctype="multipart/form-data" id="save">
             @csrf
             <div class="col-md-12">
                 <div class="mb-3">
@@ -88,13 +88,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 150,
+                height: 150,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

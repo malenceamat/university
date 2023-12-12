@@ -26,27 +26,21 @@
 
         <form action="{{Route ('zagolovok')}}" method="POST" enctype="multipart/form-data" id="save">
             @csrf
-
-
-            <div class="tab-content" id="animateLineContent-4">
-                <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel"
-                     aria-labelledby="animated-underline-home-tab">
-                    <div class="row">
-                        <div class="container">
-                            <div class="form">
+            <div class="col-xxl-12">
                                 <div class="row">
                                     <div class="container">
                                         <div class="form-group">
                                             <label for="head">Основной текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Основной текст" id="head" name="head" style="width: 75%"
+                                            <input type="text" class="form-control mb-5"
+                                                   placeholder="Основной текст" id="head" name="head"
+                                                   style="width: 50em"
                                                    value="{{$zagolovok['head']}}">
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
                                             <label for="text">Вспомогательный текст</label>
-                                            <input type="text" class="form-control mb-3" style="width: 100%"
+                                            <input type="text" class="form-control mb-5"
                                                    placeholder="Вспомогательный текст"
                                                    id="text" name="text"
                                                    value="{{$zagolovok['text']}}">
@@ -54,13 +48,9 @@
                                     </div>
                                     <input type="hidden" name="id" value="{{$zagolovok['id']}}">
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="container">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
+            </div>
             </div>
         </form>
 

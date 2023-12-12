@@ -61,14 +61,6 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="head">Название команды</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Название команды" id="head" name="head"
-                                                   value="{{$team['head']}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                             <label for="fio">Фамилия Имя Отчество</label>
                                             <input type="text" class="form-control mb-3"
                                                    placeholder="Фамилия Имя Отчество"
@@ -129,13 +121,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 80,
+                height: 80,
                 type: 'circle'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

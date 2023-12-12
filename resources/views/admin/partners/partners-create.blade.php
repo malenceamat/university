@@ -47,12 +47,12 @@
                 @method('post')
             @endif
             <div class="col-md-12">
-                <div class="mb-3">
-                    <div class="col-lg-5 col-sm-12 mt-3 pl-0">
+                <div class="mb-6">
+                    <div class="col-lg-10">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
                         <img id="itn-croppie-result" src="{{asset('/storage/'.$partners['image'])}}"
-                             class="col-lg-6 col-sm-12 pl-0">
+                             class="col-lg-12 col-sm-12 ">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
                     </div>
@@ -120,13 +120,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 140,
+                height: 72,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

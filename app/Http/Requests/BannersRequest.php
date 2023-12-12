@@ -29,7 +29,9 @@ class BannersRequest extends FormRequest
             'colortext' => ['required','string','max:255'],
             'text' => ['required','string','max:255'],
             'smalltext' => ['required','string','max:255'],
-            'bigtext' => ['required','string','max:255']
+            'bigtext' => ['required','string','max:255'],
+            'secondbutton' => ['required','string','max:255'],
+            'urlsecondbutton' => ['required','string','max:255']
         ];
     }
     public function messages()
@@ -40,7 +42,9 @@ class BannersRequest extends FormRequest
             'colortext.required' => 'Текст кнопки обязателен',
             'text.required' => 'Ссылка для кнопки обязателена',
             'smalltext.required' => 'Текст кнопки обязателен',
-            'bigtext.required' => 'Ссылка для кнопки обязателена'
+            'bigtext.required' => 'Ссылка для кнопки обязателена',
+            'secondbutton.required' => 'Текст кнопки обязателен',
+            'urlsecondbutton.required' => 'Ссылка для кнопки обязателен'
         ];
     }
 }

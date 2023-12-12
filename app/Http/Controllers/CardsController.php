@@ -30,6 +30,7 @@ class CardsController extends Controller
         $data->underhead = $req->underhead;
         $data->basic = $req->basic;
         $data->qualification = $req->qualification;
+        $data->more = $req->more;
 
         if($req['image']){
             if($req['image']!=$data['image']){

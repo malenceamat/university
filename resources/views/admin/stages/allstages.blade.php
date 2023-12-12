@@ -16,7 +16,7 @@
                         <h4 class="card-title">{{$data->date}}</h4>
                         <p class="mb-0">{{$data->number}}</p>
                     </div>
-                    <form method="get" action="/statistics/{{$data->id}}">
+                    <form method="get" action="/stages/{{$data->id}}">
                         @csrf
                         <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Редактировать</button>
                     </form>

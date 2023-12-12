@@ -31,7 +31,6 @@ class AudienceController extends Controller
 
         $audience = Audience::find($req->id);
         $audience -> head = $req->head;
-        $audience -> text = $req->text;
 
         if($req['image']){
             if($req['image']!=$audience['image']){

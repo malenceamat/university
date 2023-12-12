@@ -46,7 +46,7 @@
                         @endif
                         <br>
 
-                        <div class="widget-header"></div>
+
 
                         <div class="widget-content widget-content-area">
 
@@ -62,7 +62,7 @@
                             @yield('stages')
                             @yield('allstages')
                             @yield('cards')
-                            @yield('allselection')
+
                             @yield('additional')
                             @yield('team')
                             @yield('allteam')

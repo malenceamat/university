@@ -31,11 +31,10 @@ Route::post('/stages/save',[StagesController::class, 'create']);
 Route::get('/allstages' ,[StagesController::class,'show']);
 Route::post('/stages/edit', [StagesController::class, 'update']);
 Route::delete('/stages/{delete}',[StagesController::class, 'delete']);
-Route::get('/selection/{id?}',[SelectionController::class,'index']);
-Route::post('/selection/save',[SelectionController::class, 'create']);
-Route::get('/allselection' ,[SelectionController::class,'show']);
-Route::delete('/selection/{delete}',[SelectionController::class, 'delete']);
-Route::post('/selection/edit',[SelectionController::class,'update']);
+
+Route::get('/selection' ,[SelectionController::class,'index']);
+Route::post('/selection',[SelectionController::class, 'create'])->name('selection');
+
 Route::get('/additional' ,[AdditionalController::class,'index']);
 Route::post('/additional',[AdditionalController::class, 'create'])->name('additional');
 Route::get('/team/{id?}' ,[TeamController::class,'index']);
@@ -70,3 +69,5 @@ Route::post('/possibilities/edit', [PossibilitiesController::class, 'update']);
 Route::delete('/possibilities/{delete}',[PossibilitiesController::class, 'delete']);
 Route::get('/banner' ,[BannersController::class,'index']);
 Route::post('/banner',[BannersController::class, 'create'])->name('banner');
+
+Route::get('/',[TeamController::class,'main']);

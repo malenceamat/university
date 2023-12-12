@@ -17,6 +17,7 @@ class Results extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('head')->nullable();
+            $table->string('subtext')->nullable();
             $table->string('text')->nullable();
             $table->timestamps();
         });

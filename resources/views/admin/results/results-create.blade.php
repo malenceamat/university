@@ -62,6 +62,14 @@
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
+                                            <label for="subtext">Цветной текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Цветной текст" id="subtext" name="subtext"
+                                                   value="{{$result['subtext']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
                                             <label for="text">Вспомогательный текст</label>
                                             <input type="text" class="form-control mb-3"
                                                    placeholder="Вспомогательный текст"
@@ -88,13 +96,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 140,
+                height: 72,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

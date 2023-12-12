@@ -31,19 +31,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon and Touch Icons-->
-    <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="favicons/apple.png">
-    <link rel="manifest" href="manifest.webmanifest.html">
+    <link rel="icon" href={{asset("favicon.ico")}}>
+    <link rel="icon" href={{asset("favicons/favicon.svg")}} type="image/svg+xml">
+    <link rel="apple-touch-icon" href={{asset("favicons/apple.png")}}>
+    <link rel="manifest" href={{asset("manifest.webmanifest.html")}}>
 
     <!-- Vendor Styles-->
-    <link rel="stylesheet" media="screen" href="https://dev.mai.ru/generic/vendor/fontawesome/fontawesome-pro-6.1.1-web/css/all.min.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" media="screen" href={{asset("https://dev.mai.ru/generic/vendor/fontawesome/fontawesome-pro-6.1.1-web/css/all.min.css")}}>
+    <link rel="stylesheet" media="screen" href={{asset("assets/vendor/boxicons/css/boxicons.min.css")}}>
+    <link rel="stylesheet" media="screen" href={{asset("assets/vendor/swiper/swiper-bundle.min.css")}}>
+    <link rel="stylesheet" media="screen" href={{asset("assets/vendor/lightgallery/css/lightgallery-bundle.min.css")}}>
 
 
-    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+    <link rel="stylesheet" media="screen" href={{asset("assets/css/theme.min.css")}}>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -271,9 +271,9 @@
 
 @include('site.header')
 
- {{--   @include('banner')--}}
+
 @yield('content')
- {{--   @include('program')--}}
+
 
 
 </main>
@@ -284,25 +284,25 @@
 
 @include('site.footer')
 <!-- Back to top button -->
-<a href="index.html#top" class="btn-scroll-top" data-scroll>
+<a href="#top" class="btn-scroll-top" data-scroll>
     <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Вверх</span>
     <i class="btn-scroll-top-icon fa fa-chevron-up fs-5"></i>
 </a>
 
 <!-- Vendor Scripts -->
-<script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
-<script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-<script src="assets/vendor/rellax/rellax.min.js"></script>
-<script src="assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src={{asset("assets/vendor/jarallax/dist/jarallax.min.js")}}></script>
+<script src={{asset("assets/vendor/parallax-js/dist/parallax.min.js")}}></script>
+<script src={{asset("assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js")}}></script>
+<script src={{asset("assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js")}}></script>
+<script src={{asset("assets/vendor/rellax/rellax.min.js")}}></script>
+<script src={{asset("assets/vendor/@lottiefiles/lottie-player/dist/lottie-player.js")}}></script>
+<script src={{asset("assets/vendor/swiper/swiper-bundle.min.js")}}></script>
 
 
-<script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-<script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
-<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+<script src={{asset("assets/vendor/lightgallery/lightgallery.min.js")}}></script>
+<script src={{asset("assets/vendor/lightgallery/plugins/video/lg-video.min.js")}}></script>
+<script src={{asset("assets/vendor/imagesloaded/imagesloaded.pkgd.min.js")}}></script>
+<script src={{asset("assets/vendor/shufflejs/dist/shuffle.min.js")}}></script>
 
 
 
@@ -315,7 +315,7 @@
 
 
 <!-- Main Theme Script -->
-<script src="assets/js/theme.min.js"></script>
+<script src={{asset("assets/js/theme.min.js")}}></script>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -328,6 +328,7 @@
 
             </div>
             <div class="modal-body">
+
 
             </div>
         </div>
@@ -351,9 +352,11 @@
         var modalBody = exampleModal.querySelector('.modal-body')
         var modalImage = exampleModal.querySelector('.img-modal')
 
+        console.log(recipient)
+        console.log(recipient)
         modalTitle.textContent = recipientTitle
         modalImage.innerHTML = recipientImage
-        modalBody.textContent = recipient
+        modalBody.innerHTML = recipient
     })
 
 </script>

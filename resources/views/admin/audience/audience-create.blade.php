@@ -33,11 +33,11 @@
             @endif
             <div class="col-md-12">
                 <div class="mb-3">
-                    <div class="col-lg-5 col-sm-12 mt-3 pl-0">
+                    <div class="col-lg-12  mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
                         <img id="itn-croppie-result" src="{{asset('/storage/'.$audience['image'])}}"
-                             class="col-lg-6 col-sm-12 pl-0">
+                             class="col-lg-12 ">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
                     </div>
@@ -56,24 +56,15 @@
                 <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel"
                      aria-labelledby="animated-underline-home-tab">
                     <div class="row">
-                        <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                        <div class="col-xl-10 col-lg-12">
                             <div class="form">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="head">Текст под картинкой</label>
                                             <input type="text" class="form-control mb-3"
                                                    placeholder="Текст под картинкой" id="head" name="head"
                                                    value="{{$audience['head']}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="text">Текст на углу картинки</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Текст на углу картинки"
-                                                   id="text" name="text"
-                                                   value="{{$audience['text']}}">
                                         </div>
                                     </div>
 
@@ -113,13 +104,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 100,
+                height: 100,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

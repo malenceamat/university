@@ -103,7 +103,7 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
+                width: 1296,
                 height: 800,
                 type: 'square'
             },

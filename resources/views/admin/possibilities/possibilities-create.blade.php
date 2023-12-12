@@ -48,11 +48,11 @@
             @endif
             <div class="col-md-12">
                 <div class="mb-3">
-                    <div class="col-lg-5 col-sm-12 mt-3 pl-0">
+                    <div class="col-lg-10 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
                         <img id="itn-croppie-result" src="{{asset('/storage/'.$possibilities['image'])}}"
-                             class="col-lg-6 col-sm-12 pl-0">
+                             class="col-lg-10 col-sm-12 pl-0">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
                     </div>
@@ -66,27 +66,21 @@
                     </div>
                 </div>
             </div>
-
+            <input type="hidden" name="id" value="{{$possibilities['id']}}">
             <div class="tab-content" id="animateLineContent-4">
                 <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel" aria-labelledby="animated-underline-home-tab">
                     <div class="row">
-                        <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                        <div class="container">
                             <div class="form">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="container">
                                         <div class="form-group">
                                             <label for="text">Заголовок</label>
-                                            <input type="text" class="form-control mb-3"
+                                            <input type="text" class="form-control mb-5"
                                                    placeholder="Заголовок" id="text" name="text"
                                                    value="{{$possibilities['text']}}">
                                         </div>
                                     </div>
-
-
-                                    <input type="hidden" name="id" value="{{$possibilities['id']}}">
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -147,13 +141,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 100,
+                height: 100,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

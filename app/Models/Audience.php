@@ -10,6 +10,6 @@ class Audience extends Model
     use HasFactory;
 
     protected $table = 'audiences';
-    protected $fillable = ['image' ,'head', 'text'];
+    protected $fillable = ['image' ,'head'];
 
 }

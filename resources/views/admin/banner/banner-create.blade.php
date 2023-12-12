@@ -56,7 +56,7 @@
                                     <div class="container">
                                         <div class="form-group">
                                             <label for="emailbutton">Ссылка в кнопке</label>
-                                            <input id="emailbutton" type="url" name="emailbutton"  value="{{$banner['emailbutton']}}" placeholder="https://www.google.ru/" class="form-control" required>
+                                            <input id="emailbutton" type="url" name="emailbutton"  value="{{$banner['emailbutton']}}" placeholder="https://www.youtube.com/" class="form-control" required>
 
                                         </div>
                                     </div>
@@ -94,6 +94,23 @@
                                                    placeholder="Маленький текст"
                                                    id="smalltext" name="smalltext"
                                                    value="{{$banner['smalltext']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="smalltext">Кнопка в правом верхнем углу</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Текст кнопки"
+                                                   id="smalltext" name="secondbutton"
+                                                   value="{{$banner['secondbutton']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="urlsecondbutton">Ссылка кнопки</label>
+                                            <input id="urlsecondbutton" type="url" name="urlsecondbutton"
+                                                   value="{{$banner['urlsecondbutton']}}"
+                                                   placeholder="https://www.google.ru/" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="container">

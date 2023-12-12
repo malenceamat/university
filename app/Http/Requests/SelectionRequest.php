@@ -24,7 +24,7 @@ class SelectionRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => ['required'],
+
             'head' => ['required','string','max:255'],
             'text' => ['required', 'string','max:255'],
             'button' => ['required','string','max:255'],
@@ -34,7 +34,7 @@ class SelectionRequest extends FormRequest
     public function messages()
     {
         return [
-            'image.required' => 'Изображение обязательно',
+
             'head.required' => 'Основной текст обязателен',
             'text.required' => 'Вспомогательный текст обязателен',
             'button.required' => 'Текст кнопки обязателен',

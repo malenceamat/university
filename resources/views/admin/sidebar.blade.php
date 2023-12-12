@@ -50,8 +50,8 @@
                     <li class="{{ (request()->is('allstages')) ? 'active' : '' }}">
                         <a href="/allstages"> Этапы обучения </a>
                     </li>
-                    <li class="{{ (request()->is('allselection')) ? 'active' : '' }}">
-                        <a href="/allselection"> Условия отбора </a>
+                    <li class="{{ (request()->is('selection')) ? 'active' : '' }}">
+                        <a href="/selection"> Условия отбора </a>
                     </li>
                     <li class="{{ (request()->is('additional')) ? 'active' : '' }}">
                         <a href="/additional"> Доп. Ассессмент </a>

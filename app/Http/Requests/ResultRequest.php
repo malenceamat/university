@@ -24,18 +24,18 @@ class ResultRequest extends FormRequest
     public function rules()
     {
         return [
-
             'head' => ['required','string','max:255'],
-            'text' => ['required', 'string','max:255']
+            'text' => ['required', 'string','max:255'],
+            'subtext' => ['required', 'string','max:255']
 
         ];
     }
     public function messages()
     {
         return [
-
             'head.required' => 'Основной текст обязателен',
-            'text.required' => 'Вспомогательный текст обязателен'
+            'text.required' => 'Вспомогательный текст обязателен',
+            'subtext.required' => 'Цветной текст обязателен'
 
         ];
     }
