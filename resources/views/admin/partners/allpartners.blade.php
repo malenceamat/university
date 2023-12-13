@@ -43,9 +43,10 @@
                             <h5 class="card-title mb-3">{{$data->head}}</h5>
                         </div>
                         <div>
-                            <form method="get" action="/partners/{{$data->id}}">
+                            <form method="POST" action="/partners/{{$data->id}}">
                                 @csrf
-                                <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Редактировать</button>
+                                {{method_field('DELETE')}}
+                                <button class="btn btn-danger mb-2 me-4" style="margin: 10px">Удалить</button>
                             </form>
                         </div>
                     </div>

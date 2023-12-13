@@ -42,21 +42,12 @@ class PartnersController extends Controller
     public function update(PartnersRequest $req)
     {
 
-
+        $helper = new BaseHelperController();
         $data = partner::find($req->id);
 
-        if($req['image']){
-            if($req['image']!=$data['image']){
-                Storage::disk('public')->delete('image', $data['image']);
-
-
-                $image = preg_replace('#^data:image/\w+;base64,#i', '', $req['image']);
-                $image = str_replace(' ', '+', $image);
-                $fileName = "image/" . Str::random(20) . '.png';
-
-                Storage::disk('public')->put($fileName, base64_decode($image));
-                $data['image'] = $fileName;
-            }
+        if (!empty($data) && $req['image'] != null) {
+            Storage::disk('public')->delete('image', $data['image']);
+            $data['image']  = $helper->store_base64_image($req['image']);
         }
         $data->save();
         return redirect('allpartners');

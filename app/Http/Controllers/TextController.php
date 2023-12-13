@@ -17,6 +17,7 @@ class TextController extends Controller
     public function index($id = null)
     {
         $card = $id ? Card::find($id) : new Card();
+
         return view('admin.cards.cards', ['card' => $card]);
     }
     public function save(TextRequest $req)
@@ -30,8 +31,6 @@ class TextController extends Controller
         }
 
         $data['image'] = $helper->store_base64_image($req['image']); // 2
-
-
 
         Card::create($data)->TextInCards()->createMany($bit_data); // 3
 

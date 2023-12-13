@@ -31,23 +31,17 @@ class PossibilitiesController extends Controller
     }
     public function update(Request $req)
     {
-        $statistics = Possibilities::find($req->id);
+        $helper = new BaseHelperController();
 
-        $statistics -> text = $req->text;
-        if($req['image']){
-            if($req['image']!=$statistics['image']){
-                Storage::disk('public')->delete('image', $statistics['image']);
+        $possibilities = Possibilities::find($req->id);
+        $possibilities -> text = $req->text;
 
-
-                $image = preg_replace('#^data:image/\w+;base64,#i', '', $req['image']);
-                $image = str_replace(' ', '+', $image);
-                $fileName = "image/" . Str::random(20) . '.png';
-
-                Storage::disk('public')->put($fileName, base64_decode($image));
-                $statistics['image'] = $fileName;
-            }
+        if (!empty($possibilities) && $req['image'] != null) {
+            Storage::disk('public')->delete('image', $possibilities['image']);
+            $possibilities['image']  = $helper->store_base64_image($req['image']);
         }
-        $statistics->save();
+
+        $possibilities->save();
         return redirect('allpossibilities');
     }
     public function delete($id)

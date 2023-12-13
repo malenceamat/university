@@ -68,6 +68,21 @@
                     <li class="{{ (request()->is('contact')) ? 'active' : '' }}">
                         <a href="/contact"> Запись </a>
                     </li>
+
+                    <li>
+                        <div class="mt-3 space-y-1">
+                            <!-- Authentication -->
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <x-responsive-nav-link :href="route('logout')"
+                                                       onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                    {{ __('Выйти из аккаунта') }}
+                                </x-responsive-nav-link>
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </li>
         </ul>

@@ -30,10 +30,6 @@ class TextRequest extends FormRequest
             'basic' => ['required','string','max:255'],
             'qualification' => ['required','string','max:255'],
             'more' => ['required','string','max:255']
-
-
-
-
         ];
     }
     public function messages()

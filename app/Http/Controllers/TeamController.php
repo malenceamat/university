@@ -44,25 +44,17 @@ class TeamController extends Controller
     }
     public function update(Request $req)
     {
+        $helper = new BaseHelperController();
         $team = Team::find($req->id);
-
-        $team -> head = $req->head;
         $team -> fio = $req->fio;
         $team -> job = $req->job;
         $team -> merits = $req->merits;
-        if($req['image']){
-            if($req['image']!=$team['image']){
-                Storage::disk('public')->delete('image', $team['image']);
 
-
-                $image = preg_replace('#^data:image/\w+;base64,#i', '', $req['image']);
-                $image = str_replace(' ', '+', $image);
-                $fileName = "image/" . Str::random(20) . '.png';
-
-                Storage::disk('public')->put($fileName, base64_decode($image));
-                $team['image'] = $fileName;
-            }
+        if (!empty($team) && $req['image'] != null) {
+            Storage::disk('public')->delete('image', $team['image']);
+            $team['image']  = $helper->store_base64_image($req['image']);
         }
+
         $team->save();
         return redirect('allteam');
     }

@@ -51,8 +51,10 @@
                     <div class="col-lg-5 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
-                        <img id="itn-croppie-result" src="{{asset('/storage/'.$card['image'])}}"
+
+                        <img id="itn-croppie-result" src="@if($card->id){{asset('/storage/'.$card['image'])}} @endif"
                              class="col-lg-6 col-sm-12 pl-0">
+
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
                     </div>
@@ -121,7 +123,7 @@
                                                 <div class="widget-content widget-content-area">
 
                                                     <div id="editor-container">
-                                                        <label for="hiddenArea"></label>
+                                                        <label for="hiddenArea">{!! $card['more'] !!}</label>
                                                         <textarea name="more" style="display:none" id="hiddenArea"></textarea>
                                                     </div>
                                                 </div>
@@ -221,13 +223,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 200,
+                height: 200,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 300,
+                height: 300
             }
         });
 

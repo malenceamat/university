@@ -32,10 +32,6 @@ class SelectionController extends Controller
             Storage::disk('public')->delete('image', $select['image']);
 
             $select['image']  = $helper->store_base64_image($req['image']);
-
-
-
-
         }
 
         $select->save();

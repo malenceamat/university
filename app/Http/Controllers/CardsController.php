@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Helpers\BaseHelperController;
 use App\Models\Card;
 use App\Models\TextInCards;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Str;
+use function Sodium\compare;
 
 class CardsController extends Controller
 {
@@ -24,6 +26,8 @@ class CardsController extends Controller
     }
     public function update(Request $req)
     {
+
+        $helper = new BaseHelperController();
         $data = Card::find($req->id);
 
         $data->head = $req->head;
@@ -32,21 +36,16 @@ class CardsController extends Controller
         $data->qualification = $req->qualification;
         $data->more = $req->more;
 
-        if($req['image']){
-            if($req['image']!=$data['image']){
-                Storage::disk('public')->delete('image', $data['image']);
-
-
-                $image = preg_replace('#^data:image/\w+;base64,#i', '', $req['image']);
-                $image = str_replace(' ', '+', $image);
-                $fileName = "image/" . Str::random(20) . '.png';
-
-                Storage::disk('public')->put($fileName, base64_decode($image));
-                $data['image'] = $fileName;
-            }
+        if (!empty($data) && $req['image'] != null) {
+            Storage::disk('public')->delete('image', $data['image']);
+            $data['image']  = $helper->store_base64_image($req['image']);
         }
 
+
         $data->save();
+
+
+
         return redirect('allcards');
     }
 }
