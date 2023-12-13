@@ -62,7 +62,6 @@
                             @yield('stages')
                             @yield('allstages')
                             @yield('cards')
-
                             @yield('additional')
                             @yield('team')
                             @yield('allteam')

@@ -10,7 +10,7 @@
                     </a>
                 </div>
                 <div class="nav-item theme-text">
-                    <a href="#" class="nav-link"> ADMIN </a>
+                    <a href="/" class="nav-link"> ADMIN </a>
                 </div>
             </div>
             <div class="nav-item sidebar-toggle">

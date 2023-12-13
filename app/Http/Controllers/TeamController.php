@@ -72,23 +72,4 @@ class TeamController extends Controller
         $delete->delete();
         return redirect('allteam');
     }
-    public function main()
-    {
-        $team = Team::get();
-        $partners = partner::get();
-        $record = Contact::get();
-        $result = Result::get();
-        $addit = Additional::get();
-        $select = Selection::get();
-        $aud = Zagolovok::get();
-        $ince = Audience::get();
-        $stat = Statistics::get();
-        $poss = Possibilities::get();
-        $banner = Banner::get();
-        $stages = Stages::get();
-        $cards = Card::with('TextInCards')->get();
-
-        return view('site.general', compact('team','partners','record','result','addit','select','aud','ince','stat','poss','banner','stages','cards'));
-    }
-
 }

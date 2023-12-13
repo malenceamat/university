@@ -15,11 +15,22 @@ use App\Http\Controllers\AudienceController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\PossibilitiesController;
 use App\Http\Controllers\BannersController;
+use App\Http\Controllers\ShowController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 
-Route::get('/', function () {
-    return view('site.general');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/cards/{id?}',[TextController::class,'index']);
 Route::post('/cards/save',[TextController::class, 'save']);
@@ -70,4 +81,7 @@ Route::delete('/possibilities/{delete}',[PossibilitiesController::class, 'delete
 Route::get('/banner' ,[BannersController::class,'index']);
 Route::post('/banner',[BannersController::class, 'create'])->name('banner');
 
-Route::get('/',[TeamController::class,'main']);
+Route::get('/',[ShowController::class,'show']);
+
+
+require __DIR__.'/auth.php';
