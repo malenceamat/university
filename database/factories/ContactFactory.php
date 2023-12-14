@@ -2,17 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Banner;
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Storage;
 use Str;
 
-
-class BannerFactory extends Factory
+class ContactFactory extends Factory
 {
-
-
-    protected $model = Banner::class;
+    protected $model = Contact::class;
 
 
     public function definition()
@@ -23,17 +20,11 @@ class BannerFactory extends Factory
 
         return [
             'image' => $fileName,
-            'button' => $this->faker->text(10),
-            'emailbutton' => $this->faker->unique()->safeEmail(),
-            'colortext' => $this->faker->text(10),
             'text' => $this->faker->text(10),
-            'smalltext' => $this->faker->text(5),
-            'bigtext' => $this->faker->text(5),
-            'secondbutton' => $this->faker->text(5),
-            'urlsecondbutton' => $this->faker->url()
+            'email' => $this->faker->unique()->safeEmail(),
+            'button' => $this->faker->text(10),
+            'buttontext' => $this->faker->text(10)
         ];
 
     }
-
 }
-

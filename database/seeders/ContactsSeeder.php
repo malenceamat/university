@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Additional;
 use App\Models\Banner;
 use App\Models\Contact;
 use Illuminate\Database\Seeder;
@@ -16,11 +17,6 @@ class ContactsSeeder extends Seeder
      */
     public function run()
     {
-        Contact::create([
-            'text' => Str::random(5),
-            'email' => Str::random(6).'@gmail.com',
-            'buttontext' => Str::random(10),
-            'button' => Str::random(10)
-        ]);
+        Contact::factory(1)->create();
     }
 }

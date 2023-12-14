@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Additional;
 use App\Models\Banner;
 use App\Models\Team;
 use Illuminate\Database\Seeder;
@@ -16,10 +17,6 @@ class TeamsSeeder extends Seeder
      */
     public function run()
     {
-        Team::create([
-            'fio' => Str::random(5),
-            'job' => Str::random(10),
-            'merits' => Str::random(10)
-        ]);
+        Team::factory(1)->create();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Additional;
 use App\Models\Banner;
 use App\Models\Result;
 use Illuminate\Database\Seeder;
@@ -16,10 +17,6 @@ class ResultSeeder extends Seeder
      */
     public function run()
     {
-        Result::create([
-            'head' => Str::random(5),
-            'subtext' => Str::random(10),
-            'text' => Str::random(10)
-        ]);
+        Result::factory(1)->create();
     }
 }

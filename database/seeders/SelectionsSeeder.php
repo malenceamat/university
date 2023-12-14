@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Additional;
 use App\Models\Banner;
 use App\Models\Selection;
 use Illuminate\Database\Seeder;
@@ -16,11 +17,6 @@ class SelectionsSeeder extends Seeder
      */
     public function run()
     {
-        Selection::create([
-            'head' => Str::random(5),
-            'text' => Str::random(10),
-            'button' => Str::random(10),
-            'url' => Str::random(10)
-        ]);
+        Selection::factory(1)->create();
     }
 }

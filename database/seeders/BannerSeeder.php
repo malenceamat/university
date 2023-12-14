@@ -16,16 +16,6 @@ class BannerSeeder extends Seeder
      */
     public function run()
     {
-        Banner::create([
-            'button' => Str::random(5),
-            'emailbutton' => Str::random(6).'@gmail.com',
-            'colortext' => Str::random(10),
-            'text' => Str::random(10),
-            'smalltext' => Str::random(10),
-            'bigtext' => Str::random(10),
-            'secondbutton' => Str::random(10),
-            'urlsecondbutton' => Str::random(10),
-        ]);
-
+        Banner::factory(1)->create();
     }
 }

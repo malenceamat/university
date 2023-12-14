@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Additional;
 use App\Models\Banner;
 use App\Models\Possibilities;
 use Illuminate\Database\Seeder;
@@ -16,8 +17,6 @@ class PossibilitiesSeeder extends Seeder
      */
     public function run()
     {
-        Possibilities::create([
-            'text' => Str::random(5)
-        ]);
+        Possibilities::factory(1)->create();
     }
 }

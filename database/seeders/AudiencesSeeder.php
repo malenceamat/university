@@ -16,8 +16,6 @@ class AudiencesSeeder extends Seeder
      */
     public function run()
     {
-        Audience::create([
-            'head' => Str::random(10),
-        ]);
+        Audience::factory(1)->create();
     }
 }

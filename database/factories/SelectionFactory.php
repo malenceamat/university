@@ -3,17 +3,15 @@
 namespace Database\Factories;
 
 use App\Models\Banner;
+use App\Models\Selection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Storage;
 use Str;
 
-
-class BannerFactory extends Factory
+class SelectionFactory extends Factory
 {
 
-
-    protected $model = Banner::class;
-
+    protected $model = Selection::class;
 
     public function definition()
     {
@@ -23,17 +21,11 @@ class BannerFactory extends Factory
 
         return [
             'image' => $fileName,
-            'button' => $this->faker->text(10),
-            'emailbutton' => $this->faker->unique()->safeEmail(),
-            'colortext' => $this->faker->text(10),
+            'head' => $this->faker->text(10),
             'text' => $this->faker->text(10),
-            'smalltext' => $this->faker->text(5),
-            'bigtext' => $this->faker->text(5),
-            'secondbutton' => $this->faker->text(5),
-            'urlsecondbutton' => $this->faker->url()
+            'button' => $this->faker->text(5),
+            'url' => $this->faker->url(),
         ];
 
     }
-
 }
-
