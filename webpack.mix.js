@@ -15,3 +15,14 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+mix.copyDirectory('resources/assets', 'public/assets')
+mix.copyDirectory('resources/css', 'public/css')
+mix.copyDirectory('resources/favicons', 'public/favicons')
+mix.copyDirectory('resources/js', 'public/js')
+mix.copyDirectory('resources/layouts', 'public/layouts')
+mix.copyDirectory('resources/layouts', 'public/layouts')
+mix.copyDirectory('resources/scss', 'public/scss')
+mix.copyDirectory('resources/src', 'public/src')
+mix.copyDirectory('resources/arrow', 'public/arrow')
+

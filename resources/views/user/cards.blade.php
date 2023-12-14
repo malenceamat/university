@@ -96,11 +96,11 @@
             <div class="d-flex align-items-center justify-content-center mt-md-4 mt-3">
                 <div class="d-xl-flex d-none ms-4">
                     <button type="button" id="prev-programm" class="btn btn-prev btn-icon btn-sm me-2">
-                        <img src={{asset('arrow-sm-left-svgrepo-com.svg')}}>
+                        <img src={{asset('arrow/arrow-sm-left-svgrepo-com.svg')}}>
                         <i class="fa fa-chevron-left"></i>
                     </button>
                     <button type="button" id="next-programm" class="btn btn-next btn-icon btn-sm ms-2">
-                        <img src={{asset('arrow-sm-right-svgrepo-com.svg')}}>
+                        <img src={{asset('arrow/arrow-sm-right-svgrepo-com.svg')}}>
                         <i class="fa fa-chevron-right"></i>
                     </button>
                 </div>

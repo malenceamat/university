@@ -5,7 +5,7 @@
                 <div class="mb-md-5 pb-xl-5 mb-4">
                     <div class="d-inline-flex align-items-center position-relative mb-3">
                         <a href="{{$data['emailbutton']}}" class="btn btn-video btn-icon btn-lg flex-shrink-0 me-3 stretched-link" data-bs-toggle="video">
-                            <img src={{asset('arrow-narrow-circle-broken-down-svgrepo-com.svg')}}>
+                            <img src={{asset('arrow/arrow-narrow-circle-broken-down-svgrepo-com.svg')}}>
                         </a>
                         <p class="mb-0">{{$data['button']}}</p>
                     </div>
@@ -21,7 +21,7 @@
                 <div class="d-inline-flex align-items-center justify-content-center justify-content-md-start position-relative d-none d-md-block">
                     <a href="#programs" data-scroll data-scroll-offset="100" class="btn btn-video btn-icon rounded-circle shadow-sm flex-shrink-0 stretched-link me-3">
                         <i class=" fa-chevron-down">
-                            <img src={{asset('arrow-narrow-down-svgrepo-com.svg')}}>
+                            <img src={{asset('arrow/arrow-narrow-down-svgrepo-com.svg')}}>
                         </i>
                     </a>
                     <span class="fs-sm">Узнать больше</span>
