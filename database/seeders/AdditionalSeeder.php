@@ -16,9 +16,6 @@ class AdditionalSeeder extends Seeder
      */
     public function run()
     {
-        Additional::create([
-            'head' => Str::random(5),
-            'text' => Str::random(10)
-        ]);
+        Additional::factory(1)->create();
     }
 }
