@@ -3,11 +3,11 @@
         <h2 class="text-center text-md-left h1 mb-0">Партнёры и&nbsp;работодатели</h2>
         <div class="d-md-flex d-none ms-4">
             <button type="button" id="prev-brand" class="btn btn-prev btn-icon btn-sm me-2">
-                <img src={{asset('arrow-sm-left-svgrepo-com.svg')}}>
+                <img src={{asset('arrow/arrow-sm-left-svgrepo-com.svg')}}>
                 <i class="fa fa-chevron-left"></i>
             </button>
             <button type="button" id="next-brand" class="btn btn-next btn-icon btn-sm ms-2">
-                <img src={{asset('arrow-sm-right-svgrepo-com.svg')}}>
+                <img src={{asset('arrow/arrow-sm-right-svgrepo-com.svg')}}>
                 <i class="fa fa-chevron-right"></i>
             </button>
         </div>
@@ -44,9 +44,9 @@
       }'>
         <div class="swiper-wrapper">
             @foreach($partners as $data)
-            <div class="swiper-slide py-3">
-                <div class="card card-body card-hover px-2 mx-2">
-                    <img src={{asset('/storage/'.$data['image'])}} class="d-block mx-auto my-2" width="154">
+            <div class="swiper-slide py-3" >
+                <div class="card card-body card-hover px-2 mx-2" style="background-color: #656161">
+                    <img src={{asset('/storage/'.$data['image'])}} s class="d-block mx-auto my-2" width="154" height="115" >
                 </div>
             </div>
             @endforeach

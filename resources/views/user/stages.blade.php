@@ -5,8 +5,8 @@
             <div class="steps ps-lg-4">
                 @foreach($stages as $data)
                 <div class="step pb-5">
-                    <div class="step-number">
-                        <div class="step-number-inner">{{$data['number']}}</div>
+                    <div class="step-number" style="background-color: black">
+                        <div class="step-number-inner" style="background-color: black">{{$data['number']}}</div>
                     </div>
                     <div class="step-body">
                         <p class="mb-2">{{$data['date']}}</p>

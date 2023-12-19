@@ -17,6 +17,6 @@ class PossibilitiesSeeder extends Seeder
      */
     public function run()
     {
-        Possibilities::factory(1)->create();
+        Possibilities::factory(4)->create();
     }
 }

@@ -16,6 +16,6 @@ class AudiencesSeeder extends Seeder
      */
     public function run()
     {
-        Audience::factory(1)->create();
+        Audience::factory(3)->create();
     }
 }

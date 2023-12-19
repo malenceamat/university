@@ -6,11 +6,11 @@
             <!-- Slider controls (Prev / next buttons) -->
             <div class="d-flex justify-content-center justify-content-md-start pb-4 mb-2 pt-2 pt-md-4 mt-md-5">
                 <button type="button" id="prev-testimonial" class="btn btn-prev btn-icon btn-sm me-2">
-                    <img src={{asset('arrow-sm-left-svgrepo-com.svg')}}>
+                    <img src={{asset('arrow/arrow-sm-left-svgrepo-com.svg')}}>
                     <i class="fa fa-chevron-left"></i>
                 </button>
                 <button type="button" id="next-testimonial" class="btn btn-next btn-icon btn-sm ms-2">
-                    <img src={{asset('arrow-sm-right-svgrepo-com.svg')}}>
+                    <img src={{asset('arrow/arrow-sm-right-svgrepo-com.svg')}}>
                     <i class="fa fa-chevron-right"></i>
                 </button>
             </div>

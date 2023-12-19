@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="dark-mode">
+<html lang="ru" class="light-mode">
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="index, follow">
@@ -7,25 +7,25 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0C0F19" >
     <meta name="msapplication-TileColor" content="#0C0F19">
 
-    <title>Цифровая кафедра МАИ</title>
-    <meta name="description" content="Цифровая кафедра МАИ – возможность получения студентами всех направлений подготовки дополнительных цифровых компетенций на бесплатной основе.">
+    <title>Цифровая кафедра</title>
+    <meta name="description" content="Цифровая кафедра – возможность получения студентами всех направлений подготовки дополнительных цифровых компетенций на бесплатной основе.">
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Цифровая кафедра МАИ">
-    <meta property="og:url" content="https://digital.mai.ru">
-    <meta property="og:description" content="Цифровая кафедра МАИ – возможность получения студентами всех направлений подготовки дополнительных цифровых компетенций на бесплатной основе.">
+    <meta property="og:url" content="#">
+    <meta property="og:description" content="Цифровая кафедра – возможность получения студентами всех направлений подготовки дополнительных цифровых компетенций на бесплатной основе.">
     <meta property="og:image" content="https://digital.mai.ru/assets/img/og/og.jpg">
-    <meta property="og:image:alt" content="Цифровая кафедра МАИ">
+    <meta property="og:image:alt" content="Цифровая кафедра ">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="1080">
-    <meta property="vk:image" content="https://digital.mai.ru/assets/img/og/vk.jpg">
+    <meta property="vk:image" content="#">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Цифровая кафедра МАИ">
-    <meta property="twitter:description" content="Цифровая кафедра МАИ – возможность получения студентами всех направлений подготовки дополнительных цифровых компетенций на бесплатной основе.">
+    <meta property="twitter:title" content="Цифровая кафедра ">
+    <meta property="twitter:description" content="Цифровая кафедра – возможность получения студентами всех направлений подготовки дополнительных цифровых компетенций на бесплатной основе.">
     <meta property="twitter:image" content="https://digital.mai.ru/assets/img/og/twitter.jpg">
-    <meta property="twitter:image:alt" content="Цифровая кафедра МАИ">
+    <meta property="twitter:image:alt" content="Цифровая кафедра">
 
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,13 +59,13 @@
             height: 100%;
             -webkit-transition: all .4s .2s ease-in-out;
             transition: all .4s .2s ease-in-out;
-            background-color: #fff;
+            background-color: #293434;
             opacity: 0;
             visibility: hidden;
             z-index: 9999;
         }
         .dark-mode .page-loading {
-            background-color: #0b0f19;
+            background-color: #0b0b1a;
         }
         .page-loading.active {
             opacity: 1;
@@ -224,7 +224,7 @@
         .it-courses::after {
             content: "не по IT";
             font-size: 13px;
-            background: #6366f1;
+            background: #bdbdff;
             padding: 3px 8px 4px 8px;
             border-radius: 15px;
             position: relative;
@@ -237,7 +237,7 @@
             content: "NEW";
             font-size: 14px;
             font-weight: 800;
-            background: #6366f1;
+            background: #bdbdff;
             padding: 5px 15px 5px 15px;
             border-radius: 10px;
             position: relative;

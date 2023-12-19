@@ -1,7 +1,8 @@
-<header class="header navbar navbar-expand-lg position-absolute navbar-sticky">
+<header class="header navbar navbar-expand-lg position-absolute navbar-sticky navbar-stuck">
     <div class="container px-3">
-        <a href="index.html" class="navbar-brand pe-3">
-            <img src="assets/img/svg/inverse.svg" width="47" alt="digital.mai.ru">
+        <a href="/" class="navbar-brand pe-3">
+            <img src={{asset("assets/img/svg/inverse.svg")}} width="47" alt="digital.mai.ru"
+                 style="background-color: black;border-radius: 10px">
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end">
             <div class="offcanvas-header border-bottom">
@@ -14,7 +15,7 @@
                         <a href="#start" class="nav-link" data-scroll>О цифровой кафедре</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#forwhom" class="nav-link" data-scroll >Для кого</a>
+                        <a href="#forwhom" class="nav-link" data-scroll>Для кого</a>
                     </li>
                     <li class="nav-item">
                         <a href="#programs" class="nav-link" data-scroll>Программы</a>
@@ -28,13 +29,15 @@
                 </ul>
             </div>
         </div>
-        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         @foreach($banner as $data)
-        <a href="{{$data['urlsecondbutton']}}" class="btn btn-primary fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
-            &nbsp;{{$data['secondbutton']}}
-        </a>
+            <a href="{{$data['urlsecondbutton']}}" class="btn btn-primary fs-sm rounded d-none d-lg-inline-flex"
+               target="_blank" rel="noopener">
+                &nbsp;{{$data['secondbutton']}}
+            </a>
         @endforeach
     </div>
 </header>
