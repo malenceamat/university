@@ -142,13 +142,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 1280,
-                height: 800,
+                width: 950,
+                height: 300,
                 type: 'square'
             },
             boundary: {
-                width: 428,
-                height: 268
+                width: 950,
+                height: 600
             }
         });
 
