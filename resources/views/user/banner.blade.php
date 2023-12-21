@@ -72,7 +72,7 @@
             <div class="top-right">
                 <a href="{{$data['emailbutton']}}"
                    class="btn btn-video btn-icon btn-lg flex-shrink-0 me-3 stretched-link" data-bs-toggle="video">
-                    <img src={{asset('arrow/arrow-narrow-circle-broken-down-svgrepo-com.svg')}}>
+                    <img src={{asset('arrow/movie_film_basic_essential_multimedia_video_player_play_ui_icon_219939.svg')}}>
                 </a>
                 <span>{{$data['button']}}</span>
             </div>
