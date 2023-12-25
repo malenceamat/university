@@ -17,8 +17,8 @@ class ZagolovokSeeder extends Seeder
     public function run()
     {
         Zagolovok::create([
-            'head' => Str::random(10),
-            'text' => Str::random(10)
+            'head' => 'Для кого программы?',
+            'text' => 'Студент имеет право на однократное обучение на цифровой кафедре НовГУ на бесплатной основе'
         ]);
     }
 }

@@ -17,6 +17,28 @@ class PartnersSeeder extends Seeder
      */
     public function run()
     {
-        partner::factory(3)->create();
+        partner::create([
+            'image' => 'content/rostelekom.png',
+        ]);
+
+        partner::create([
+            'image' => 'content/npo.png',
+        ]);
+
+        partner::create([
+            'image' => 'content/stantis.png',
+        ]);
+
+        partner::create([
+            'image' => 'content/endi.png',
+        ]);
+
+        partner::create([
+            'image' => 'content/fly.png',
+        ]);
+
+        partner::create([
+            'image' => 'content/serviz.png',
+        ]);
     }
 }

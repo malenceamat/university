@@ -25,6 +25,6 @@ class ResultFactory extends Factory
             'subtext' => $this->faker->text(10),
             'text' => $this->faker->text(10)
         ];
-
     }
+
 }

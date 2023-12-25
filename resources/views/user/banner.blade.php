@@ -61,7 +61,7 @@
             <img src="{{asset('/storage/'. $data['image'])}}" class="card-img-top" alt="Image"
                  style="margin-top: 25px;height: 75%;">
             <div class="bottom-left">
-                <h4 class="text-gradient-primary">{{$data['smalltext']}}</h4>
+                <h4 class="" style="color: #f5f4f4;">{{$data['smalltext']}}</h4>
             </div>
             <div class="top-left">
                 <h1 class="display-2 mb-3 pb-3" style="line-height: 1.1;">

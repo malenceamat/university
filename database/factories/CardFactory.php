@@ -21,12 +21,7 @@ class CardFactory extends Factory
         Storage::disk('public')->put($fileName,file_get_contents($image));
 
         return [
-            'image' => $fileName,
-            'head' => $this->faker->text(10),
-            'underhead' => $this->faker->text(10),
-            'basic' => $this->faker->text(10),
-            'qualification' => $this->faker->text(5),
-            'more' => $this->faker->text(5)
+            'image' => $fileName
         ];
 
     }

@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             StagesSeeder::class,
             StatisticsSeeder::class,
             TeamsSeeder::class,
-            ZagolovokSeeder::class
+            ZagolovokSeeder::class,
+            TextInCardsSeeder::class
         ]);
     }
 }

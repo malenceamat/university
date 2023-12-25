@@ -1,3 +1,21 @@
+
+
+<style>
+    .it-courses::after {
+        content: "не по IT";
+        font-size: 13px;
+        background: #6366f1;
+        padding: 3px 8px 4px 8px;
+        border-radius: 15px;
+        position: relative;
+        top: -150px;
+        right: -55px;
+    }
+</style>
+
+
+
+
 <section id="start" tabindex="-1" class="container mt-sm-0 mb-4 mb-md-5">
     <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 pt-2 pt-sm-3 pt-xl-2">
         @foreach($poss as $data)

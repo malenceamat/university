@@ -22,9 +22,6 @@ class TeamFactory extends Factory
 
         return [
             'image' => $fileName,
-            'fio' => $this->faker->text(10),
-            'job' => $this->faker->text(10),
-            'merits' => $this->faker->text(10)
         ];
 
     }

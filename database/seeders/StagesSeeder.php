@@ -17,9 +17,9 @@ class StagesSeeder extends Seeder
     public function run()
     {
         Stages::create([
-            'number' => Str::random(5),
-            'date' => Str::random(10),
-            'stages' => Str::random(10)
+            'number' => '1',
+            'date' => 'март-апрель',
+            'stages' => 'стадия'
         ]);
     }
 }

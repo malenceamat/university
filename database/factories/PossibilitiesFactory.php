@@ -21,7 +21,6 @@ class PossibilitiesFactory extends Factory
 
         return [
             'image' => $fileName,
-            'text' => $this->faker->text(10)
         ];
 
     }

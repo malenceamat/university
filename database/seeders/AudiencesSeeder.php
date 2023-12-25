@@ -16,6 +16,19 @@ class AudiencesSeeder extends Seeder
      */
     public function run()
     {
-        Audience::factory(3)->create();
+        //Audience::factory(3)->create();
+
+        Audience::create([
+           'image' => 'content/2-4.svg',
+            'head' => 'Курсы бакалавриата'
+        ]);
+        Audience::create([
+            'image' => 'content/3-5.svg',
+            'head' => 'Курсы специалитета'
+        ]);
+        Audience::create([
+            'image' => 'content/1-2.svg',
+            'head' => 'Курс магистратуры'
+        ]);
     }
 }

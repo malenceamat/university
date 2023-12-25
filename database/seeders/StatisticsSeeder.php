@@ -17,6 +17,24 @@ class StatisticsSeeder extends Seeder
      */
     public function run()
     {
-        Statistics::factory(4)->create();
+        // дефолтное создание записей
+      //  Statistics::factory(4)->create();
+
+        //персонализированный контент
+
+        Statistics::create([
+            'head' => '1200',
+            'text' => 'Обучающихся ежегодно'
+        ]);
+
+        Statistics::create([
+            'head' => '9 мес.',
+            'text' => 'длительность программы'
+        ]);
+
+        Statistics::create([
+            'head' => '10',
+            'text' => 'индустриальных партнеров'
+        ]);
     }
 }
