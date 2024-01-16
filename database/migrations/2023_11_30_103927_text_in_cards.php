@@ -16,7 +16,7 @@ class TextInCards extends Migration
         Schema::create('text_in_cards', function (Blueprint $table) {
             $table->id();
             $table->string('text')->nullable();
-            $table->string('card_id')->nullable();
+            $table->integer('card_id')->nullable();
             $table->timestamps();
         });
     }
