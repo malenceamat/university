@@ -18,7 +18,7 @@ class PartnersSeeder extends Seeder
     public function run()
     {
         partner::create([
-            'image' => 'content/rostelekom.png',
+            'image' => 'content/rostelecom.png',
         ]);
 
         partner::create([
@@ -26,19 +26,15 @@ class PartnersSeeder extends Seeder
         ]);
 
         partner::create([
-            'image' => 'content/stantis.png',
+            'image' => 'content/endy.png',
         ]);
 
         partner::create([
-            'image' => 'content/endi.png',
+            'image' => 'content/flyes.png',
         ]);
 
         partner::create([
-            'image' => 'content/fly.png',
-        ]);
-
-        partner::create([
-            'image' => 'content/serviz.png',
+            'image' => 'content/logo-servizoria.png',
         ]);
     }
 }
