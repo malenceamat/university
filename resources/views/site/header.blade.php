@@ -1,7 +1,7 @@
 <header class="header navbar navbar-expand-lg position-absolute navbar-sticky navbar-stuck">
     <div class="container px-3">
         <a href="/" class="navbar-brand pe-3">
-            <img src={{asset("arrow/image.psd.png")}} width="270"
+            <img src={{asset("arrow/logo.png")}} width="175"
                  style="background-color: white;border-radius: 10px">
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end">
