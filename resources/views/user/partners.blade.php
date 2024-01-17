@@ -44,9 +44,9 @@
       }'>
         <div class="swiper-wrapper">
             @foreach($partners as $data)
-            <div class="swiper-slide py-3" >
-                <div class="card card-body card-hover px-2 mx-2" style="background-color: #656161">
-                    <img src={{asset('/storage/'.$data['image'])}} s class="d-block mx-auto my-2" style="width: 154px;height:115px " width="154" height="115" >
+            <div class="swiper-slide py-3">
+                <div class="card card-hover  mx-2" style="background-color: white">
+                    <img src={{asset('/storage/'.$data['image'])}} s  style="width: 200px;height:115px; background-color: white " >
                 </div>
             </div>
             @endforeach

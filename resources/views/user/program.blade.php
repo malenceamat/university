@@ -17,6 +17,8 @@
 
 
 <section id="start" tabindex="-1" class="container mt-sm-0 mb-4 mb-md-5">
+    <h2 class="h1 text-center pb-3 pb-md-0 mb-md-2">У нас вы получите:</h2>
+    <br>
     <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 pt-2 pt-sm-3 pt-xl-2">
         @foreach($poss as $data)
         <div class="col p-4">

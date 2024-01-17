@@ -441,7 +441,7 @@ span {
   }
 
   /* Card Style 2 */
-  
+
   &.style-2 {
     padding: 15px 18px;
     border-radius: 15px;
@@ -453,7 +453,7 @@ span {
   }
 
   /* Card Style 3 */
-  
+
   &.style-3 {
     padding: 10px 10px;
     border-radius: 15px;
@@ -506,9 +506,9 @@ span {
     }
   }
 
-  
+
 /* Card Style 5 */
-  
+
   &.style-5 {
     flex-direction: row;
 
@@ -529,7 +529,7 @@ span {
     right: 8px;
     top: 8px;
   }
-  
+
   /* Card Style 7 */
 
   &.style-7 {
@@ -609,8 +609,8 @@ span {
       cursor: no-drop;
       color: #d3d3d3;
     }
-    
-    
+
+
     &:focus {
       background-color: #f1f2f3;
     }
@@ -619,7 +619,7 @@ span {
       color: #888ea8;
       font-size: 15px;
     }
-    
+
   }
 }
 
@@ -711,7 +711,7 @@ span {
   height: 17px;
   margin-top: 0.21em;
   transition: background-color .15s ease-in-out,background-position .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  
+
   &:focus {
     border-color: #e0e6ed;
     box-shadow: none;
@@ -3460,12 +3460,12 @@ fieldset:disabled .btn {
           left: -14px;
           top: 0;
         }
-        
+
       }
 
     }
   }
-  
+
 }
 
 .avatar {
@@ -3677,7 +3677,7 @@ fieldset:disabled .btn {
 
 /* .search-form-control { border-radius: .25rem; } */
 
-/*  
+/*
     ====================
         Table
     ====================
@@ -3698,7 +3698,7 @@ fieldset:disabled .btn {
     background-color: #bfc9d4;
     border-color: #bfc9d4;
   }
-  
+
   thead {
     color: #515365;
     letter-spacing: 1px;
@@ -3728,7 +3728,7 @@ fieldset:disabled .btn {
       border-bottom-right-radius: 10px;
     }
   }
-  
+
   &.table-no-space {
 
     &:not(.dataTable) thead tr th {
@@ -3736,7 +3736,7 @@ fieldset:disabled .btn {
         border-radius: 0;
         border-top-left-radius: 10px;
       }
-  
+
       &:last-child {
         border-radius: 0;
         border-top-right-radius: 10px;
@@ -3755,9 +3755,9 @@ fieldset:disabled .btn {
     .table-row-hidden {
       display: none!important;
     }
-    
+
   }
-  
+
   tbody {
     border: none;
 
@@ -3865,7 +3865,7 @@ fieldset:disabled .btn {
   }
 }
 
-/* 
+/*
     Hover and Striped
 */
 
@@ -3891,13 +3891,13 @@ fieldset:disabled .btn {
   }
 }
 
-/* 
+/*
 
     Striped
 
 */
 
-/* 
+/*
     Striped and Bordered
 */
 
@@ -4002,13 +4002,13 @@ fieldset:disabled .btn {
   }
 }
 
-/* 
+/*
 
     Bordered
 
 */
 
-/* 
+/*
     Bordered and Hover
 */
 
@@ -4107,14 +4107,14 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-/*  
+/*
     ==========================
-        Background Colors  
+        Background Colors
     ==========================
 */
 
-/*  
-    Default  
+/*
+    Default
 */
 
 .bg-primary {
@@ -4159,8 +4159,8 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-/*  
-    Light Background  
+/*
+    Light Background
 */
 
 .bg-light-primary {
@@ -4205,7 +4205,7 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
-/*  
+/*
     Progress Bar
 */
 
@@ -4310,7 +4310,7 @@ fieldset:disabled .btn {
   }
 }
 
-/* 
+/*
     =====================
         BreadCrumbs
     =====================

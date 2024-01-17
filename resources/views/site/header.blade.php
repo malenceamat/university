@@ -1,8 +1,8 @@
 <header class="header navbar navbar-expand-lg position-absolute navbar-sticky navbar-stuck">
     <div class="container px-3">
         <a href="/" class="navbar-brand pe-3">
-            <img src={{asset("assets/img/svg/inverse.svg")}} width="47" alt="digital.mai.ru"
-                 style="background-color: black;border-radius: 10px">
+            <img src={{asset("arrow/image.psd.png")}} width="270"
+                 style="background-color: white;border-radius: 10px">
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end">
             <div class="offcanvas-header border-bottom">
