@@ -1,47 +1,49 @@
 FROM php:8.1-fpm
 
-ARG WWWGROUP=1000
-ARG NODE_VERSION=16
-ARG POSTGRES_VERSION=14
+# Устанавливаем рабочую директорию
+WORKDIR /var/www
 
-WORKDIR /var/www/html
+# Копируем composer.lock и composer.json
+#COPY composer.json composer.lock /var/www/
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV TZ=Europe/Moscow
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# Устанавливаем зависимости
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    git \
+    curl \
+    libpq-dev \
+    libonig-dev \
+    libzip-dev \
+    libxml2-dev
 
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+# Очищаем кэш
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+# Загружаем актуальную версию Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN apt-get update \
-    && apt-get install -y gnupg gosu curl ca-certificates zip unzip git sqlite3 libcap2-bin libpng-dev python2 libpq-dev \
-    && mkdir -p ~/.gnupg \
-    && chmod 600 ~/.gnupg \
-    && echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf \
-    && chmod +x /usr/local/bin/install-php-extensions \
-    && install-php-extensions xdebug pdo pdo_pgsql pgsql gd zip \
-    && php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
-    && curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
-    && apt-get install -y nodejs \
-    && npm install -g npm \
-    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-    && echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list \
-    && curl --silent -o - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - \
-    && apt-get update \
-    && apt-get install -y yarn \
-    && apt-get -y autoremove \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd soap
 
-RUN groupadd --force -g $WWWGROUP nova_site
-RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 nova_site
+# Создаём пользователя и группу www для приложения Laravel
+RUN groupadd --force -g 1000 www-data
 
-COPY start-container /usr/local/bin/start-container
-COPY php.ini /etc/php/8.1/cli/conf.d/99-nova_site.ini
-RUN chmod +x /usr/local/bin/start-container
 
+# Копируем содержимое текущего каталога в рабочую директорию
+COPY . /var/www
+COPY --chown=www:www . /var/www
+
+# Меняем пользователя на www
+
+
+# В контейнере открываем 8000 порт и запускаем сервер php-fpm
 EXPOSE 9000
-
-ENTRYPOINT ["start-container"]
+CMD ["php-fpm"]
