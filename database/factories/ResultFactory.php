@@ -16,7 +16,7 @@ class ResultFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'content/green.png',
+            'image' => 'content/award.svg',
             'head' => $this->faker->text(10),
             'subtext' => $this->faker->text(10),
             'text' => $this->faker->text(10)

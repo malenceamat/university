@@ -15,7 +15,7 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'content/green.png',
+            'image' => 'content/gradient.png',
             'text' => $this->faker->text(10),
             'email' => $this->faker->unique()->safeEmail(),
             'button' => $this->faker->text(10),

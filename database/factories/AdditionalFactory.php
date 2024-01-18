@@ -16,7 +16,7 @@ class AdditionalFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'content/green.png',
+            'image' => 'content/additional.png',
             'head' => $this->faker->text(10),
             'text' => $this->faker->text(10)
         ];
