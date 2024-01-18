@@ -17,14 +17,6 @@ class BannerSeeder extends Seeder
      */
     public function run()
     {
-        //дефолтное создание записей
-        //Banner::factory(1)->create();
-
-        //персонализированный контент
-
-
-
-
         Banner::create([
             'image' => 'content/banner.png',
             'button' => 'Записаться',

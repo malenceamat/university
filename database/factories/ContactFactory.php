@@ -14,17 +14,12 @@ class ContactFactory extends Factory
 
     public function definition()
     {
-        $image = $this->faker->image();
-        $fileName = "image/" . Str::random(20) . '.png';
-        Storage::disk('public')->put($fileName,file_get_contents($image));
-
         return [
-            'image' => $fileName,
+            'image' => 'content/green.png',
             'text' => $this->faker->text(10),
             'email' => $this->faker->unique()->safeEmail(),
             'button' => $this->faker->text(10),
             'buttontext' => $this->faker->text(10)
         ];
-
     }
 }
