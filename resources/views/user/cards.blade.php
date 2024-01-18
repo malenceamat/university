@@ -40,7 +40,7 @@
                         <div class="swiper-slide h-auto px-2">
                             <article class="card border-0 h-100 mx-1">
                                 <div class="position-relative">
-                                    <img src="{{asset('/storage/' . $data['image'])}}" class="card-img-top" alt="Image" style="height: 300px;width: 600px">
+                                    <img src="{{asset('/storage/' . $data['image'])}}" class="card-img-top" alt="Image" style="object-fit: cover;height: 200px;">
                                     <div class="card-img-overlay p-1">
                                         <div class="card-header border-0 text-end">
                                             <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="tooltip"
