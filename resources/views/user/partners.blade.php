@@ -45,13 +45,12 @@
         <div class="swiper-wrapper">
             @foreach($partners as $data)
             <div class="swiper-slide py-3">
-                <div class="card card-hover  mx-2" style="background-color: white">
+                <div class=" card-hover  mx-2" style="background-color: white">
                     <img src={{asset('/storage/'.$data['image'])}} s  style="width: 300px;height:115px; background-color: white " >
                 </div>
             </div>
             @endforeach
         </div>
-
         <div class="swiper-pagination position-relative pt-3 mt-4 d-md-none d-flex"></div>
     </div>
 </section>
