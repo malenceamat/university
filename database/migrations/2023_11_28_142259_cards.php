@@ -20,7 +20,7 @@ class Cards extends Migration
             $table->string('underhead')->nullable();
             $table->string('basic')->nullable();
             $table->string('qualification')->nullable();
-            $table->string('more')->nullable();
+            $table->longText('more')->nullable();
             $table->timestamps();
         });
     }
