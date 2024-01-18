@@ -3245,7 +3245,7 @@ body.dark .text-muted {
   color: #888ea8 !important;
 }
 body.dark .text-white {
-  color: #fff !important;
+  color: #000000 !important;
 }
 body.dark .text-black {
   color: #000 !important;
@@ -3363,7 +3363,7 @@ body.dark .position-relative {
 */
 /*      Avatar      */
 /* .search-form-control { border-radius: .25rem; } */
-/*  
+/*
     ====================
         Table
     ====================
@@ -3373,23 +3373,23 @@ body.dark .position-relative {
     Hover
 
 */
-/* 
+/*
     Hover and Striped
 */
-/* 
+/*
 
     Striped
 
 */
-/* 
+/*
     Striped and Bordered
 */
-/* 
+/*
 
     Bordered
 
 */
-/* 
+/*
     Bordered and Hover
 */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -3418,21 +3418,21 @@ body.dark .position-relative {
     transform: rotate(359deg);
   }
 }
-/*  
+/*
     ==========================
-        Background Colors  
+        Background Colors
     ==========================
 */
-/*  
-    Default  
+/*
+    Default
 */
-/*  
-    Light Background  
+/*
+    Light Background
 */
-/*  
+/*
     Progress Bar
 */
-/* 
+/*
     =====================
         BreadCrumbs
     =====================
