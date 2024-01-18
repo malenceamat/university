@@ -17,30 +17,37 @@ class PossibilitiesSeeder extends Seeder
      */
     public function run()
     {
-        Possibilities::factory(1)->create([
-            'text' => 'вторую востребованную профессию'
+        Possibilities::create([
+            'image' => 'content/proffesiya.png',
+            'text'  => 'вторую востребованную профессию'
         ]);
-        Possibilities::factory(1)->create([
+        Possibilities::create([
+            'image' => 'content/education.svg',
             'text' => 'новые знания и умения в программировании и искусственном интеллекте'
         ]);
 
-        Possibilities::factory(1)->create([
+        Possibilities::create([
+            'image' => 'content/pedagog.png',
             'text' => 'общения с педагогами- программистами и специалистами IT- компаний и получения от них уникальных знаний и умений'
         ]);
 
-        Possibilities::factory(1)->create([
+        Possibilities::create([
+            'image' => 'content/ocenka.png',
             'text' => 'независимую оценку уровня сформированности ИТ-компетенций, которую проводит университет "Иннополис"'
         ]);
 
-        Possibilities::factory(1)->create([
+        Possibilities::create([
+            'image' => 'content/diplom.svg',
             'text' => 'диплом о профессиональной переподготовке, дающий право работы по IT-специальности'
         ]);
 
-        Possibilities::factory(1)->create([
+        Possibilities::create([
+            'image' => 'content/portfolio.svg',
             'text' => 'реализованный проект по заказу IT или отраслевой компании в портфолио'
         ]);
 
-        Possibilities::factory(1)->create([
+        Possibilities::create([
+            'image' => 'content/practica.svg',
             'text' => 'практическая подготовка на базе компании-партнера'
         ]);
     }
