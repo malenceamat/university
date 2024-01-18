@@ -65,7 +65,7 @@ class CardsSeeder extends Seeder
         ]);
 
         Card::create([
-            'image' => 'content/1cards.jpg',
+            'image' => 'content/4cards.jpg',
             'head' => '108 чел.',
             'underhead' => '108 человек из 649',
             'basic' => 'Искусственный интеллект и большие данные',
@@ -80,7 +80,7 @@ class CardsSeeder extends Seeder
         ]);
 
         Card::create([
-            'image' => 'content/2cards.jpg',
+            'image' => 'content/5cards.jpg',
             'head' => '227 чел.',
             'underhead' => '227 человек из 649',
             'basic' => 'Управление проектами в области искусственного интеллекта',
