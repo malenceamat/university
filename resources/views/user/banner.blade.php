@@ -59,7 +59,7 @@
              data-img-position="0% 100%" data-speed="0.5" style="margin-top: 30px">
         <div class="element73">
             <img src="{{asset('/storage/'. $data['image'])}}" class="card-img-top" alt="Image"
-                 style="margin-top: 25px;height: 75%;">
+                 style="margin-top: 25px;height: 75%;object-fit: cover;">
             <div class="bottom-left">
                 <h4 style="color: #f5f4f4;"><p align="left">{{$data['smalltext']}}</p></h4>
             </div>

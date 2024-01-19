@@ -17,8 +17,8 @@ class ResultFactory extends Factory
     {
         return [
             'image' => 'content/award.svg',
-            'head' => $this->faker->text(10),
-            'subtext' => $this->faker->text(10),
+            'head' => 'Победитель марафона',
+            'subtext' => 'цифровых кафедр',
             'text' => $this->faker->text(10)
         ];
     }
