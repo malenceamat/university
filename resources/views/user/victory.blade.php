@@ -9,7 +9,7 @@
                         class="card-body d-flex align-items-center justify-content-center position-relative zindex-2 p-0 pb-2 p-lg-4"
                         style="background-color: #8eb9b7;border-radius: 15px">
 
-                        <img src={{asset('/storage/'. $data['image'])}} width="130" alt="Award icon"
+                        <img src={{asset('/storage/'. $data['image'])}} s width="75" alt="Award icon"
                              class="mt-2 mt-md-0 mb-0 mb-md-3">
 
                         <div class="text-left pb-0 pb-md-4 p-4">
