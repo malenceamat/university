@@ -1,10 +1,15 @@
-<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="70" height="70" rx="13" fill="#1E222B"/>
-<path d="M19.6628 46V29.2742L15.8259 31.6189V27.8389L19.6628 25.5368H23.1586V46H19.6628ZM28.0037 37.1042V34.4184H36.53V37.1042H28.0037ZM39.3699 45.9716V42.9874L48.1236 35.1858C48.8057 34.5795 49.2794 34.0063 49.5446 33.4663C49.8099 32.9263 49.9425 32.4053 49.9425 31.9032C49.9425 31.2211 49.7957 30.6147 49.502 30.0842C49.2083 29.5442 48.8009 29.1179 48.2799 28.8053C47.7683 28.4926 47.1762 28.3363 46.5036 28.3363C45.793 28.3363 45.163 28.5021 44.6136 28.8337C44.0736 29.1558 43.652 29.5868 43.3488 30.1268C43.0457 30.6668 42.9036 31.2495 42.9225 31.8747H39.3983C39.3983 30.5105 39.7015 29.3216 40.3078 28.3079C40.9236 27.2942 41.7667 26.5079 42.8373 25.9489C43.9173 25.39 45.163 25.1105 46.5746 25.1105C47.882 25.1105 49.0567 25.4042 50.0988 25.9916C51.1409 26.5695 51.9604 27.3747 52.5573 28.4074C53.1541 29.4305 53.4525 30.61 53.4525 31.9458C53.4525 32.9216 53.3199 33.7411 53.0546 34.4042C52.7894 35.0674 52.3915 35.6784 51.8609 36.2374C51.3399 36.7963 50.6909 37.4168 49.9141 38.0989L43.7041 43.5984L43.3915 42.7458H53.4525V45.9716H39.3699Z" fill="url(#paint0_linear_41_797)"/>
-<defs>
-<linearGradient id="paint0_linear_41_797" x1="6.94204" y1="51.6577" x2="43.4845" y2="16.3013" gradientUnits="userSpaceOnUse">
-<stop stop-color="#9080FF"/>
-<stop offset="1" stop-color="#B30ED9"/>
-</linearGradient>
-</defs>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70">
+	<title>1-2-svg</title>
+	<defs>
+		<image  width="70" height="70" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGBAMAAACDAP+3AAAAAXNSR0IB2cksfwAAABtQTFRFyNLZydPaytPaytTaydPZ0Nnf09vhztfdzdbcYDyhHgAAAChJREFUeJxjYBgFo2AUjIJRMAoGDAgpGYngV8EUFt5EQMkoGAWjAAIApcwBwE7wPUgAAAAASUVORK5CYII="/>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(36.542,-35.356,38.419,39.708,6.942,51.658)">
+			<stop offset="0" stop-color="#9080ff"/>
+			<stop offset="1" stop-color="#b30ed9"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+	</style>
+	<use id="Layer" href="#img1" x="0" y="0"/>
+	<path id="Layer" class="s0" d="m19.7 46v-16.7l-3.9 2.3v-3.8l3.9-2.3h3.5v20.5zm8.3-8.9v-2.7h8.5v2.7zm11.4 8.9v-3l8.7-7.8q1.1-0.9 1.5-1.7 0.4-0.8 0.4-1.6 0-1-0.5-1.8-0.4-0.8-1.2-1.3-0.8-0.5-1.8-0.5-1 0-1.9 0.5-0.8 0.5-1.2 1.3-0.5 0.8-0.5 1.8h-3.5q0-2.1 0.9-3.6 1-1.5 2.6-2.4 1.6-0.8 3.7-0.8 2 0 3.5 0.9 1.6 0.9 2.5 2.4 0.9 1.5 0.9 3.5 0 1.5-0.4 2.5-0.4 1-1.2 1.8-0.8 0.9-2 1.9l-6.2 5.5-0.3-0.9h10.1v3.3z"/>
 </svg>

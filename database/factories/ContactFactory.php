@@ -16,10 +16,10 @@ class ContactFactory extends Factory
     {
         return [
             'image' => 'content/gradient.png',
-            'text' => $this->faker->text(10),
+            'text' => 'Электронная почта для справок',
             'email' => $this->faker->unique()->safeEmail(),
-            'button' => $this->faker->text(10),
-            'buttontext' => $this->faker->text(10)
+            'button' => 'https://www.google.ru/',
+            'buttontext' => 'Подать заявку'
         ];
     }
 }
