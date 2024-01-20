@@ -18,7 +18,7 @@ class BannerSeeder extends Seeder
     public function run()
     {
         Banner::create([
-            'image' => 'content/banner1.png',
+            'image' => 'content/bannernew.png',
             'button' => 'Смотреть видео',
             'emailbutton' => 'https://www.youtube.com/watch?v=Jp2gDOONOd0',
             'colortext' => 'Цифровая',
