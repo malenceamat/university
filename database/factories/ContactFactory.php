@@ -15,7 +15,7 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'content/gradient.png',
+            'image' => 'content/newgradient.png',
             'text' => 'Электронная почта для справок',
             'email' => $this->faker->unique()->safeEmail(),
             'button' => 'https://www.google.ru/',
