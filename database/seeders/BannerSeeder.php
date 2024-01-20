@@ -19,7 +19,7 @@ class BannerSeeder extends Seeder
     {
         Banner::create([
             'image' => 'content/banner.png',
-            'button' => 'Записаться',
+            'button' => 'Смотреть видео',
             'emailbutton' => 'https://www.youtube.com/watch?v=Jp2gDOONOd0',
             'colortext' => 'Цифровая',
             'text' => 'кафедра НовГУ',

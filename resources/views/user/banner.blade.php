@@ -74,7 +74,7 @@
                    class="btn btn-video btn-icon btn-lg flex-shrink-0 me-3 stretched-link" data-bs-toggle="video">
                     <img src={{asset('arrow/movie_film_basic_essential_multimedia_video_player_play_ui_icon_219939.svg')}}>
                 </a>
-                <span>{{$data['button']}}</span>
+                <span style="color: white!important;">{{$data['button']}}</span>
             </div>
             <div class="bottom-right">
                 <p class="lead mt-3 pb-3" style="font-size: 1.3rem;">{{$data['bigtext']}}<sup
