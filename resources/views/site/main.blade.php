@@ -32,7 +32,6 @@
 
     <!-- Favicon and Touch Icons-->
     <link rel="icon" href={{asset("favicon.ico")}}>
-    <link rel="icon" href={{asset("favicons/favicon.svg")}} type="image/svg+xml">
     <link rel="apple-touch-icon" href={{asset("favicons/apple.png")}}>
     <link rel="manifest" href={{asset("manifest.webmanifest.html")}}>
 
