@@ -19,7 +19,8 @@ class ResultFactory extends Factory
             'image' => 'content/award.svg',
             'head' => 'Победитель марафона',
             'subtext' => 'цифровых кафедр',
-            'text' => $this->faker->text(10)
+            'text' => $this->faker->text(10),
+            'hideblock' => 'on'
         ];
     }
 

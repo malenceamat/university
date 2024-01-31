@@ -21,6 +21,7 @@ class SelectionFactory extends Factory
             'text' => $this->faker->text(10),
             'button' => $this->faker->text(5),
             'url' => $this->faker->url(),
+            'hideblock' => 'on'
         ];
     }
 }

@@ -28,6 +28,7 @@ class BannersController extends Controller
         $banner->bigtext = $req->bigtext;
         $banner->secondbutton = $req->secondbutton;
         $banner->urlsecondbutton = $req->urlsecondbutton;
+        $banner->hideblock = $req->hideblock ?? false;
 
         if (!empty($banner) && $req['image'] != null) {
             Storage::disk('public')->delete('image', $banner['image']);

@@ -18,6 +18,7 @@ class Additionals extends Migration
             $table->string('image')->nullable();
             $table->string('head')->nullable();
             $table->string('text')->nullable();
+            $table->string('hideblock')->nullable();
             $table->timestamps();
         });
     }

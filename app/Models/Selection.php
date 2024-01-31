@@ -9,5 +9,5 @@ class Selection extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image', 'head','text','button','url'];
+    protected $fillable = ['image', 'head','text','button','url','hideblock'];
 }

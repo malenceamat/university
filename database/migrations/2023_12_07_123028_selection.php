@@ -20,6 +20,7 @@ class Selection extends Migration
             $table->string('text')->nullable();
             $table->string('button')->nullable();
             $table->string('url')->nullable();
+            $table->string('hideblock')->nullable();
             $table->timestamps();
         });
     }

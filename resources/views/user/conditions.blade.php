@@ -1,5 +1,6 @@
 
 @foreach($select as $data)
+    @if($data['hideblock'] == 'on')
 <section class="container my-5 pt-0 pt-md-3 pb-0 pb-md-5">
     <div class="row gy-4 align-items-center justify-content-center">
         <div class="col-10 col-md-6">
@@ -25,5 +26,6 @@
         </div>
     </div>
 </section>
+    @endif
 @endforeach
 <div class="separator"></div>

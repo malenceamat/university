@@ -1,15 +1,4 @@
 @extends('admin.main')
-
-
-
-
-
-
-
-
-
-
-
 @section('possibilities')
 
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
@@ -30,11 +19,6 @@
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
     <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
     <link rel="stylesheet" href={{asset("croppie.css")}} />
-
-
-
-
-
 
 
 
@@ -87,6 +71,7 @@
                     </div>
                 </div>
             </div>
+
             @if(isset($possibilities->id))
                 <div class="container">
                     <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Редактировать</button>

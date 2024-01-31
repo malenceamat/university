@@ -1,4 +1,6 @@
+
 @foreach($addit as $data)
+    @if($data['hideblock'] == 'on')
 
 <section class="container my-4 my-md-5 py-3">
     <div class="row align-items-lg-center">
@@ -14,5 +16,6 @@
         </div>
     </div>
 </section>
+    @endif
 @endforeach
 <div class="separator"></div>

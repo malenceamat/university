@@ -9,5 +9,5 @@ class Result extends Model
 {
     use HasFactory;
     protected $table = 'results';
-    protected $fillable = ['image' ,'head', 'text'];
+    protected $fillable = ['image' ,'head', 'text','hideblock'];
 }

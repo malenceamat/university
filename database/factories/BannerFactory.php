@@ -30,7 +30,8 @@ class BannerFactory extends Factory
             'smalltext' => $this->faker->text(5),
             'bigtext' => $this->faker->text(5),
             'secondbutton' => $this->faker->text(5),
-            'urlsecondbutton' => $this->faker->url()
+            'urlsecondbutton' => $this->faker->url(),
+            'hideblock' => 'on'
         ];
 
     }

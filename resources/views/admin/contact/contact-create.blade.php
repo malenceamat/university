@@ -55,7 +55,8 @@
                                     <div class="container">
                                         <div class="form-group">
                                             <label for="e-text">Почта</label>
-                                            <input id="e-text" type="email" name="email" value="{{$contact['email']}}" placeholder="email@mail.com" class="form-control" required>
+                                            <input id="e-text" type="email" name="email" value="{{$contact['email']}}"
+                                                   placeholder="email@mail.com" class="form-control" required>
 
                                         </div>
                                     </div>
@@ -80,7 +81,8 @@
                                     <div class="container">
                                         <div class="form-group">
                                             <label for="button">Ссылка в кнопке</label>
-                                            <input id="button" type="url" name="button"  value="{{$contact['button']}}" placeholder="https://www.google.ru/" class="form-control" required>
+                                            <input id="button" type="url" name="button" value="{{$contact['button']}}"
+                                                   placeholder="https://www.google.ru/" class="form-control" required>
 
                                         </div>
                                     </div>
@@ -93,6 +95,13 @@
             </div>
             <div class="container mt-5">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
+
+                <div class="form-check form-check-primary form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="form-check-default" name="hideblock" @if ($contact['hideblock'] == 'on') checked @endif>
+                    <label class="form-check-label" for="form-check-default">
+                        Отображение блока
+                    </label>
+                </div>
             </div>
         </form>
     </div>

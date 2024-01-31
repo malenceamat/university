@@ -62,8 +62,8 @@
                     <li class="{{ (request()->is('result')) ? 'active' : '' }}">
                         <a href="/result"> Результаты </a>
                     </li>
-                    <li class="{{ (request()->is('partners')) ? 'active' : '' }}">
-                        <a href="/partners"> Партнеры </a>
+                    <li class="{{ (request()->is('allpartners')) ? 'active' : '' }}">
+                        <a href="/allpartners"> Партнеры </a>
                     </li>
                     <li class="{{ (request()->is('contact')) ? 'active' : '' }}">
                         <a href="/contact"> Запись </a>

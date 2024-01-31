@@ -23,6 +23,7 @@ class ResultController extends Controller
         $result->head = $req->head;
         $result->text = $req->text;
         $result->subtext = $req->subtext;
+        $result->hideblock = $req->hideblock ?? false;
 
         if (!empty($result) && $req['image'] != null) {
             Storage::disk('public')->delete('image', $result['image']);

@@ -55,6 +55,7 @@
 </style>
 
 @foreach($banner as $data)
+    @if($data['hideblock'] == 'on')
     <section class="position-relative d-flex align-items-center min-vh-100 bg-light py-lg-5 pt-5" data-jarallax
              data-img-position="0% 100%" data-speed="0.5" style="margin-top: 30px">
         <div class="element73">
@@ -92,5 +93,6 @@
 
         </div>
     </section>
+    @endif
 @endforeach
 

@@ -18,7 +18,8 @@ class AdditionalFactory extends Factory
         return [
             'image' => 'content/additional.png',
             'head' => $this->faker->text(10),
-            'text' => $this->faker->text(10)
+            'text' => $this->faker->text(10),
+            'hideblock' => 'on'
         ];
     }
 }

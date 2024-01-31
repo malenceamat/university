@@ -1,3 +1,4 @@
+
 <section id="partners" tabindex="-1" class="container my-4 my-md-5 py-3">
     <div class="d-flex align-items-center justify-content-md-between justify-content-center mb-md-4 mb-3 ">
         <h2 class="text-center text-md-left h1 mb-0">Партнёры и&nbsp;работодатели</h2>
@@ -44,11 +45,13 @@
       }'>
         <div class="swiper-wrapper">
             @foreach($partners as $data)
+                @if($data['hideblock'] >0 )
             <div class="swiper-slide py-3">
                 <div class=" card-hover  mx-2" style="background-color: white;">
                     <img src={{asset('/storage/'.$data['image'])}} s  style="width: 300px;height:115px; background-color: white;  filter: none!important;" >
                 </div>
             </div>
+                @endif
             @endforeach
         </div>
         <div class="swiper-pagination position-relative pt-3 mt-4 d-md-none d-flex"></div>

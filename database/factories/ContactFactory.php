@@ -19,7 +19,8 @@ class ContactFactory extends Factory
             'text' => 'Электронная почта для справок',
             'email' => $this->faker->unique()->safeEmail(),
             'button' => 'https://www.google.ru/',
-            'buttontext' => 'Подать заявку'
+            'buttontext' => 'Подать заявку',
+            'hideblock' => 'on'
         ];
     }
 }

@@ -20,6 +20,7 @@ class Contacts extends Migration
             $table->string('text')->nullable();
             $table->string('buttontext')->nullable();
             $table->string('button')->nullable();
+            $table->string('hideblock')->nullable();
             $table->timestamps();
         });
     }

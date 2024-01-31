@@ -19,6 +19,7 @@ class Results extends Migration
             $table->string('head')->nullable();
             $table->string('subtext')->nullable();
             $table->string('text')->nullable();
+            $table->string('hideblock')->nullable();
             $table->timestamps();
         });
     }

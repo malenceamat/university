@@ -23,6 +23,8 @@ class AdditionalController extends Controller
         $additional = Additional::find(1);
         $additional->head = $req->head;
         $additional->text = $req->text;
+        $additional->hideblock = $req->hideblock ?? false;
+
 
         if (!empty($additional) && $req['image'] != null) {
             Storage::disk('public')->delete('image', $additional['image']);

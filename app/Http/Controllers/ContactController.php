@@ -23,6 +23,8 @@ class ContactController extends Controller
         $contact->text = $req->text;
         $contact->buttontext = $req->buttontext;
         $contact->button = $req->button;
+        $contact->hideblock = $req->hideblock ?? false;
+
 
 
         if (!empty($contact) && $req['image'] != null) {

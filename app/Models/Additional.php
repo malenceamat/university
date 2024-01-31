@@ -9,5 +9,5 @@ class Additional extends Model
 {
     use HasFactory;
 protected $table = 'additionals';
-    protected $fillable = ['image' ,'head', 'text'];
+    protected $fillable = ['image' ,'head', 'text','hideblock'];
 }
