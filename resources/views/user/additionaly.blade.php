@@ -1,4 +1,11 @@
-
+<style>
+    .separator:after{
+        display: inline-block;
+        content: " ";
+        border-right: 1px solid #0025ff;
+        height: 100%;
+    }
+</style>
 @foreach($addit as $data)
     @if($data['hideblock'] == 'on')
 

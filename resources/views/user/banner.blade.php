@@ -52,6 +52,13 @@
         word-wrap: break-word;
         text-align: left;
     }
+
+    .gradient-text {
+        background-image: linear-gradient(to right, #6384ff, #0528ec);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
 </style>
 
 @foreach($banner as $data)
@@ -66,7 +73,7 @@
             </div>
             <div class="top-left">
                 <h1 class="display-2 mb-3 pb-3" style="line-height: 1.1;">
-                    <span class="text-gradient-primary">{{$data['colortext']}}</span>
+                    <span class="gradient-text">{{$data['colortext']}}</span>
                     <br> <div style="color: white;">{{$data['text']}}</div>
                 </h1>
             </div>
@@ -79,7 +86,7 @@
             </div>
             <div class="bottom-right">
                 <p class="lead mt-3 pb-3" style="font-size: 1.3rem;">{{$data['bigtext']}}<sup
-                        class="text-gradient-primary">*</sup></p>
+                        class="gradient-text">*</sup></p>
             </div>
             <div class="button">
                 <a href="#programs" data-scroll data-scroll-offset="100"
@@ -88,9 +95,8 @@
                         <img src={{asset('arrow/arrow-narrow-down-svgrepo-com.svg')}}>
                     </i>
                 </a>
-                <span class="fs-sm">Узнать больше</span>
+                <span class="gradient-text">Узнать больше</span>
             </div>
-
         </div>
     </section>
     @endif

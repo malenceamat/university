@@ -1,3 +1,12 @@
+<style>
+    .separator:after{
+        display: inline-block;
+        content: " ";
+        border-right: 1px solid #0025ff;
+        height: 100%;
+    }
+</style>
+
 <section id="stages" tabindex="-1" class="container my-4 my-md-5 py-3">
     @if (!$stages->isEmpty())
         <h2 class="h1 text-center pb-3 pb-md-0 mb-md-5">Этапы обучения</h2>

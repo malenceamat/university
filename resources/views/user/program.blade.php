@@ -11,6 +11,28 @@
         top: -150px;
         right: -55px;
     }
+
+    .gradient-text {
+        background-image: linear-gradient(to right, #6384ff, #0528ec);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .gradient-text-zvezda {
+        background-image: linear-gradient(to right, #0025ff, #0025ff);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .separator:after{
+        display: inline-block;
+        content: " ";
+        border-right: 1px solid #0025ff;
+        height: 100%;
+    }
+
 </style>
 
 
@@ -43,7 +65,7 @@
             <div class=" lh-sm px-xxl-4">
                 <div class="card border-0 h-100">
                     <div class="card-body p-3 p-sm-4" style="background-color: #c8d2d9;border-radius: 30px">
-                        <h2 class="display-4 text-gradient-primary">{{$data['head']}}</h2>
+                        <h2 class="display-4 gradient-text">{{$data['head']}}</h2>
                         <p class="fs-4 fs-xs-5 fw-medium text-light"><span
                                 class="opacity-70 sizetext" style="color: black">{{$data['text']}}</span></p>
                     </div>
@@ -57,8 +79,8 @@
 <div class="separator"></div>
 @foreach($aud as $data)
 <section id="forwhom" tabindex="-1" class="container my-4 my-md-5 py-3">
-    <h2 class="h1 text-center pb-3 pb-md-0 mb-md-2">{{$data['head']}}<sup class="text-gradient-primary">*</sup></h2>
-    <p class="fs-xs mb-0 text-center mb-md-5"><span class="fs-lg">*</span> - {{$data['text']}}</p>
+    <h2 class="h1 text-center pb-3 pb-md-0 mb-md-2">{{$data['head']}}<sup class="gradient-text-zvezda">*</sup></h2>
+    <p class="fs-xs mb-0 text-center mb-md-5"><span class="gradient-text-zvezda">*</span> - {{$data['text']}}</p>
     @endforeach
     <div class="row row-cols-3 g-4">
 

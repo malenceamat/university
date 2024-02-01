@@ -1,4 +1,11 @@
-
+<style>
+    .separator:after{
+        display: inline-block;
+        content: " ";
+        border-right: 1px solid #0025ff;
+        height: 100%;
+    }
+</style>
 @foreach($select as $data)
     @if($data['hideblock'] == 'on')
 <section class="container my-5 pt-0 pt-md-3 pb-0 pb-md-5">
