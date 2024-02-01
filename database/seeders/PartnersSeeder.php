@@ -34,8 +34,7 @@ class PartnersSeeder extends Seeder
         ]);
 
         partner::create([
-            'image' => 'content/logo-servizoria.png',
-            'hideblock' => '10'
+            'image' => 'content/logo-servizoria.png'
         ]);
     }
 }

@@ -56,17 +56,6 @@
             @endforeach
         </div>
     </div>
-
-    <form action="/allpartners">
-
-        @if ($data['hideblock'] > 5)
-            <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Скрыть блок</button>
-            <input type="hidden" name="hideblock" value="1">
-        @else
-            <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Отобразить блок</button>
-            <input type="hidden" name="hideblock" value="10">
-        @endif
-    </form>
 @endsection
 
 
