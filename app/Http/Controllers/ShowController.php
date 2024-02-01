@@ -32,7 +32,7 @@ class ShowController extends Controller
         $stat = Statistics::get();
         $poss = Possibilities::get();
         $banner = Banner::get();
-        $stages = Stages::get();
+        $stages = Stages::orderBy('number','asc')->get();
         $cards = Card::with('TextInCards')->get();
 
         return view('site.general', compact('team','partners','record','result','addit','select','aud','ince','stat','poss','banner','stages','cards'));

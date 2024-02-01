@@ -21,7 +21,7 @@ class StagesController extends Controller
     }
     public function show()
     {
-        $stage = Stages::get();
+        $stage = Stages::orderBy('number','asc')->get();
         return view('admin.stages.allstages', compact('stage'));
     }
     public function update(Request $req)
