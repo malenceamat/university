@@ -36,7 +36,9 @@
     <link rel="manifest" href={{asset("manifest.webmanifest.html")}}>
 
     <!-- Vendor Styles-->
-    <link rel="stylesheet" media="screen" href={{asset("https://dev.mai.ru/generic/vendor/fontawesome/fontawesome-pro-6.1.1-web/css/all.min.css")}}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="screen" href={{asset("assets/vendor/boxicons/css/boxicons.min.css")}}>
     <link rel="stylesheet" media="screen" href={{asset("assets/vendor/swiper/swiper-bundle.min.css")}}>
     <link rel="stylesheet" media="screen" href={{asset("assets/vendor/lightgallery/css/lightgallery-bundle.min.css")}}>
@@ -47,7 +49,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
     <style>
-
+        font-face {
+            font-family: 'PT Sans', sans-serif!important;
+        }
         .page-loading {
             position: fixed;
             top: 0;
