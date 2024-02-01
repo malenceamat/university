@@ -61,12 +61,26 @@
                                         </div>
                                     </div>
                                     <div class="container">
-                                        <div class="form-group">
-                                            <label for="text">Вспомогательный текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Вспомогательный текст"
-                                                   id="text" name="text"
-                                                   value="{{$select['text']}}">
+                                        <div id="basic" class="row layout-spacing layout-top-spacing">
+                                            <div class="col-lg-12">
+                                                <div class="statbox widget box box-shadow">
+                                                    <div class="widget-header">
+                                                        <div class="row">
+                                                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                                <h4>Вспомогательный текст</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-content widget-content-area">
+
+                                                        <div id="editor-container">
+                                                            <label for="hiddenArea">{!! $select['text'] !!}</label>
+                                                            <textarea name="text" style="display:none"
+                                                                      id="hiddenArea"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="container">
@@ -162,6 +176,24 @@
             uploadCrop.croppie('bind', {
                 url: res,
                 orientation: i,
+            });
+        });
+    </script>
+    <script src={{asset("../src/plugins/src/editors/quill/quill.js")}}></script>
+    <script> quill = new Quill('#editor-container', {
+            modules: {
+                toolbar: [
+                    [{header: [1, 2, false]}],
+                    ['bold', 'italic', 'underline']
+                ]
+            },
+            placeholder: 'Введите текст',
+            theme: 'snow'
+        });
+        $(document).ready(function () {
+            $("#save").on("submit", function () {
+                let value = $('.ql-editor').html();
+                $(this).append("<textarea name='text' style='display:none'>" + value + "</textarea>");
             });
         });
     </script>

@@ -11,11 +11,9 @@
         <div class="col-md-6 px-md-5 align-self-center">
             <h2 class="pb-3 d-flex align-items-center justify-content-md-between justify-content-center">{{$data['head']}}</h2>
             <ul class="list-unstyled pb-3 mb-3">
-                <li class="d-flex mb-2 align-items-top">
-                    <i class="fa-regular fa-check-circle fs-xl text-primary me-2 mt-1"></i>
-                    {{$data['text']}}
-                </li>
-
+                <p>
+                    {!! $data['text'] !!}
+                </p>
             </ul>
             <div class="d-flex align-items-center justify-content-md-between justify-content-center">
                 <a href="{{$data['url']}}" class="btn btn-primary ">

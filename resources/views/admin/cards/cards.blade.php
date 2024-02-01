@@ -124,7 +124,8 @@
 
                                                     <div id="editor-container">
                                                         <label for="hiddenArea">{!! $card['more'] !!}</label>
-                                                        <textarea name="more" style="display:none" id="hiddenArea"></textarea>
+                                                        <textarea name="more" style="display:none"
+                                                                  id="hiddenArea"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,7 +138,12 @@
                                             <thead>
                                             <tr>
                                                 <th>Text</th>
-                                                <th><button type="button" name="add" id="add" class="btn btn-outline-secondary btn-rounded mb-2 me-4">Добавить строку</button></th>
+                                                <th>
+                                                    <button type="button" name="add" id="add"
+                                                            class="btn btn-outline-secondary btn-rounded mb-2 me-4">
+                                                        Добавить строку
+                                                    </button>
+                                                </th>
                                             </tr>
                                             @if(isset($card->TextInCards))
                                                 @foreach($card->TextInCards as $text)
@@ -181,11 +187,11 @@
         </form>
         @if(isset($card->id))
             <div class="" style="float: right;height: auto">
-            <form method="POST" action="/cards/{{$card->id}}">
-                @csrf
-                {{method_field('DELETE')}}
-                <button class="btn btn-danger mb-2 me-4">Удалить</button>
-            </form>
+                <form method="POST" action="/cards/{{$card->id}}">
+                    @csrf
+                    {{method_field('DELETE')}}
+                    <button class="btn btn-danger mb-2 me-4">Удалить</button>
+                </form>
             </div>
         @endif
     </div>
@@ -300,8 +306,6 @@
             });
         });
     </script>
-
-
 
 @endsection
 
