@@ -73,7 +73,7 @@
                                 <div class="card-footer py-4 fs-sm">
                                     <div class="d-flex align-items-top position-relative">
                                         <div class="d-table rounded-3 flex-shrink-0 me-3">
-                                            <img src="assets/img/svg/shield.svg" class="d-inline-block mb-2" width="48" alt="Icon" style="background-color: white">
+                                            <img src={{asset("assets/img/svg/new-shield.svg")}} class="d-inline-block mb-2" width="48" alt="Icon" style="background-color: white">
                                         </div>
                                         <div>
                                             <p class="nav-link p-0 mb-0 fw-bold text-decoration-none stretched-link fs-xs">Квалификация</p>
