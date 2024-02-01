@@ -44,7 +44,7 @@
                                     <div class="card-img-overlay p-1">
                                         <div class="card-header border-0 text-end">
                                             <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
+                                                    data-bs-placement="bottom" style="background-color: #0D2fa7!important;"
                                                     title="{{$data['underhead']}}">
                                                 {{$data['head']}}</button>
                                         </div>
