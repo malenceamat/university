@@ -1,4 +1,8 @@
-
+<style>
+    .btn-prev, .btn-next {
+        --si-carousel-nav-btn-hover-bg: #0036ff!important;
+    }
+</style>
 <section id="programs" tabindex="-1" class="overflow-hidden my-4 my-md-5 py-3">
     <div class="container">
         <h2 class="h1 mb-5 text-center">Образовательные программы</h2>
@@ -95,7 +99,7 @@
 
             <div class="d-flex align-items-center justify-content-center mt-md-4 mt-3">
                 <div class="d-xl-flex d-none ms-4">
-                    <button type="button" id="prev-programm" class="btn btn-prev btn-icon btn-sm me-2">
+                    <button type="button" id="prev-programm" class="btn btn-prev btn-icon btn-sm me-2" style="bac">
                         <img src={{asset('arrow/arrow-sm-left-svgrepo-com.svg')}}>
                         <i class="fa fa-chevron-left"></i>
                     </button>

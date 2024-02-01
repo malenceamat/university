@@ -2,9 +2,10 @@
     .separator:after{
         display: inline-block;
         content: " ";
-        border-right: 1px solid #0025ff;
+        border-right: 1px solid #0D2fa7;
         height: 100%;
     }
+
 </style>
 @foreach($select as $data)
     @if($data['hideblock'] == 'on')

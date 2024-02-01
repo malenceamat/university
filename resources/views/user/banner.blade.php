@@ -6,6 +6,9 @@
         text-align: center;
     }
 
+    .btn-video {
+        --si-btn-video-hover-bg: #0036ff!important;
+    }
     .bottom-left {
         position: absolute;
         top: 37%;

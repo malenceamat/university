@@ -2,7 +2,9 @@
 <style>
     .btn-primary {
         --si-btn-bg: #0D2fa7 !important;
+        --si-btn-hover-bg: #0036ff !important;
     }
+
 </style>
 
 <header class="header navbar navbar-expand-lg position-absolute navbar-sticky navbar-stuck">

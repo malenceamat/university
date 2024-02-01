@@ -243,6 +243,9 @@
             top: -260px;
             left: -5px
         }
+        .btn-scroll-top {
+            --si-btn-scroll-top-hover-bg: #0036ff!important;
+        }
     </style>
     <script>
         (function () {
