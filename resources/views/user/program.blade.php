@@ -61,7 +61,7 @@
 
 <section tabindex="-1" class="container my-4 my-md-5 py-3">
 
-    <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-4">
+    <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">
 
         @foreach($stat as $data)
             <div class="col pt-2 pt-md-0" id="mobile">
