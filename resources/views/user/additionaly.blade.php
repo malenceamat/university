@@ -5,6 +5,11 @@
         border-right: 1px solid #0025ff;
         height: 100%;
     }
+    @media screen and (max-width: 900px) {
+        #mobile {
+            height: auto!important;
+        }
+    }
 </style>
 @foreach($addit as $data)
     @if($data['hideblock'] == 'on')
@@ -12,7 +17,7 @@
 <section class="container my-4 my-md-5 py-3">
     <div class="row align-items-lg-center">
         <div class="col-md-6 order-md-2 mb-4 mb-md-0 px-md-5">
-            <img src={{asset('/storage/'. $data['image'])}} alt="Image" style="width: 500px;height: 450px">
+            <img id="mobile" src={{asset('/storage/'. $data['image'])}} alt="Image" style="width: 500px;height: 450px">
         </div>
         <div class="col-md-6 order-md-1">
             <div class="pe-xl-5 me-md-2 me-lg-4 text-center">

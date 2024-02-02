@@ -31,6 +31,12 @@
         height: 100%;
     }
 
+    @media screen and (max-width: 900px) {
+        #mobile  {
+            width: 100%;
+        }
+    }
+
 </style>
 
 
@@ -58,7 +64,7 @@
     <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-4">
 
         @foreach($stat as $data)
-            <div class="col pt-2 pt-md-0">
+            <div class="col pt-2 pt-md-0" id="mobile">
                 <div class=" lh-sm px-xxl-4">
                     <div class="card border-0 h-100">
                         <div class="card-body p-3 p-sm-4" style="background-color: #c8d2d9;border-radius: 30px">
@@ -79,9 +85,10 @@
         <h2 class="h1 text-center pb-3 pb-md-0 mb-md-2">{{$data['head']}}<sup class="gradient-text-zvezda">*</sup></h2>
         <p class="fs-xs mb-0 text-center mb-md-5"><span class="gradient-text-zvezda">*</span> - {{$data['text']}}</p>
         @endforeach
-        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">  {{--поставить row-cols-lg-4 чтобы вернуть к изначальному--}}
+        <div
+            class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">  {{--поставить row-cols-lg-4 чтобы вернуть к изначальному--}}
             @foreach($ince as $data)
-                <div class="col pt-2 pt-md-0">
+                <div class="col pt-2 pt-md-0" id="mobile">
                     <div class=" lh-sm px-xxl-4">
                         <div class="card border-0 h-100">
                             <div class="card-body p-3 p-sm-4" style="background-color: #c8d2d9;border-radius: 30px">
