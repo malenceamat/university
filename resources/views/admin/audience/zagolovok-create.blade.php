@@ -58,9 +58,8 @@
     <div class="col-xxl-12">
         <div class="row">
             @foreach($audience as $data)
-                <div class="col-sm-3" style="padding: 10px">
+                <div class="col-sm-4" style="padding: 10px">
                     <div class="card">
-                        <img src="{{asset('/storage/'. $data['image'])}}"  alt="...">
                         <div class="card-body">
                             <h5 class="card-title mb-3">{{$data->head}}</h5>
                         </div>

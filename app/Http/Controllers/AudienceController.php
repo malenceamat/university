@@ -19,26 +19,15 @@ class AudienceController extends Controller
     }
     public function create(AudienceRequest $req)
     {
-        $helper = new BaseHelperController();
         $data = $req->all();
-        $data['image'] = $helper->store_base64_image($req['image']);
         Audience::create($data);
         return redirect('/allaudience');
     }
     public function update(Request $req)
     {
-        $helper = new BaseHelperController();
-
         $audience = Audience::find($req->id);
         $audience -> head = $req->head;
-
-        if($req['image']){
-            if($req['image']!=$audience['image']){
-                Storage::disk('public')->delete('image', $audience['image']);
-                $audience['image']  = $helper->store_base64_image($req['image']);
-            }
-        }
-
+        $audience -> text = $req->text;
         $audience->save();
         return redirect('/allaudience');
     }

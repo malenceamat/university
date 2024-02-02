@@ -24,15 +24,15 @@ class AudienceRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => ['required'],
+            'text' => ['required','string','max:255'],
             'head' => ['required','string','max:255']
         ];
     }
     public function messages()
     {
         return [
-            'image.required' => 'Изображение обязательно',
-            'head.required' => 'Текст под картинкой обязателен'
+            'image.required' => 'Основной текст',
+            'head.required' => 'Вспомогательный текст'
         ];
     }
 }

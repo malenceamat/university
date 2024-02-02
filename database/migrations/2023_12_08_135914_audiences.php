@@ -15,7 +15,7 @@ class Audiences extends Migration
     {
         Schema::create('audiences', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
+            $table->string('text')->nullable();
             $table->string('head')->nullable();
 
             $table->timestamps();
