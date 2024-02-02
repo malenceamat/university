@@ -251,7 +251,7 @@
             --si-btn-scroll-top-hover-bg: #0036ff!important;
         }
         @media screen and (max-width: 900px) {
-            #mobile {
+            #mobile_arrow {
                 display: none;
             }
         }
@@ -295,7 +295,7 @@
 
 @include('site.footer')
 <!-- Back to top button -->
-<a href="#top" class="btn-scroll-top" data-scroll id="mobile">
+<a href="#top" class="btn-scroll-top" data-scroll id="mobile_arrow">
     <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Вверх</span>
     <img src={{asset('arrow/arrow-narrow-up-svgrepo-com.svg')}}>
     <i class="btn-scroll-top-icon fa fa-chevron-up fs-5"></i>
