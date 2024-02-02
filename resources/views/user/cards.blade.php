@@ -77,7 +77,7 @@
                                 <div class="card-footer py-4 fs-sm">
                                     <div class="d-flex align-items-top position-relative">
                                         <div class="d-table rounded-3 flex-shrink-0 me-3">
-                                            <img src={{asset("assets/img/svg/ikon-5.png")}} s class="d-inline-block mb-2" width="48" alt="Icon" style="background-color: white">
+                                            <img src={{asset("assets/img/svg/shield-done.png")}} s class="d-inline-block mb-2" width="48" alt="Icon" style="background-color: white">
                                         </div>
                                         <div>
                                             <p class="nav-link p-0 mb-0 fw-bold text-decoration-none stretched-link fs-xs">Квалификация</p>
@@ -99,7 +99,7 @@
 
             <div class="d-flex align-items-center justify-content-center mt-md-4 mt-3">
                 <div class="d-xl-flex d-none ms-4">
-                    <button type="button" id="prev-programm" class="btn btn-prev btn-icon btn-sm me-2" style="bac">
+                    <button type="button" id="prev-programm" class="btn btn-prev btn-icon btn-sm me-2">
                         <img src={{asset('arrow/arrow-sm-left-svgrepo-com.svg')}}>
                         <i class="fa fa-chevron-left"></i>
                     </button>
