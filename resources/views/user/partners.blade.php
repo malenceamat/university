@@ -46,7 +46,7 @@
             @foreach($partners as $data)
             <div class="swiper-slide py-3">
                 <div class=" card-hover  mx-2" style="background-color: white;">
-                    <img src={{asset('/storage/'.$data['image'])}} s  style="width: 300px;height:115px; background-color: white;  filter: none!important;" >
+                    <img src={{asset('/storage/'.$data['image'])}} s  style="object-fit: contain;height:115px; background-color: white;  filter: none!important;" >
                 </div>
             </div>
             @endforeach
