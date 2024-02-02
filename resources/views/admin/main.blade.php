@@ -22,11 +22,6 @@
     <div class="overlay"></div>
     <div class="search-overlay"></div>
 
-
-
-
-
-
 @include('admin.sidebar')
     <div id="content" class="main-content">
         <div class="container">
@@ -44,19 +39,7 @@
                                 </ul>
                             </div>
                         @endif
-
-
-
-
                         <div class="widget-content widget-content-area">
-
-
-
-
-
-
-
-
                             @yield('selection')
                             @yield('allcards')
                             @yield('stages')
@@ -76,24 +59,8 @@
                             @yield('possibilities')
                             @yield('allpossibilities')
                             @yield('banner')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            @yield('hide')
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -101,18 +68,10 @@
     </div>
 </div>
 
-
-
-
 <script src={{asset("../src/bootstrap/js/bootstrap.bundle.min.js")}}></script>
 <script src={{asset("../src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js")}}></script>
 <script src={{asset("../src/plugins/src/mousetrap/mousetrap.min.js")}}></script>
 <script src={{asset("../layouts/vertical-dark-menu/app.js")}}></script>
-
-
-
-
-
 
 </body>
 </html>
