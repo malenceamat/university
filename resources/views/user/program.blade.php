@@ -92,9 +92,9 @@
                     <div class=" lh-sm px-xxl-4">
                         <div class="card border-0 h-100">
                             <div class="card-body p-3 p-sm-4" style="background-color: #c8d2d9;border-radius: 30px">
-                                <h2 class="display-4 gradient-text">{{$data['text']}}</h2>
+                                <h2 class="display-4 gradient-text" style="text-align: center">{{$data['text']}}</h2>
                                 <p class="fs-4 fs-xs-5 fw-medium text-light"><span
-                                        class="opacity-70 sizetext" style="color: black">{{$data['head']}}</span></p>
+                                        class="opacity-70 sizetext" style="color: black;text-align: center;">{{$data['head']}}</span></p>
                             </div>
                         </div>
                     </div>
