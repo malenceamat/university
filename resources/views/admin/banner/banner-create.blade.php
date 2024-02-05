@@ -1,7 +1,4 @@
-
 @extends('admin.main')
-
-
 @section('banner')
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
@@ -21,8 +18,6 @@
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
     <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
     <link rel="stylesheet" href={{asset("croppie.css")}} />
-
-
 
     <div class="profile-image">
         <form action="{{Route ('banner')}}" method="POST" enctype="multipart/form-data" id="save">
@@ -55,71 +50,46 @@
                                 <div class="row">
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="emailbutton">Ссылка в кнопке</label>
+                                            <label for="emailbutton">Ссылка первой кнопки</label>
                                             <input id="emailbutton" type="url" name="emailbutton"  value="{{$banner['emailbutton']}}" placeholder="https://www.youtube.com/" class="form-control" required>
 
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="button">Текст кнопки</label>
+                                            <label for="button">Текст первой кнопки</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Текст кнопки"
+                                                   placeholder="Текст первой кнопки"
                                                    id="button" name="button"
                                                    value="{{$banner['button']}}">
                                         </div>
                                     </div>
+
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="colortext">Цветной текст</label>
+                                            <label for="text">Основной текст</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Цветной текст"
-                                                   id="colortext" name="colortext"
-                                                   value="{{$banner['colortext']}}">
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="text">Обычный текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Обычный текст"
+                                                   placeholder="Основной текст"
                                                    id="text" name="text"
                                                    value="{{$banner['text']}}">
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="smalltext">Маленький текст</label>
+                                            <label for="smalltext">Дополнительный текст</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Маленький текст"
+                                                   placeholder="Дополнительный текст"
                                                    id="smalltext" name="smalltext"
                                                    value="{{$banner['smalltext']}}">
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="smalltext">Кнопка в правом верхнем углу</label>
+                                            <label for="smalltext">Текст второй кнопки</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Текст кнопки"
+                                                   placeholder="Текст второй кнопки"
                                                    id="smalltext" name="secondbutton"
                                                    value="{{$banner['secondbutton']}}">
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="urlsecondbutton">Ссылка кнопки</label>
-                                            <input id="urlsecondbutton" type="url" name="urlsecondbutton"
-                                                   value="{{$banner['urlsecondbutton']}}"
-                                                   placeholder="https://www.google.ru/" class="form-control" required>
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="bigtext">Основной текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Основной текст"
-                                                   id="bigtext" name="bigtext"
-                                                   value="{{$banner['bigtext']}}">
                                         </div>
                                     </div>
 
@@ -149,13 +119,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 950,
-                height: 300,
+                width: 550,
+                height: 350,
                 type: 'square'
             },
             boundary: {
-                width: 950,
-                height: 600
+                width: 900,
+                height: 550
             }
         });
 

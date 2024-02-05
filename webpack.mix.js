@@ -21,4 +21,5 @@ mix.copyDirectory('resources/images', 'public/images')
 mix.copyDirectory('resources/js', 'public/js')
 mix.copyDirectory('resources/layouts', 'public/layouts')
 mix.copyDirectory('resources/src', 'public/src')
-
+mix.copyDirectory('resources/css', 'public/css')
+mix.copyDirectory('resources/scss', 'public/scss')

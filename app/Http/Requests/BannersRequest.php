@@ -26,25 +26,19 @@ class BannersRequest extends FormRequest
         return [
             'button' => ['required','string','max:255'],
             'emailbutton' => ['required', 'string','max:255'],
-            'colortext' => ['required','string','max:255'],
             'text' => ['required','string','max:255'],
             'smalltext' => ['required','string','max:255'],
-            'bigtext' => ['required','string','max:255'],
             'secondbutton' => ['required','string','max:255'],
-            'urlsecondbutton' => ['required','string','max:255']
         ];
     }
     public function messages()
     {
         return [
-            'button.required' => 'Основной текст обязателен',
-            'emailbutton.required' => 'Вспомогательный текст обязателен',
-            'colortext.required' => 'Текст кнопки обязателен',
-            'text.required' => 'Ссылка для кнопки обязателена',
-            'smalltext.required' => 'Текст кнопки обязателен',
-            'bigtext.required' => 'Ссылка для кнопки обязателена',
-            'secondbutton.required' => 'Текст кнопки обязателен',
-            'urlsecondbutton.required' => 'Ссылка для кнопки обязателен'
+            'button.required' => 'Текст первой кнопки обязателен',
+            'emailbutton.required' => 'Ссылка первой кнопки обязателена',
+            'text.required' => 'Основной текст обязателен',
+            'smalltext.required' => 'Дополнительный текст обязателен',
+            'secondbutton.required' => 'Текст второй кнопки обязателен',
         ];
     }
 }

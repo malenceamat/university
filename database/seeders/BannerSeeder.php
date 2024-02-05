@@ -18,16 +18,12 @@ class BannerSeeder extends Seeder
     public function run()
     {
         Banner::create([
-            'image' => 'content/bannernew.png',
-            'button' => 'Смотреть видео',
-            'emailbutton' => 'https://www.youtube.com/watch?v=Jp2gDOONOd0',
-            'colortext' => 'Цифровая',
-            'text' => 'кафедра НовГУ',
+            'image' => 'content/banner.png',
+            'button' => 'Начать обучение',
+            'emailbutton' => 'https://www.google.ru/',
+            'text' => 'Цифровая Кафедра',
             'smalltext' => 'Цифровая кафедра — программа федерального проекта «Развитие кадрового потенциала ИТ-отрасли» национальной программы «Цифровая экономика Российской Федерации».',
-            'bigtext' => 'Это совместный проект Минобрнауки и Минцифры России, который дает возможность студентам получить новую профессию в сфере информационных технологий.',
-            'secondbutton' => 'Записаться',
-            'urlsecondbutton' => 'https://www.google.ru/',
-            'hideblock' => 'on'
+            'secondbutton' => 'Программы',
         ]);
 
     }
