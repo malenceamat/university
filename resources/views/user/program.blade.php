@@ -49,6 +49,9 @@
     .right-arrow:hover:before {
         border-color: #0d2fa7;
     }
+    .swiper-slide {
+        width: 55%;
+    }
 </style>
 <section id="programs" tabindex="-1" class="overflow-hidden my-4 my-md-5 py-3">
     <div class="container">
@@ -86,14 +89,9 @@
             }
           }'>
 
-
-
-
-
-
-                <div class="row justify-content-center">
+                <div class="swiper-wrapper">
                     @foreach($cards as $data)
-                        <div class="swiper-slide">
+                        <div class="swiper-slide h-auto px-2">
                             <article class="card border-0 h-100 mx-1">
                                 <div class="position-relative">
                                     <img src="{{asset('/storage/' . $data['image'])}}" class="card-img-top" alt="Image" style="object-fit: cover;height: 200px;">
