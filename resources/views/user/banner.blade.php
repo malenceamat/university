@@ -1,4 +1,4 @@
-<div class="header-banner bg-theme-alt">
+<div class="header-banner bg-theme-alt" id="top">
     <div class="nk-banner bg-grad-special">
         <div class="banner banner-fs banner-single bg-grad-special-alt tc-light">
             <div class="banner-wrap mt-auto">
@@ -19,8 +19,8 @@
                                 </div>
                                 <div class="cpn-action">
                                     <ul class="cpn-links animated" data-animate="fadeInUp" data-delay="1.55">
-                                        <li><a href="v2.php.html#" class="btn btn-md btn-grad">Начать обучение</a></li>
-                                        <li><a href="v2.php.html#" class="btn btn-md btn-grad">Программы</a></li>
+                                        <li><a href="#" class="btn btn-md btn-grad">Начать обучение</a></li>
+                                        <li><a href="#programs" class="btn btn-md btn-grad">Программы</a></li>
                                     </ul>
                                 </div>
                             </div>

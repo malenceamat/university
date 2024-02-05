@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Admin</title>
     <link rel="icon" type="image/x-icon" href={{asset("../src/assets/img/favicon.ico")}}/>
-    <link href={{asset("../layouts/vertical-dark-menu/css/light/loader.css")}} rel="stylesheet" type="text/css" />
-    <link href={{asset("../layouts/vertical-dark-menu/css/dark/loader.css")}} rel="stylesheet" type="text/css" />
-    <script src={{asset("../layouts/vertical-dark-menu/loader.js")}}></script>
+    <link href={{asset("/layouts/vertical-dark-menu/css/light/loader.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("/layouts/vertical-dark-menu/css/dark/loader.css")}} rel="stylesheet" type="text/css" />
+    <script src={{asset("/layouts/vertical-dark-menu/loader.js")}}></script>
 
     <link href={{asset("https://fonts.googleapis.com/css?family=Nunito:400,600,700")}} rel="stylesheet">
-    <link href={{asset("../src/bootstrap/css/bootstrap.min.css")}} rel="stylesheet" type="text/css" />
-    <link href={{asset("../layouts/vertical-dark-menu/css/light/plugins.css")}} rel="stylesheet" type="text/css" />
-    <link href={{asset("../layouts/vertical-dark-menu/css/dark/plugins.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("/src/bootstrap/css/bootstrap.min.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("/layouts/vertical-dark-menu/css/light/plugins.css")}} rel="stylesheet" type="text/css" />
+    <link href={{asset("/layouts/vertical-dark-menu/css/dark/plugins.css")}} rel="stylesheet" type="text/css" />
 </head>
 <body class="layout-boxed">
 @include('admin.navbar')
