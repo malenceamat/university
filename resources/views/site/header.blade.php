@@ -1,52 +1,41 @@
-
-<style>
-    .btn-primary {
-        --si-btn-bg: #0D2fa7 !important;
-        --si-btn-hover-bg: #0036ff !important;
-    }
-
-</style>
-
-<header class="header navbar navbar-expand-lg position-absolute navbar-sticky navbar-stuck">
-    <div class="container px-3">
-        <a href="/" class="navbar-brand pe-3">
-            <img src={{asset("arrow/logo.png")}} width="175"
-                 style="background-color: white;border-radius: 10px">
-        </a>
-        <div id="navbarNav" class="offcanvas offcanvas-end">
-            <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title">Меню</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="header-main">
+    <div class="header-container container">
+        <div class="header-wrap">
+            <!-- Logo @s -->
+            <div class="header-logo header-logo-ls logo animated" data-animate="fadeInDown" data-delay=".65">
+                <a href="{{--https://dpo.novsu.ru/dk/--}}#top" class="logo-link">
+                    <img class="logo-dark" src="images/logo-novgu-white.png" srcset="images/logo-novgu-white.png" alt="logo">
+                    <img class="logo-light" src="images/logo-novgu-white.png" srcset="images/logo-novgu-white.png" alt="logo">
+                </a>
+                {{--<div class="language-switcher language-switcher-s3 toggle-wrap">
+                    <a class="toggle-tigger" href="v2.php.html#">RU</a>
+                    <ul class="toggle-class toggle-drop text-center drop-list drop-list-xs">
+                        <li><a href="v2.php.html#">EN</a></li>
+                    </ul>
+                </div>--}}
             </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a href="#start" class="nav-link" data-scroll>О цифровой кафедре</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#forwhom" class="nav-link" data-scroll>Для кого</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#programs" class="nav-link" data-scroll>Программы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#stages" class="nav-link" data-scroll>Этапы обучения</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#partners" class="nav-link" data-scroll>Партнёры</a>
-                    </li>
-                </ul>
+            <!-- Menu Toogle @s -->
+            <div class="header-nav-toggle">
+                <a href="v2.php.html#" class="navbar-toggle" data-menu-toggle="example-menu-04">
+                    <div class="toggle-line">
+                        <span></span>
+                    </div>
+                </a>
             </div>
+            <!-- Menu @s -->
+            <div class="header-navbar header-navbar-s3">
+                <nav class="header-menu justify-content-between" id="example-menu-04">
+                    <ul class="menu menu-s2 animated" data-animate="fadeInDown" data-delay=".75">
+                        <li class="menu-item"><a class="menu-link nav-link" href="#top">Главная</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#peculiarities">О ЦК</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#roadmap">Этапы обучения</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#programs">Программы</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#teacher">Преподаватели</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#faq">FAQs</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div><!-- .header-navbar @e -->
         </div>
-        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        @foreach($banner as $data)
-            <a href="{{$data['urlsecondbutton']}}" class="btn btn-primary fs-sm rounded d-none d-lg-inline-flex"
-               target="_blank" rel="noopener">
-                &nbsp;{{$data['secondbutton']}}
-            </a>
-        @endforeach
     </div>
-</header>
+</div>

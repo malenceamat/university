@@ -1,127 +1,70 @@
-<style>
-    .element73 {
-        height: 100vh;
-        width: 100vw;
-        position: relative;
-        text-align: center;
-    }
-
-    .btn-video {
-        --si-btn-video-hover-bg: #0036ff!important;
-    }
-    .bottom-left {
-        position: absolute;
-        top: 37%;
-        left: 17%;
-        color: white;
-        max-width: 40%;
-        word-wrap: break-word;
-    }
-
-    .top-left {
-        position: absolute;
-        top: 15%;
-        left: 17%;
-        color: #ffffff;
-        max-width: 40%;
-        word-wrap: break-word;
-        text-align: left;
-    }
-
-    .top-right {
-        position: absolute;
-        top: 5%;
-        left: 5%;
-        word-wrap: break-word;
-    }
-
-    .bottom-right {
-        position: absolute;
-        top: 55%;
-        left: 17%;
-        color: #f5f4f4;
-        max-width: 40%;
-        word-wrap: break-word;
-        text-align: left;
-    }
-
-    .button {
-        position: absolute;
-        top: 80%;
-        left: 48.5%;
-        color: black;
-        max-width: 40%;
-        word-wrap: break-word;
-        text-align: left;
-    }
-
-    .gradient-text {
-        background-image: linear-gradient(to right, #6384ff, #0528ec);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    @media screen and (max-width: 900px) {
-        .top-left {
-            word-wrap: normal!important;
-        }
-        .bottom-right {
-            display: none;
-        }
-        .bottom-left {
-            max-width: 100%!important;
-            word-wrap: unset!important;
-            text-align: center;
-        }
-        .button{
-            display: none;
-        }
-    }
-
-
-</style>
-
-@foreach($banner as $data)
-    @if($data['hideblock'] == 'on')
-        <section class="position-relative d-flex align-items-center min-vh-100 bg-light py-lg-5 pt-5" data-jarallax
-                 data-img-position="0% 100%" data-speed="0.5" style="margin-top: 30px">
-            <div class="element73">
-                <img src="{{asset('/storage/'. $data['image'])}}" class="card-img-top" alt="Image"
-                     style="margin-top: 25px;height: 75%;object-fit: cover;">
-                <div class="bottom-left">
-                    <h4 style="color: #f5f4f4;"><p align="left">{{$data['smalltext']}}</p></h4>
-                </div>
-                <div class="top-left">
-                    <h1 class="display-2 mb-3 pb-3" style="line-height: 1.1;">
-                        <span class="gradient-text">{{$data['colortext']}}</span>
-                        <br>
-                        <div style="color: white;">{{$data['text']}}</div>
-                    </h1>
-                </div>
-                <div class="top-right">
-                    <a href="{{$data['emailbutton']}}"
-                       class="btn btn-video btn-icon btn-lg flex-shrink-0 me-3 stretched-link" data-bs-toggle="video">
-                        <img
-                            src={{asset('arrow/movie_film_basic_essential_multimedia_video_player_play_ui_icon_219939.svg')}}>
-                    </a>
-                    <span style="color: white!important;">{{$data['button']}}</span>
-                </div>
-                <div class="bottom-right">
-                    <p class="lead mt-3 pb-3" style="font-size: 1.3rem;">{{$data['bigtext']}}<sup
-                            class="gradient-text">*</sup></p>
-                </div>
-                <div class="button">
-                    <a href="#programs" data-scroll data-scroll-offset="100"
-                       class="btn btn-video btn-icon rounded-circle shadow-sm flex-shrink-0 stretched-link me-3">
-                        <i class=" fa-chevron-down">
-                            <img src={{asset('arrow/arrow-narrow-down-svgrepo-com.svg')}}>
-                        </i>
-                    </a>
-                    <span class="gradient-text">Узнать больше</span>
+<div class="header-banner bg-theme-alt">
+    <div class="nk-banner bg-grad-special">
+        <div class="banner banner-fs banner-single bg-grad-special-alt tc-light">
+            <div class="banner-wrap mt-auto">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center justify-content-lg-between">
+                        <div class="col-lg-6 order-lg-last animated" data-animate="fadeInUp" data-delay="1.25">
+                            <div class="banner-gfx banner-gfx-re-s5">
+                                <img src="images/header/gfx-f.png" alt="header">
+                            </div>
+                        </div><!-- .col -->
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <div class="banner-caption cpn tc-light">
+                                <div class="cpn-head">
+                                    <h1 class="title title-xl-2 title-lg title-semibold animated" data-animate="fadeInUp" data-delay="1.35">Цифровая Кафедра</h1>
+                                </div>
+                                <div class="cpn-text">
+                                    <p class="lead-s2 animated" data-animate="fadeInUp" data-delay="1.45">Цифровая кафедра — программа федерального проекта «Развитие кадрового потенциала ИТ-отрасли» национальной программы «Цифровая экономика Российской Федерации».</p>
+                                </div>
+                                <div class="cpn-action">
+                                    <ul class="cpn-links animated" data-animate="fadeInUp" data-delay="1.55">
+                                        <li><a href="v2.php.html#" class="btn btn-md btn-grad">Начать обучение</a></li>
+                                        <li><a href="v2.php.html#" class="btn btn-md btn-grad">Программы</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- .col -->
+                    </div><!-- .row -->
                 </div>
             </div>
-        </section>
-    @endif
-@endforeach
-
+            <div class="nk-block mt-auto pdb-r">
+                <div class="container">
+                    <ul class="partner-list-s3 row align-items-center justify-content-center">
+                        <li class="col-12 col-md-2 text-center text-md-start">
+                            <h6 class="title title-xs tc-primary mb-md-0 mb-4 animated" data-animate="fadeInUp" data-delay="1.65">Наши <br> Партнеры</h6>
+                        </li>
+                        <li class="col-4 col-md-2 animated" data-animate="fadeInUp" data-delay="1.7">
+                            <a href="v2.php.html#">
+                                <img src="images/partners/a-xs-light.png" alt="partner">
+                            </a>
+                        </li>
+                        <li class="col-4 col-md-2 animated" data-animate="fadeInUp" data-delay="1.75">
+                            <a href="v2.php.html#">
+                                <img src="images/partners/b-xs-light.png" alt="partner">
+                            </a>
+                        </li>
+                        <li class="col-4 col-md-2 animated" data-animate="fadeInUp" data-delay="1.8">
+                            <a href="v2.php.html#">
+                                <img src="images/partners/c-xs-light.png" alt="partner">
+                            </a>
+                        </li>
+                        <li class="col-4 col-md-2 animated" data-animate="fadeInUp" data-delay="1.85">
+                            <a href="v2.php.html#">
+                                <img src="images/partners/d-xs-light.png" alt="partner">
+                            </a>
+                        </li>
+                        <li class="col-4 col-md-2 animated" data-animate="fadeInUp" data-delay="1.9">
+                            <a href="v2.php.html#">
+                                <img src="images/partners/e-xs-light.png" alt="partner">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- .block @e -->
+            <div class="nk-ovm shape-u shape-contain shape-left-top"></div>
+            <!-- Place Particle Js -->
+            <div id="particles-bg" class="particles-container particles-bg" data-pt-base="#00c0fa" data-pt-base-op=".3" data-pt-line="#2b56f5" data-pt-line-op=".5" data-pt-shape="#00c0fa" data-pt-shape-op=".2"></div>
+        </div>
+    </div><!-- .nk-banner -->
+</div>

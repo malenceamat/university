@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlockHideController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\TextController;
@@ -79,6 +80,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/possibilities/{delete}',[PossibilitiesController::class, 'delete']);
     Route::get('/banner' ,[BannersController::class,'index']);
     Route::post('/banner',[BannersController::class, 'create'])->name('banner');
+    Route::get('hide',[BlockHideController::class,'index']);
 });
 
 require __DIR__.'/auth.php';

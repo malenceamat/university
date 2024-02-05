@@ -1,105 +1,165 @@
 <style>
-    .it-courses::after {
-        content: "не по IT";
-        font-size: 13px;
-        background: #6366f1;
-        padding: 3px 8px 4px 8px;
-        border-radius: 15px;
+    .btn-prev, .btn-next {
+        --si-carousel-nav-btn-hover-bg: #0036ff!important;
+    }
+
+    .left-arrow,
+    .right-arrow {
+        display: inline-flex;
         position: relative;
-        top: -150px;
-        right: -55px;
+        width: 30px; /* увеличиваем ширину до 30px */
+        height: 30px; /* увеличиваем высоту до 30px */
+        background-color: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
     }
 
-    .gradient-text {
-        background-image: linear-gradient(to right, #6384ff, #0528ec);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
+    .left-arrow::before,
+    .right-arrow::before {
+        position: absolute;
+        display: inline-flex;
+        width: 10px; /* увеличиваем ширину до 9px */
+        height: 10px; /* увеличиваем высоту до 9px */
+        content: '';
     }
 
-    .gradient-text-zvezda {
-        background-image: linear-gradient(to right, #0025ff, #0025ff);
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
+    .left-arrow::before {
+        top: 9px; /* корректируем положение верхней стрелки */
+        left: 11px; /* корректируем положение левой стрелки */
+        border-top: 3px solid #000000; /* увеличиваем толщину стрелки до 3px */
+        border-left: 3px solid #000000; /* увеличиваем толщину стрелки до 3px */
+        transform: rotate(-45deg);
     }
 
-    .separator:after {
-        display: inline-block;
-        content: " ";
-        border-right: 1px solid #0025ff;
-        height: 100%;
+    .right-arrow::before {
+        top: 9px; /* корректируем положение верхней стрелки */
+        left: 8px; /* корректируем положение правой стрелки */
+        border-top: 3px solid #000000; /* увеличиваем толщину стрелки до 3px */
+        border-right: 3px solid #000000; /* увеличиваем толщину стрелки до 3px */
+        transform: rotate(45deg);
     }
 
-    @media screen and (max-width: 900px) {
-        #mobile  {
-            width: 100%;
-        }
+    /* Изменение фона и цвета при наведении */
+    .left-arrow:hover,
+    .right-arrow:hover {
+        background-color: #ffffff;
     }
 
+    .left-arrow:hover:before,
+    .right-arrow:hover:before {
+        border-color: #0d2fa7;
+    }
 </style>
+<section id="programs" tabindex="-1" class="overflow-hidden my-4 my-md-5 py-3">
+    <div class="container">
+        <h2 class="h1 mb-5 text-center">Образовательные программы</h2>
+        <div class="position-relative">
+
+            <div class="swiper overflow-visible" data-swiper-options='{
+            "slidesPerView": "auto",
+            "slidesPerGroupAuto": "auto",
+            "slidesPerGroup": 1,
+            "noSwiping": false,
+            "loop": false,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+            },
+            "navigation": {
+              "prevEl": "#prev-programm",
+              "nextEl": "#next-programm"
+            },
+            "breakpoints": {
+              "0": {
+                "slidesPerView": 1
+              },
+              "576": {
+                "slidesPerView": 2
+              },
+              "768": {
+                "slidesPerView": 2
+              },
+              "1200": {
+                "slidesPerView": 3,
+                "noSwiping": true
+              }
+            }
+          }'>
 
 
-<section id="start" tabindex="-1" class="container mt-sm-0 mb-4 mb-md-5">
-    <h2 class="h1 text-center pb-3 pb-md-0 mb-md-2">У нас вы получите:</h2>
-    <br>
-    <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 pt-2 pt-sm-3 pt-xl-2">
-        @foreach($poss as $data)
-            <div class="col p-4">
-                <img src="{{asset('/storage/'.$data['image'])}}" width="150" alt="Bulb icon" class="d-block mb-4 "
-                     style="border-radius: 30px">
-                <div class="d-table mb-1 lh-sm">
-                    <p class="mb-0" style="color: black">{{$data['text']}}</p>
+
+
+
+
+                <div class="row justify-content-center">
+                    @foreach($cards as $data)
+                        <div class="swiper-slide">
+                            <article class="card border-0 h-100 mx-1">
+                                <div class="position-relative">
+                                    <img src="{{asset('/storage/' . $data['image'])}}" class="card-img-top" alt="Image" style="object-fit: cover;height: 200px;">
+                                    <div class="card-img-overlay p-1">
+                                        <div class="card-header border-0 text-end">
+                                            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="tooltip"
+                                                    data-bs-placement="bottom" style="background-color: #0D2fa7!important;"
+                                                    title="{{$data['underhead']}}">
+                                                {{$data['head']}}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pb-4">
+                                    <h3 class="h5 mb-3 swiper-no-swiping">{{$data['basic']}}<sup
+                                            class="text-gradient-primary">(new)</sup></h3>
+                                    <ul class="list-unstyled swiper-no-swiping">
+
+                                        @foreach($data->TextInCards as $d)
+                                            <li class="d-flex fs-sm mb-2">
+                                                <i class="fa-regular fa-check-circle fs-5 text-primary me-2"></i>
+                                                {{$d['text']}}
+                                            </li>
+                                        @endforeach
+
+                                    </ul>
+                                    <a type="button" class="link link-collapse d-flex text-decoration-none"
+                                       data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                       data-bs-whatever2='<img src="{{asset('/storage/' . $data['image'])}}" class="card-img-top" alt="Image">'
+                                       data-bs-whatever1="{{$data['head']}}" data-bs-whatever="{{$data['more']}}">
+                                        <span class="text-primary link-collapse-default">Подробнее</span>
+                                    </a>
+                                </div>
+                                <div class="card-footer py-4 fs-sm">
+                                    <div class="d-flex align-items-top position-relative">
+                                        <div class="d-table rounded-3 flex-shrink-0 me-3">
+                                            <img src={{asset("assets/img/svg/shield-done.png")}} s class="d-inline-block mb-2" width="48" alt="Icon" style="background-color: white">
+                                        </div>
+                                        <div>
+                                            <p class="nav-link p-0 mb-0 fw-bold text-decoration-none stretched-link fs-xs">Квалификация</p>
+                                            <span class="fs-xs text-muted d-block">{{$data['qualification']}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
+                </div>
+
+
+
+
+                <div class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5 d-xl-none d-flex"></div>
+
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center mt-md-4 mt-3">
+                <div class="d-xl-flex d-none ms-4">
+                    <button type="button" id="prev-programm" class="btn btn-prev btn-icon btn-sm me-2">
+                        <div class="left-arrow"></div>
+                    </button>
+                    <button type="button" id="next-programm" class="btn btn-next btn-icon btn-sm ms-2">
+                        <div class="right-arrow"></div>
+                    </button>
                 </div>
             </div>
-        @endforeach
-    </div>
-</section>
 
-
-<div class="separator"></div>
-
-<section tabindex="-1" class="container my-4 my-md-5 py-3">
-
-    <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">
-
-        @foreach($stat as $data)
-            <div class="col pt-2 pt-md-0" id="mobile">
-                <div class=" lh-sm px-xxl-4">
-                    <div class="card border-0 h-100">
-                        <div class="card-body p-3 p-sm-3" style="background-color: #c8d2d9;border-radius: 30px">
-                            <h2 class="display-4 gradient-text">{{$data['head']}}</h2>
-                            <p class="fs-4 fs-xs-5 fw-medium text-light"><span
-                                    class="opacity-70 sizetext" style="color: black">{{$data['text']}}</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</section>
-
-<div class="separator"></div>
-@foreach($aud as $data)
-    <section id="forwhom" tabindex="-1" class="container my-4 my-md-5 py-3">
-        <h2 class="h1 text-center pb-3 pb-md-0 mb-md-2">{{$data['head']}}<sup class="gradient-text-zvezda">*</sup></h2>
-        <p class="fs-xs mb-0 text-center mb-md-5"><span class="gradient-text-zvezda">*</span> - {{$data['text']}}</p>
-        @endforeach
-        <div
-            class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">  {{--поставить row-cols-lg-4 чтобы вернуть к изначальному--}}
-            @foreach($ince as $data)
-                <div class="col pt-2 pt-md-0" id="mobile">
-                    <div class=" lh-sm px-xxl-4">
-                        <div class="card border-0 h-100">
-                            <div class="card-body p-3 p-sm-4" style="background-color: #c8d2d9;border-radius: 30px">
-                                <h2 class="display-4 gradient-text" style="text-align: center">{{$data['text']}}</h2>
-                                <p class="fs-4 fs-xs-5 fw-medium text-light"><span
-                                        class="opacity-70 sizetext" style="color: black;text-align: center;">{{$data['head']}}</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
         </div>
-    </section>
-    <div class="separator"></div>
+    </div>
+</section>
