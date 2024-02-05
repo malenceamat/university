@@ -50,7 +50,7 @@
         border-color: #0d2fa7;
     }
     .swiper-slide {
-        width: 55%;
+        width: 55%!important;
     }
 </style>
 <section id="programs" tabindex="-1" class="overflow-hidden my-4 my-md-5 py-3">
@@ -105,8 +105,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body pb-4">
-                                    <h3 class="h5 mb-3 swiper-no-swiping">{{$data['basic']}}<sup
-                                            class="text-gradient-primary">(new)</sup></h3>
+                                    <h3 class="h5 mb-3 swiper-no-swiping">{{$data['basic']}}</h3>
                                     <ul class="list-unstyled swiper-no-swiping">
 
                                         @foreach($data->TextInCards as $d)
@@ -127,7 +126,7 @@
                                 <div class="card-footer py-4 fs-sm">
                                     <div class="d-flex align-items-top position-relative">
                                         <div class="d-table rounded-3 flex-shrink-0 me-3">
-                                            <img src={{asset("assets/img/svg/shield-done.png")}} s class="d-inline-block mb-2" width="48" alt="Icon" style="background-color: white">
+                                            <img src={{asset("assets/img/svg/shield-done.png")}} s class="d-inline-block mb-2" width="48" style="background-color: white">
                                         </div>
                                         <div>
                                             <p class="nav-link p-0 mb-0 fw-bold text-decoration-none stretched-link fs-xs">Квалификация</p>
