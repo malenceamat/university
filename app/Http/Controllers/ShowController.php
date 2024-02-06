@@ -7,8 +7,10 @@ use App\Models\Audience;
 use App\Models\Banner;
 use App\Models\Card;
 use App\Models\Contact;
+use App\Models\Faq;
 use App\Models\partner;
 use App\Models\Possibilities;
+use App\Models\Question;
 use App\Models\Result;
 use App\Models\Selection;
 use App\Models\Stages;
@@ -21,6 +23,7 @@ class ShowController extends Controller
 {
     public function show()
     {
+        $faqs = Faq::with('ques')->get();
         $team = Team::get();
         $partners = partner::get();
         $record = Contact::get();
@@ -32,9 +35,9 @@ class ShowController extends Controller
         $stat = Statistics::get();
         $poss = Possibilities::get();
         $banner = Banner::get();
-        $stages = Stages::orderBy('number','asc')->get();
+        $stages = Stages::get();
         $cards = Card::with('TextInCards')->get();
 
-        return view('site.general', compact('team','partners','record','result','addit','select','aud','ince','stat','poss','banner','stages','cards'));
+        return view('site.general', compact('faqs','team','partners','record','result','addit','select','aud','ince','stat','poss','banner','stages','cards'));
     }
 }

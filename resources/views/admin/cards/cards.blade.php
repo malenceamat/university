@@ -1,15 +1,4 @@
 @extends('admin.main')
-
-
-
-
-
-
-
-
-
-
-
 @section('cards')
 
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
@@ -30,13 +19,6 @@
     <link rel="stylesheet" type="text/css" href={{asset("../src/plugins/css/dark/editors/quill/quill.snow.css")}}>
     <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
     <link rel="stylesheet" href={{asset("croppie.css")}} />
-
-
-
-
-
-
-
 
     <div class="profile-image">
         <form @if (isset($card->id)) action="{{url('cards/edit')}}"

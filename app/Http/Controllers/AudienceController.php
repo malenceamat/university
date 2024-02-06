@@ -15,7 +15,7 @@ class AudienceController extends Controller
     public function index($id = null)
     {
         $audience = $id ? Audience::find($id) : new Audience();
-        return view('admin.audience.audience-create', compact('audience'));
+        return view('admin.advantages.audience-create', compact('audience'));
     }
     public function create(AudienceRequest $req)
     {
@@ -25,9 +25,17 @@ class AudienceController extends Controller
     }
     public function update(Request $req)
     {
+        $helper = new BaseHelperController();
+
         $audience = Audience::find($req->id);
         $audience -> head = $req->head;
         $audience -> text = $req->text;
+
+        if (!empty($audience) && $req['image'] != null) {
+            Storage::disk('public')->delete('image', $audience['image']);
+            $audience['image']  = $helper->store_base64_image($req['image']);
+        }
+
         $audience->save();
         return redirect('/allaudience');
     }

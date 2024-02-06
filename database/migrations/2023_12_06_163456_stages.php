@@ -15,7 +15,6 @@ class Stages extends Migration
     {
         Schema::create('stages', function (Blueprint $table) {
             $table->id();
-            $table->string('number')->nullable();
             $table->string('date')->nullable();
             $table->string('stages')->nullable();
             $table->timestamps();

@@ -17,6 +17,9 @@ class Zagolovok extends Migration
             $table->id();
             $table->string('head')->nullable();
             $table->string('text')->nullable();
+            $table->string('button')->nullable();
+            $table->string('link_button')->nullable();
+            $table->string('telegram')->nullable();
             $table->timestamps();
         });
     }

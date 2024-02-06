@@ -61,43 +61,34 @@
                                         </div>
                                     </div>
                                     <div class="container">
+                                        <div class="form-group">
+                                            <label for="head">Нижний текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Нижний текст" id="head" name="text"
+                                                   value="{{$select['text']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
                                         <div id="basic" class="row layout-spacing layout-top-spacing">
                                             <div class="col-lg-12">
                                                 <div class="statbox widget box box-shadow">
                                                     <div class="widget-header">
                                                         <div class="row">
                                                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                                                <h4>Вспомогательный текст</h4>
+                                                                <h4>Дополнительный текст</h4>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="widget-content widget-content-area">
 
                                                         <div id="editor-container">
-                                                            <label for="hiddenArea">{!! $select['text'] !!}</label>
-                                                            <textarea name="text" style="display:none"
+                                                            <label for="hiddenArea">{!! $select['more'] !!}</label>
+                                                            <textarea name="more" style="display:none"
                                                                       id="hiddenArea"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="button">Текст кнопки</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Текст кнопки"
-                                                   id="button" name="button"
-                                                   value="{{$select['button']}}">
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="form-group">
-                                            <label for="text">Ссылка в кнопке</label>
-                                            <input id="url-text" type="url" name="url" placeholder="https://www.google.ru/" value="{{$select['url']}}" class="form-control">
-
-
                                         </div>
                                     </div>
                                     <input type="hidden" name="id" value="{{$select['id']}}">
@@ -110,13 +101,6 @@
             <br>
             <div class="container">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
-
-                <div class="form-check form-check-primary form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="form-check-default" name="hideblock" @if ($select['hideblock'] == 'on') checked @endif>
-                    <label class="form-check-label" for="form-check-default">
-                        Отображение блока
-                    </label>
-                </div>
             </div>
         </form>
     </div>
@@ -194,7 +178,7 @@
         $(document).ready(function () {
             $("#save").on("submit", function () {
                 let value = $('.ql-editor').html();
-                $(this).append("<textarea name='text' style='display:none'>" + value + "</textarea>");
+                $(this).append("<textarea name='more' style='display:none'>" + value + "</textarea>");
             });
         });
     </script>

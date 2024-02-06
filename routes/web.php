@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlockHideController;
+use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\TextController;
@@ -14,7 +15,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ZagolovokController;
 use App\Http\Controllers\AudienceController;
 use App\Http\Controllers\StatisticsController;
-use App\Http\Controllers\PossibilitiesController;
+/*use App\Http\Controllers\PossibilitiesController;*/
 use App\Http\Controllers\BannersController;
 use App\Http\Controllers\ShowController;
 /*
@@ -46,8 +47,8 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/stages/{delete}',[StagesController::class, 'delete']);
     Route::get('/selection' ,[SelectionController::class,'index']);
     Route::post('/selection',[SelectionController::class, 'create'])->name('selection');
-    Route::get('/additional' ,[AdditionalController::class,'index']);
-    Route::post('/additional',[AdditionalController::class, 'create'])->name('additional');
+    Route::get('/about_us' ,[AdditionalController::class,'index']);
+    Route::post('/about_us',[AdditionalController::class, 'create'])->name('about_us');
     Route::get('/team/{id?}' ,[TeamController::class,'index']);
     Route::post('/team/save',[TeamController::class, 'create']);
     Route::get('/allteam' ,[TeamController::class,'show']);
@@ -73,14 +74,24 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/allstatistics' ,[StatisticsController::class,'show']);
     Route::post('/statistics/edit', [StatisticsController::class, 'update']);
     Route::delete('/statistics/{delete}',[StatisticsController::class, 'delete']);
-    Route::get('/possibilities/{id?}' ,[PossibilitiesController::class,'index']);
+/*    Route::get('/possibilities/{id?}' ,[PossibilitiesController::class,'index']);
     Route::post('/possibilities/save',[PossibilitiesController::class, 'create']);
     Route::get('/allpossibilities' ,[PossibilitiesController::class,'show']);
     Route::post('/possibilities/edit', [PossibilitiesController::class, 'update']);
-    Route::delete('/possibilities/{delete}',[PossibilitiesController::class, 'delete']);
+    Route::delete('/possibilities/{delete}',[PossibilitiesController::class, 'delete']);*/
     Route::get('/banner' ,[BannersController::class,'index']);
     Route::post('/banner',[BannersController::class, 'create'])->name('banner');
     Route::get('hide',[BlockHideController::class,'index']);
+
+
+    Route::get('/faq',[FaqController::class,'index']);
+    Route::post('faq',[FaqController::class,'create'])->name('faqs');
+    Route::delete('/faq/{id}',[FaqController::class,'delete']);
+    Route::post('/faq_edit/{id}',[FaqController::class,'show'])->name('qwe');
+    Route::post('/question',[FaqController::class,'question'])->name('response');
+    Route::delete('/ask_delete/{id}',[FaqController::class,'delete_ask']);
+
+
 });
 
 require __DIR__.'/auth.php';

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Additional;
 use App\Models\Banner;
 use App\Models\Possibilities;
+use App\Models\Question;
 use Illuminate\Database\Seeder;
 use Str;
 
@@ -17,38 +18,30 @@ class PossibilitiesSeeder extends Seeder
      */
     public function run()
     {
-        Possibilities::create([
-            'image' => 'content/proffesiya.png',
-            'text'  => 'вторую востребованную профессию'
+        Question::create([
+            'ask' => 'Вопрос 1-1',
+            'response'  => 'Ответ 1-1',
+            'faq_id' => '1'
         ]);
-        Possibilities::create([
-            'image' => 'content/education.svg',
-            'text' => 'новые знания и умения в программировании и искусственном интеллекте'
+        Question::create([
+            'ask' => 'Вопрос 1-2',
+            'response'  => 'Ответ 1-2',
+            'faq_id' => '1'
         ]);
-
-        Possibilities::create([
-            'image' => 'content/pedagog.png',
-            'text' => 'общения с педагогами- программистами и специалистами IT- компаний и получения от них уникальных знаний и умений'
+        Question::create([
+            'ask' => 'Вопрос 2-1',
+            'response'  => 'Ответ 2-1',
+            'faq_id' => '2'
         ]);
-
-        Possibilities::create([
-            'image' => 'content/ocenka.png',
-            'text' => 'независимую оценку уровня сформированности ИТ-компетенций, которую проводит университет "Иннополис"'
+        Question::create([
+            'ask' => 'Вопрос 3-1',
+            'response'  => 'Ответ 3-1',
+            'faq_id' => '3'
         ]);
-
-        Possibilities::create([
-            'image' => 'content/diplom.svg',
-            'text' => 'диплом о профессиональной переподготовке, дающий право работы по IT-специальности'
-        ]);
-
-        Possibilities::create([
-            'image' => 'content/portfolio.svg',
-            'text' => 'реализованный проект по заказу IT или отраслевой компании в портфолио'
-        ]);
-
-        Possibilities::create([
-            'image' => 'content/practica.svg',
-            'text' => 'практическая подготовка на базе компании-партнера'
+        Question::create([
+            'ask' => 'Вопрос 3-2',
+            'response'  => 'Ответ 3-2',
+            'faq_id' => '3'
         ]);
     }
 }

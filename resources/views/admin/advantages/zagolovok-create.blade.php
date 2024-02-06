@@ -46,6 +46,33 @@
                                                    value="{{$zagolovok['text']}}">
                                         </div>
                                     </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="text">Текст кнопки</label>
+                                            <input type="text" class="form-control mb-5"
+                                                   placeholder="Текст кнопки"
+                                                   id="text" name="button"
+                                                   value="{{$zagolovok['button']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="text">Ссылка в кнопке</label>
+                                            <input type="text" class="form-control mb-5"
+                                                   placeholder="Ссылка в кнопке"
+                                                   id="text" name="link_button"
+                                                   value="{{$zagolovok['link_button']}}">
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="text">Ссылка на телеграмм</label>
+                                            <input type="text" class="form-control mb-5"
+                                                   placeholder="Ссылка на телеграмм"
+                                                   id="text" name="telegram"
+                                                   value="{{$zagolovok['telegram']}}">
+                                        </div>
+                                    </div>
                                     <input type="hidden" name="id" value="{{$zagolovok['id']}}">
                                 </div>
             <div class="container">
@@ -53,14 +80,15 @@
             </div>
             </div>
         </form>
-
-
     <div class="col-xxl-12">
         <div class="row">
             @foreach($audience as $data)
                 <div class="col-sm-4" style="padding: 10px">
                     <div class="card">
                         <div class="card-body">
+                            <img style="width: 70%;height: 50%" src="{{asset('/storage/'.$data['image'])}}">
+                        </div>
+                        <div class="card-footer">
                             <h5 class="card-title mb-3">{{$data->head}}</h5>
                         </div>
                         <div>

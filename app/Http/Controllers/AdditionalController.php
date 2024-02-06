@@ -14,29 +14,25 @@ class AdditionalController extends Controller
     public function index()
     {
         $additional = Additional::firstOrCreate();
-        return view('admin.additional.additional-create',compact('additional'));
+        return view('admin.about_us.about_us-create',compact('additional'));
     }
     public function create(AdditionalRequest $req)
     {
         $helper = new BaseHelperController();
 
         $additional = Additional::find(1);
-        $additional->head = $req->head;
+        $additional->more = $req->more;
         $additional->text = $req->text;
-        $additional->hideblock = $req->hideblock ?? false;
-
+        $additional->button = $req->button;
+        $additional->emailbutton = $req->emailbutton;
 
         if (!empty($additional) && $req['image'] != null) {
             Storage::disk('public')->delete('image', $additional['image']);
 
             $additional['image']  = $helper->store_base64_image($req['image']);
-
-
-
-
         }
 
         $additional->save();
-        return redirect('additional');
+        return redirect('about_us');
     }
 }

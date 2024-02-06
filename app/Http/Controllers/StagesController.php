@@ -21,14 +21,13 @@ class StagesController extends Controller
     }
     public function show()
     {
-        $stage = Stages::orderBy('number','asc')->get();
+        $stage = Stages::orderBy('id','asc')->get();
         return view('admin.stages.allstages', compact('stage'));
     }
     public function update(Request $req)
     {
         $stage = Stages::find($req->id);
 
-        $stage -> number = $req->number;
         $stage -> date = $req->date;
         $stage -> stages = $req->stages;
         $stage->save();

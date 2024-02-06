@@ -1,7 +1,5 @@
 @extends('admin.main')
-
-
-@section('additional')
+@section('about_us')
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/filepond.min.css")}}>
@@ -21,10 +19,8 @@
     <script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")}}></script>
     <link rel="stylesheet" href={{asset("croppie.css")}} />
 
-
-
     <div class="profile-image">
-        <form action="{{Route ('additional')}}" method="POST" enctype="multipart/form-data" id="save">
+        <form action="{{Route ('about_us')}}" method="POST" enctype="multipart/form-data" id="save">
             @csrf
             <div class="col-md-12">
                 <div class="mb-3">
@@ -54,21 +50,51 @@
                                 <div class="row">
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="head">Основной текст</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Основной текст" id="head" name="head"
-                                                   value="{{$additional['head']}}">
+                                            <label for="emailbutton">Ссылка в кнопке</label>
+                                            <input id="emailbutton" type="url" name="emailbutton"  value="{{$additional['emailbutton']}}" placeholder="https://www.youtube.com/" class="form-control">
                                         </div>
                                     </div>
                                     <div class="container">
                                         <div class="form-group">
-                                            <label for="text">Вспомогательный текст</label>
+                                            <label for="button">Текст кнопки</label>
                                             <input type="text" class="form-control mb-3"
-                                                   placeholder="Вспомогательный текст"
+                                                   placeholder="Текст кнопки"
+                                                   id="button" name="button"
+                                                   value="{{$additional['button']}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="text">Основной текст</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Основной текст"
                                                    id="text" name="text"
                                                    value="{{$additional['text']}}">
                                         </div>
                                     </div>
+                                    <div id="basic" class="row layout-spacing layout-top-spacing">
+                                        <div class="col-lg-12">
+                                            <div class="statbox widget box box-shadow">
+                                                <div class="widget-header">
+                                                    <div class="row">
+                                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                            <h4> Текст в кнопке "Подробнее" </h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content widget-content-area">
+
+                                                    <div id="editor-container">
+                                                        <label for="hiddenArea">{!! $additional['more'] !!}</label>
+                                                        <textarea name="more" style="display:none"
+                                                                  id="hiddenArea"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <input type="hidden" name="id" value="{{$additional['id']}}">
                                 </div>
                             </div>
@@ -76,15 +102,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container mt-5">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
-
-                <div class="form-check form-check-primary form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="form-check-default" name="hideblock" @if ($additional['hideblock'] == 'on') checked @endif>
-                    <label class="form-check-label" for="form-check-default">
-                        Отображение блока
-                    </label>
-                </div>
             </div>
         </form>
     </div>
@@ -95,13 +114,13 @@
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 150,
-                height: 150,
+                width: 550,
+                height: 350,
                 type: 'square'
             },
             boundary: {
-                width: 300,
-                height: 300
+                width: 900,
+                height: 550
             }
         });
 
@@ -148,5 +167,25 @@
             });
         });
     </script>
+
+    <script src={{asset("../src/plugins/src/editors/quill/quill.js")}}></script>
+    <script> quill = new Quill('#editor-container', {
+            modules: {
+                toolbar: [
+                    [{ header: [1, 2, false] }],
+                    ['bold', 'italic', 'underline']
+                ]
+            },
+            placeholder: 'Введите текст',
+            theme: 'snow'
+        });
+        $(document).ready(function(){
+            $("#save").on("submit", function () {
+                let value = $('.ql-editor').html();
+                $(this).append("<textarea name='more' style='display:none'>"+value+"</textarea>");
+            });
+        });
+    </script>
+
 
 @endsection

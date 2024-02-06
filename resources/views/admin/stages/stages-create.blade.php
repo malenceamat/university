@@ -12,7 +12,8 @@
             @endif
 
             <div class="tab-content" id="animateLineContent-4">
-                <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel" aria-labelledby="animated-underline-home-tab">
+                <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel"
+                     aria-labelledby="animated-underline-home-tab">
                     <div class="row">
                         <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
                             <div class="form">
@@ -34,19 +35,7 @@
                                                    value="{{$stage['stages']}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="number">Порядковый номер</label>
-                                            <input type="text" class="form-control mb-3"
-                                                   placeholder="Порядковый номер"
-                                                   id="number" name="number"
-                                                   value="{{$stage['number']}}">
-                                        </div>
-                                    </div>
-
                                     <input type="hidden" name="id" value="{{$stage['id']}}">
-
-
 
                                 </div>
                             </div>

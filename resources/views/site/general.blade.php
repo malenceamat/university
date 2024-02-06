@@ -2,7 +2,7 @@
 @section('content')
     @include('user.about_us')
     @include('user.advantages')
-    @include('user.statistics')
+    {{--@include('user.statistics')--}}
     @include('user.student')
     @include('user.stages')
     @include('user.program')

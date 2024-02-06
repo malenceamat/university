@@ -25,9 +25,7 @@ class SelectionController extends Controller
         $select = Selection::find(1);
         $select->head = $req->head;
         $select->text = $req->text;
-        $select->button = $req->button;
-        $select->url = $req->url;
-        $select->hideblock = $req->hideblock ?? false;
+        $select->more = $req->more;
 
         if (!empty($select) && $req['image'] != null) {
             Storage::disk('public')->delete('image', $select['image']);

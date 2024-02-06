@@ -40,7 +40,7 @@
                             </div>
                         @endif
                         <div class="widget-content widget-content-area">
-                            @yield('selection')
+                            @yield('about_us')
                             @yield('allcards')
                             @yield('stages')
                             @yield('allstages')
@@ -60,6 +60,8 @@
                             @yield('allpossibilities')
                             @yield('banner')
                             @yield('hide')
+                            @yield('selection')
+                            @yield('faq')
                         </div>
                     </div>
                 </div>

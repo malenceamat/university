@@ -17,10 +17,8 @@ class Selection extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('head')->nullable();
-            $table->string('text')->nullable();
-            $table->string('button')->nullable();
-            $table->string('url')->nullable();
-            $table->string('hideblock')->nullable();
+            $table->longText('text')->nullable();
+            $table->longText('more')->nullable();
             $table->timestamps();
         });
     }

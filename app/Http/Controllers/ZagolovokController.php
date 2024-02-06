@@ -17,13 +17,16 @@ class ZagolovokController extends Controller
     {
         $zagolovok = Zagolovok::firstOrCreate();
         $audience = Audience::get();
-        return view('admin.audience.zagolovok-create',compact('zagolovok','audience'));
+        return view('admin.advantages.zagolovok-create',compact('zagolovok','audience'));
     }
     public function create(ZagolovokRequest $req)
     {
         $zagolovok = Zagolovok::find(1);
-        $zagolovok->head = $req->head;
-        $zagolovok->text = $req->text;
+        $zagolovok -> head = $req->head;
+        $zagolovok -> text = $req->text;
+        $zagolovok -> button = $req->button;
+        $zagolovok -> link_button = $req->link_button;
+        $zagolovok -> telegram = $req->telegram;
         $zagolovok->save();
         return redirect('allaudience');
     }

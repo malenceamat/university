@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Banner;
+use App\Models\Faq;
 use App\Models\partner;
 use App\Models\Statistics;
 use Illuminate\Database\Seeder;
@@ -17,24 +18,16 @@ class StatisticsSeeder extends Seeder
      */
     public function run()
     {
-        // дефолтное создание записей
-      //  Statistics::factory(4)->create();
-
         //персонализированный контент
 
-        Statistics::create([
-            'head' => '1200',
-            'text' => 'Обучающихся ежегодно'
+        Faq::create([
+            'question' => 'Категория 1',
         ]);
-
-        Statistics::create([
-            'head' => '9 мес.',
-            'text' => 'длительность программы'
+        Faq::create([
+            'question' => 'Категория 2',
         ]);
-
-        Statistics::create([
-            'head' => '10',
-            'text' => 'индустриальных партнеров'
+        Faq::create([
+            'question' => 'Категория 3',
         ]);
     }
 }

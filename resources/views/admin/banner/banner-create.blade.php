@@ -102,13 +102,6 @@
             </div>
             <div class="container mt-5">
                 <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Сохранить</button>
-
-                <div class="form-check form-check-primary form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="form-check-default" name="hideblock" @if ($banner['hideblock'] == 'on') checked @endif>
-                    <label class="form-check-label" for="form-check-default">
-                        Отображение блока
-                    </label>
-                </div>
             </div>
         </form>
     </div>

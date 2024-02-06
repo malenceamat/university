@@ -26,7 +26,6 @@ class CardsController extends Controller
     }
     public function update(Request $req)
     {
-
         $helper = new BaseHelperController();
         $data = Card::find($req->id);
 
@@ -41,10 +40,7 @@ class CardsController extends Controller
             $data['image']  = $helper->store_base64_image($req['image']);
         }
 
-
         $data->save();
-
-
 
         return redirect('allcards');
     }

@@ -12,9 +12,10 @@
             <div class="col-sm-3" style="padding: 10px">
                 <div class="card">
                     <div class="card-body">
-                        <p class="mb-0">{{$data->stages}}</p>
                         <h4 class="card-title">{{$data->date}}</h4>
-                        <p class="mb-0">{{$data->number}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="mb-0">{{$data->stages}}</p>
                     </div>
                     <form method="get" action="/stages/{{$data->id}}">
                         @csrf

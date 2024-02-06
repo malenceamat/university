@@ -16,9 +16,11 @@ class Additionals extends Migration
         Schema::create('additionals', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
-            $table->string('head')->nullable();
             $table->string('text')->nullable();
-            $table->string('hideblock')->nullable();
+            $table->longText('more')->nullable();
+            $table->string('button')->nullable();
+            $table->string('emailbutton')->nullable();
+
             $table->timestamps();
         });
     }

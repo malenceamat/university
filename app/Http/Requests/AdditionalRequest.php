@@ -24,16 +24,18 @@ class AdditionalRequest extends FormRequest
     public function rules()
     {
         return [
-            'head' => ['required','string','max:255'],
-            'text' => ['required', 'string','max:255']
+            'text' => ['required','string','max:255'],
+            'button' => ['required', 'string','max:255'],
+            'emailbutton' => ['required', 'string' ,'max:255'],
 
         ];
     }
     public function messages()
     {
         return [
-            'head.required' => 'Основной текст обязателен',
-            'text.required' => 'Вспомогательный текст обязателен'
+            'text.required' => 'Основной текст обязателен',
+            'button.required' => 'Текст для кнопки обязателен',
+            'emailbutton.required' => 'Ссылка в кнопке обязательна',
 
         ];
     }

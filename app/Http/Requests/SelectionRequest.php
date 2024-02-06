@@ -24,21 +24,15 @@ class SelectionRequest extends FormRequest
     public function rules()
     {
         return [
-
             'head' => ['required','string','max:255'],
-            'text' => ['required', 'string','max:255'],
-            'button' => ['required','string','max:255'],
-            'url' => ['required','string','max:255']
+            'text' => ['required', 'string','max:255']
         ];
     }
     public function messages()
     {
         return [
-
             'head.required' => 'Основной текст обязателен',
             'text.required' => 'Вспомогательный текст обязателен',
-            'button.required' => 'Текст кнопки обязателен',
-            'url.required' => 'Ссылка для кнопки обязателена'
         ];
     }
 }

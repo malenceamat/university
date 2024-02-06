@@ -11,5 +11,5 @@ class Zagolovok extends Model
 
     protected $table = 'zagolovok';
 
-    protected $fillable = ['head','text'];
+    protected $fillable = ['head','text','button','link_button','telegram'];
 }

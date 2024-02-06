@@ -35,38 +35,26 @@
                     <li class="{{ (request()->is('banner')) ? 'active' : '' }}">
                         <a href="/banner"> Баннер </a>
                     </li>
-                    <li class="{{ (request()->is('allpossibilities')) ? 'active' : '' }}">
-                        <a href="/allpossibilities"> Возможности </a>
-                    </li>
-                    <li class="{{ (request()->is('allstatistics')) ? 'active' : '' }}">
-                        <a href="/allstatistics"> Cтатистика </a>
+                    <li class="{{ (request()->is('about_us')) ? 'active' : '' }}">
+                        <a href="/about_us"> О цифровой кафедре </a>
                     </li>
                     <li class="{{ (request()->is('allaudience')) ? 'active' : '' }}">
-                        <a href="/allaudience"> Аудитория </a>
-                    </li>
-                    <li class="{{ (request()->is('allcards')) ? 'active' : '' }}">
-                        <a href="/allcards"> Карточки </a>
-                    </li>
-                    <li class="{{ (request()->is('allstages')) ? 'active' : '' }}">
-                        <a href="/allstages"> Этапы обучения </a>
+                        <a href="/allaudience"> Преимущества </a>
                     </li>
                     <li class="{{ (request()->is('selection')) ? 'active' : '' }}">
-                        <a href="/selection"> Условия отбора </a>
+                        <a href="/selection"> Что дает ЦК </a>
                     </li>
-                    <li class="{{ (request()->is('additional')) ? 'active' : '' }}">
-                        <a href="/additional"> Доп. Ассессмент </a>
+                    <li class="{{ (request()->is('allstages')) ? 'active' : '' }}">
+                        <a href="/allstages"> Этапы </a>
+                    </li>
+                    <li class="{{ (request()->is('allcards')) ? 'active' : '' }}">
+                        <a href="/allcards"> Программы </a>
+                    </li>
+                    <li class="{{ (request()->is('faq')) ? 'active' : '' }}">
+                        <a href="/faq"> FAQS </a>
                     </li>
                     <li class="{{ (request()->is('allteam')) ? 'active' : '' }}">
-                        <a href="/allteam"> Команда </a>
-                    </li>
-                    <li class="{{ (request()->is('result')) ? 'active' : '' }}">
-                        <a href="/result"> Результаты </a>
-                    </li>
-                    <li class="{{ (request()->is('allpartners')) ? 'active' : '' }}">
-                        <a href="/allpartners"> Партнеры </a>
-                    </li>
-                    <li class="{{ (request()->is('contact')) ? 'active' : '' }}">
-                        <a href="/contact"> Запись </a>
+                        <a href="/allteam"> Контакты </a>
                     </li>
                     <li class="{{ (request()->is('hide')) ? 'active' : '' }}">
                         <a href="/hide"> Настройка блоков </a>
