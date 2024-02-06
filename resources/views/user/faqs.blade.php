@@ -23,8 +23,8 @@
 
 
             @foreach($faqs as $data)
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
 
 
                         <div class="tab-content animate" data-animate="fadeInUp" data-delay=".5">
@@ -47,13 +47,16 @@
                         </div>
 
 
-
+                    </div>
                 </div>
-            </div>
             @endforeach
 
 
-
         </div>
-        <div class="ui-mask-left ui-mask-s5"></div>
+
+
+    </div>
+    <div class="ui-mask-left ui-mask-s5"></div>
+
+
 </section>
