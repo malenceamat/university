@@ -8,26 +8,26 @@
                 <p class="animated" data-animate="fadeInUp" data-delay=".3">Возможно, у Вас остались вопросы. Вы можете
                     попробовать найти ответы здесь</p>
             </div>
+
+
             <div class="nk-block">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-10">
                         <ul class="nav tab-nav tab-nav-s2 tab-nav-center mgb-r animated" data-animate="fadeInUp"
                             data-delay=".4">
                             @foreach($faqs as $data)
-                                <li><a class="active{{$data['id']}}" data-bs-toggle="tab"
+                                <li><a data-bs-toggle="tab"
                                        href="#general-questions{{$data['id']}}">{{$data['question']}}</a>
                                 </li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
-
-
-                @foreach($faqs as $data)
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="tab-content animate" data-animate="fadeInUp" data-delay=".5">
-                                <div class="tab-panel fade active show{{$data['id']}}"
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="tab-content animate" data-animate="fadeInUp" data-delay=".5">
+                            @foreach($faqs as $data)
+                                <div class="tab-panel fade"
                                      id="general-questions{{$data['id']}}">
                                     <div class="row gutter-vr-50px">
                                         @foreach($data->ques as $key)
@@ -40,12 +40,18 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
         <div class="ui-mask-left ui-mask-s5"></div>
     </section>
 @endif
+
+
+
+
+
+

@@ -56,6 +56,7 @@
                             @yield('allpartners')
                             @yield('partners')
                             @yield('allteam')
+                            @yield('team')
                         </div>
                     </div>
                 </div>
