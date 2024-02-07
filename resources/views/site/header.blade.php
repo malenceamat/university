@@ -30,7 +30,7 @@
                         <li class="menu-item"><a class="menu-link nav-link" href="#peculiarities">О ЦК</a></li>
                         <li class="menu-item"><a class="menu-link nav-link" href="#roadmap">Этапы обучения</a></li>
                         <li class="menu-item"><a class="menu-link nav-link" href="#programs">Программы</a></li>
-                        <li class="menu-item"><a class="menu-link nav-link" href="#teacher">Преподаватели</a></li>
+                        <li class="menu-item"><a class="menu-link nav-link" href="#http://77.222.54.217/">Преподаватели</a></li>
                         <li class="menu-item"><a class="menu-link nav-link" href="#faq">FAQs</a></li>
                         <li class="menu-item"><a class="menu-link nav-link" href="#contact">Контакты</a></li>
                     </ul>

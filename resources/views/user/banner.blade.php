@@ -31,7 +31,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="nk-block mt-auto pdb-r">
+                    {{--<div class="nk-block mt-auto pdb-r">
                         <div class="container">
                             <ul class="partner-list-s3 row align-items-center justify-content-center">
                                 <li class="col-12 col-md-2 text-center text-md-start">
@@ -65,7 +65,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div><!-- .block @e -->
+                    </div>--}}
                     <div class="nk-ovm shape-u shape-contain shape-left-top"></div>
                     <!-- Place Particle Js -->
                     <div id="particles-bg" class="particles-container particles-bg" data-pt-base="#00c0fa"
