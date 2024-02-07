@@ -59,13 +59,14 @@
                     <li class="{{ (request()->is('contact')) ? 'active' : '' }}">
                         <a href="/contact"> Контакты </a>
                     </li>
+                    <li class="{{ (request()->is('allteam')) ? 'active' : '' }}">
+                        <a href="/allteam"> Преподаватели </a>
+                    </li>
                     <li class="{{ (request()->is('hide')) ? 'active' : '' }}">
                         <a href="/hide"> Настройка блоков </a>
                     </li>
-
                     <li>
                         <div class="mt-3 space-y-1">
-                            <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 

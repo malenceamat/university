@@ -55,6 +55,7 @@
                             @yield('hide')
                             @yield('allpartners')
                             @yield('partners')
+                            @yield('allteam')
                         </div>
                     </div>
                 </div>

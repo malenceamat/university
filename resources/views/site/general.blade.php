@@ -6,6 +6,7 @@
     @include('user.student')
     @include('user.stages')
     @include('user.program')
+    @include('user.teacher')
     @include('user.faqs')
     @include('user.contact')
     @include('user.partners')

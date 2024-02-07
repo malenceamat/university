@@ -32,8 +32,9 @@ class ShowController extends Controller
         $ince = Audience::get();
         $banner = Banner::get();
         $stages = Stages::get();
+        $team = Team::get();
         $cards = Card::with('TextInCards')->get();
 
-        return view('site.general', compact('faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
+        return view('site.general', compact('team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }
 }
