@@ -1,4 +1,5 @@
 @foreach($addit as $data)
+    @if($hide['about_us_hide'] == 'on')
 <section class="section section-intro bg-white pb-0 ov-h" id="peculiarities">
     <div class="container">
         <div class="nk-block nk-block-about">
@@ -29,4 +30,5 @@
         </div>
     </div>
 </section>
+    @endif
 @endforeach

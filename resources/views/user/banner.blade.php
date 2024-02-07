@@ -1,4 +1,5 @@
 @foreach($banner as $data)
+    @if($hide['banner_hide'] == 'on')
         <div class="header-banner bg-theme-alt" id="top">
             <div class="nk-banner bg-grad-special">
                 <div class="banner banner-fs banner-single bg-grad-special-alt tc-light">
@@ -73,4 +74,5 @@
                 </div>
             </div><!-- .nk-banner -->
         </div>
+    @endif
 @endforeach

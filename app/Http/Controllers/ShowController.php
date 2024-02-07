@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Additional;
 use App\Models\Audience;
 use App\Models\Banner;
+use App\Models\BlockHide;
 use App\Models\Card;
 use App\Models\Contact;
 use App\Models\Faq;
@@ -23,6 +24,7 @@ class ShowController extends Controller
 {
     public function show()
     {
+        $hide = BlockHide::first();
         $faqs = Faq::with('ques')->get();
         $partners = partner::get();
         $record = Contact::get();
@@ -35,6 +37,6 @@ class ShowController extends Controller
         $team = Team::get();
         $cards = Card::with('TextInCards')->get();
 
-        return view('site.general', compact('team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
+        return view('site.general', compact('hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }
 }

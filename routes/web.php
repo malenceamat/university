@@ -80,6 +80,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/form',[ContactController::class,'contact'])->name('form');
     Route::delete('/contact/{id}',[ContactController::class,'delete']);
 
+    Route::post('/hide_save',[BlockHideController::class,'create']);
+
 });
 
 require __DIR__.'/auth.php';

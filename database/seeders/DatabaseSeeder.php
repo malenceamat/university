@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Banner;
+use App\Models\BlockHide;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
             TeamsSeeder::class,
             StatisticsSeeder::class,
             ZagolovokSeeder::class,
-            TextInCardsSeeder::class
+            TextInCardsSeeder::class,
+            HideSeeder::class
         ]);
     }
 }

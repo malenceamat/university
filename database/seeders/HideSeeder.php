@@ -15,16 +15,16 @@ class HideSeeder extends Seeder
     public function run()
     {
         BlockHide::create([
-            'banner_hide' => 'true',
-            'partners_hide' => 'true',
-            'about_us_hide' => 'true',
-            'advantagesh' => 'true',
-            'gives_hide' => 'true',
-            'stages_hide' => 'true',
-            'programs_hide' => 'true',
-            'faqs_hide' => 'true',
-            'contact_hide' => 'true',
-            'teacher_hide' => 'true'
+            'banner_hide' => 'on',
+            'partners_hide' => '0',
+            'about_us_hide' => 'on',
+            'advantagesh' => 'on',
+            'gives_hide' => 'on',
+            'stages_hide' => 'on',
+            'programs_hide' => 'on',
+            'faqs_hide' => 'on',
+            'contact_hide' => 'on',
+            'teacher_hide' => 'on'
         ]);
     }
 }
