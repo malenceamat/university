@@ -1,7 +1,7 @@
 @extends('admin.main')
 
-@section('partners')
 
+@section('team')
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/light/elements/alert.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("../src/assets/css/dark/elements/alert.css")}}>
     <link rel="stylesheet" href={{asset("../src/plugins/src/filepond/filepond.min.css")}}>
@@ -23,26 +23,21 @@
 
 
 
-
-
-
-
-
     <div class="profile-image">
-        <form @if (isset($partners->id)) action="{{url('partners/edit')}}"
-              @else action="{{url('partners/save')}}" @endif method="post"
+        <form @if (isset($team->id)) action="{{url('team/edit')}}"
+              @else action="{{url('team/save')}}" @endif method="post"
               enctype="multipart/form-data" id="save">
             @csrf
-            @if($partners->id)
+            @if($team->id)
                 @method('post')
             @endif
             <div class="col-md-12">
-                <div class="mb-6">
-                    <div class="col-lg-10">
+                <div class="mb-3">
+                    <div class="col-lg-5 col-sm-12 mt-3 pl-0">
                         <input id="itn-croppie-result-i" type="text" hidden value=""
                                name="image">
-                        <img id="itn-croppie-result" src="{{asset('/storage/'.$partners['image'])}}"
-                             class="col-lg-12 col-sm-12 ">
+                        <img id="itn-croppie-result" src="{{asset('/storage/'.$team['image'])}}"
+                             class="col-lg-6 col-sm-12 pl-0">
                         <input id="croppie-input" type="file" style="color: #3b3f5c"
                                class="form-control-file d-block mt-3">
                     </div>
@@ -57,18 +52,61 @@
                 </div>
             </div>
 
+            <div class="tab-content" id="animateLineContent-4">
+                <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel"
+                     aria-labelledby="animated-underline-home-tab">
+                    <div class="row">
+                        <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
+                            <div class="form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="fio">Фамилия Имя Отчество</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Фамилия Имя Отчество"
+                                                   id="fio" name="fio"
+                                                   value="{{$team['fio']}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="job">Должность</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Должность" id="job"
+                                                   name="job" value="{{$team['job']}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="merits">Заслуги</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Заслуги" id="merits"
+                                                   name="merits" value="{{$team['merits']}}">
+                                        </div>
+                                    </div>
 
-            @if(isset($partners->id))
+                                    <input type="hidden" name="id" value="{{$team['id']}}">
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @if(isset($team->id))
+                <div class="container">
+                    <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Редактировать</button>
+                </div>
             @else
                 <div class="container">
                     <button class="btn btn-outline-secondary btn-rounded mb-2 me-4">Создать</button>
                 </div>
             @endif
         </form>
-        @if(isset($partners->id))
+        @if(isset($team->id))
             <div class="" style="float: right;height: auto">
-                <form method="POST" action="/partners/{{$partners->id}}">
+                <form method="POST" action="/team/{{$team->id}}">
                     @csrf
                     {{method_field('DELETE')}}
                     <button class="btn btn-danger mb-2 me-4">Удалить</button>
@@ -77,42 +115,15 @@
         @endif
     </div>
 
-
-
-
-
-
-
-
-    <script src={{asset("../src/assets/js/scrollspyNav.js")}}></script>
-    <script src={{asset("../src/plugins/src/editors/quill/quill.js")}}></script>
-    <script> quill = new Quill('#editor-container', {
-            modules: {
-                toolbar: [
-                    [{ header: [1, 2, false] }],
-                    ['bold', 'italic', 'underline']
-                ]
-            },
-            placeholder: 'Введите текст',
-            theme: 'snow'
-        });
-        $(document).ready(function(){
-            $("#save").on("submit", function () {
-                let value = $('.ql-editor').html();
-                $(this).append("<textarea name='more' style='display:none'>"+value+"</textarea>");
-            });
-        });
-    </script>
     <script src={{asset("croppie.js")}}></script>
-
     <script>
         let uploadCrop = $('.itn-croppie').croppie({
             enableExif: true,
             enableOrientation: true,
             viewport: {
-                width: 140,
-                height: 72,
-                type: 'square'
+                width: 80,
+                height: 80,
+                type: 'circle'
             },
             boundary: {
                 width: 300,
@@ -163,32 +174,5 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function () {
-            let count = {{ (request()->is('cards')) ? '1' : '0' }};
-            dynamic_field(count);
-
-            function dynamic_field(number) {
-                html = '<tr>';
-                html += '<td><input type="text" name="text[]" class="form-control" /></td>';
-                if (number >= 1) {
-                    html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td>';
-                    $('thead').append(html);
-                }
-            }
-
-            $(document).on('click', '#add', function () {
-                count++;
-                dynamic_field(count);
-            });
-            $(document).on('click', '.remove', function () {
-                count--;
-                $(this).closest("tr").remove();
-            });
-        });
-    </script>
-
-
 
 @endsection
-

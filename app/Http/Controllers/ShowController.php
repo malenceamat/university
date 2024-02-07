@@ -24,20 +24,16 @@ class ShowController extends Controller
     public function show()
     {
         $faqs = Faq::with('ques')->get();
-        $team = Team::get();
         $partners = partner::get();
         $record = Contact::get();
-        $result = Result::get();
         $addit = Additional::get();
         $select = Selection::get();
         $aud = Zagolovok::get();
         $ince = Audience::get();
-        $stat = Statistics::get();
-        $poss = Possibilities::get();
         $banner = Banner::get();
         $stages = Stages::get();
         $cards = Card::with('TextInCards')->get();
 
-        return view('site.general', compact('faqs','team','partners','record','result','addit','select','aud','ince','stat','poss','banner','stages','cards'));
+        return view('site.general', compact('faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }
 }

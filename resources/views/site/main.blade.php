@@ -10,7 +10,6 @@
     <link rel="stylesheet" href={{asset("assets/css/vendor.bundle.css")}}>
     <link rel="stylesheet" href={{asset("assets/css/style-azure.css")}}>
     <link rel="stylesheet" href={{asset("assets/css/theme.css")}}>
-    <link rel="stylesheet" media="screen" href={{asset("assets/theme.min.css")}}>
     <link rel="stylesheet" media="screen" href={{asset("assets/vendor/swiper/swiper-bundle.min.css")}}>
 
     <style>

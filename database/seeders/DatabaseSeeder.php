@@ -23,11 +23,10 @@ class DatabaseSeeder extends Seeder
             ContactsSeeder::class,
             PartnersSeeder::class,
             PossibilitiesSeeder::class,
-            ResultSeeder::class,
             SelectionsSeeder::class,
             StagesSeeder::class,
-            StatisticsSeeder::class,
             TeamsSeeder::class,
+            StatisticsSeeder::class,
             ZagolovokSeeder::class,
             TextInCardsSeeder::class
         ]);

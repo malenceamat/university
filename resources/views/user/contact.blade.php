@@ -10,55 +10,48 @@
             <div class="row justify-content-center gutter-vr-30px">
                 <div class="col-lg-4">
                     <div class="pdt-s">
-                        <div class="d-flex flex-column h-100">
-                            <p class="animated" data-animate="fadeInUp" data-delay=".3">Остались вопросы? Напишите нам,
-                                и мы свяжемся с вами в ближайшее время.</p>
-                            <ul class="contact-list contact-list-s3">
-                                <li class="animated" data-animate="fadeInUp" data-delay=".4">
-                                    <em class="contact-icon contact-icon-s3 fas fa-phone"></em>
-                                    <div class="contact-text">
-                                        <span>+79999999999</span>
-                                    </div>
-                                </li>
-                                <li class="animated" data-animate="fadeInUp" data-delay=".5">
-                                    <em class="contact-icon contact-icon-s3 fas fa-envelope"></em>
-                                    <div class="contact-text">
-                                        <span>info@company.com</span>
-                                    </div>
-                                </li>
-                                <li class="animated" data-animate="fadeInUp" data-delay=".6">
-                                    <em class="contact-icon contact-icon-s3 fas fa-paper-plane"></em>
-                                    <div class="contact-text">
-                                        <span>Вступить в Телеграм канал</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        @foreach($record as $data)
+                            <div class="d-flex flex-column h-100">
+                                <p class="animated" data-animate="fadeInUp" data-delay=".3">Остались вопросы? Напишите
+                                    нам,
+                                    и мы свяжемся с вами в ближайшее время.</p>
+                                <ul class="contact-list contact-list-s3">
+                                    <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                                        <em class="contact-icon contact-icon-s3 fas fa-phone"></em>
+                                        <div class="contact-text">
+                                            <span>{{$data['phone']}}</span>
+                                        </div>
+                                    </li>
+                                    <li class="animated" data-animate="fadeInUp" data-delay=".5">
+                                        <em class="contact-icon contact-icon-s3 fas fa-envelope"></em>
+                                        <div class="contact-text">
+                                            <span>{{$data['email']}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endforeach
                     </div>
                 </div><!-- .col -->
                 <div class="col-lg-6">
                     <div class="">
-                        <form id="contact-form" class="nk-form-submit" action="https://dpo.novsu.ru/dk/form/contact.php"
-                              method="post">
-                            <div class="field-item animated" data-animate="fadeInUp" data-delay=".7">
-                                <input name="contact-name" type="text" class="input-line required">
+                        <form  action="{{route('form')}}" method="POST">
+                            @csrf
+                            <div class="field-item animated" >
+                                <input name="name" type="text" class="input-line">
                                 <label class="field-label field-label-line">Ваше Имя</label>
                             </div>
-                            <div class="field-item animated" data-animate="fadeInUp" data-delay=".8">
-                                <input name="contact-email" type="email" class="input-line required email">
+                            <div class="field-item animated" >
+                                <input name="email" type="email" class="input-line">
                                 <label class="field-label field-label-line">Ваш Email</label>
                             </div>
-                            <div class="field-item animated" data-animate="fadeInUp" data-delay=".9">
-                                <textarea name="contact-message" class="input-line input-textarea required"></textarea>
+                            <div class="field-item animated" >
+                                <textarea name="message" class="input-line input-textarea"></textarea>
                                 <label class="field-label field-label-line">Ваше сообщение</label>
                             </div>
-                            <input type="text" class="d-none" name="form-anti-honeypot" value="">
                             <div class="row">
-                                <div class="col-sm-4 animated" data-animate="fadeInUp" data-delay="1">
-                                    <button type="submit" class="btn btn-md btn-grad">Отправить</button>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="form-results"></div>
+                                <div class="col-sm-4 animated" >
+                                    <button class="btn btn-md btn-grad">Отправить</button>
                                 </div>
                             </div>
                         </form>

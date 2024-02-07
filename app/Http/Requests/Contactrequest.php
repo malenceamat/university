@@ -26,9 +26,7 @@ class Contactrequest extends FormRequest
         return [
 
             'email' => ['required','string','max:255'],
-            'text' => ['required', 'string','max:255'],
-            'buttontext' => ['required','string','max:255'],
-            'button' => ['required','string','max:255']
+            'phone' => ['required', 'string','max:255'],
         ];
     }
     public function messages()
@@ -36,9 +34,7 @@ class Contactrequest extends FormRequest
         return [
 
             'email.required' => 'Почта обязателена',
-            'text.required' => 'Основной текст обязателен',
-            'buttontext.required' => 'Текст кнопки обязателен',
-            'button.required' => 'Ссылка для кнопки обязателена'
+            'phone.required' => 'Номер телефона обязателен',
         ];
     }
 }

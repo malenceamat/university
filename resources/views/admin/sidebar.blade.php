@@ -35,6 +35,9 @@
                     <li class="{{ (request()->is('banner')) ? 'active' : '' }}">
                         <a href="/banner"> Баннер </a>
                     </li>
+                    <li class="{{ (request()->is('allpartners')) ? 'active' : '' }}">
+                        <a href="/allpartners"> Партнеры </a>
+                    </li>
                     <li class="{{ (request()->is('about_us')) ? 'active' : '' }}">
                         <a href="/about_us"> О цифровой кафедре </a>
                     </li>

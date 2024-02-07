@@ -53,6 +53,8 @@
                             @yield('allpossibilities')
                             @yield('contact')
                             @yield('hide')
+                            @yield('allpartners')
+                            @yield('partners')
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlockHideController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\TextController;
@@ -50,6 +51,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/allpartners',[PartnersController::class, 'show']);
     Route::delete('/partners/{delete}',[PartnersController::class, 'delete']);
     Route::post('/partners/edit',[PartnersController::class,'update']);
+
+    Route::get('/team/{id?}' ,[TeamController::class,'index']);
+    Route::post('/team/save',[TeamController::class, 'create']);
+    Route::get('/allteam' ,[TeamController::class,'show']);
+    Route::delete('/team/{delete}',[TeamController::class, 'delete']);
+    Route::post('/team/edit',[TeamController::class,'update']);
+
+
     Route::get('/contact' ,[ContactController::class,'index']);
     Route::post('/contact',[ContactController::class, 'create'])->name('contact');
     Route::get('/allaudience' ,[ZagolovokController::class,'index']);
@@ -68,6 +77,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/question',[FaqController::class,'question'])->name('response');
     Route::delete('/ask_delete/{id}',[FaqController::class,'delete_ask']);
 
+    Route::post('/form',[ContactController::class,'contact'])->name('form');
+    Route::delete('/contact/{id}',[ContactController::class,'delete']);
 
 });
 

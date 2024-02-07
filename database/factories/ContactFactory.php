@@ -15,12 +15,8 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'image' => 'content/newgradient.png',
-            'text' => 'Электронная почта для справок',
+            'phone' => '+79606708940',
             'email' => $this->faker->unique()->safeEmail(),
-            'button' => 'https://www.google.ru/',
-            'buttontext' => 'Подать заявку',
-            'hideblock' => 'on'
         ];
     }
 }
