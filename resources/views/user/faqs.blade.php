@@ -30,7 +30,7 @@
                                                     <div class="col-md-6">
                                                         <div class="nk-block-text">
                                                             <h5 class="title title-sm">{{$questions['ask']}}</h5>
-                                                            <p>Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                                            <p>{{$questions['response']}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
