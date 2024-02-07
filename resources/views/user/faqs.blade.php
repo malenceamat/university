@@ -8,37 +8,34 @@
                 <p class="animated" data-animate="fadeInUp" data-delay=".3">Возможно, у Вас остались вопросы. Вы можете
                     попробовать найти ответы здесь</p>
             </div>
-
-
+            <!-- Block @s -->
             <div class="nk-block">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-10">
-                        <ul class="nav tab-nav tab-nav-s2 tab-nav-center mgb-r animated" data-animate="fadeInUp"
-                            data-delay=".4">
-                            @foreach($faqs as $data)
-                                <li><a data-bs-toggle="tab"
-                                       href="#general-questions{{$data['id']}}">{{$data['question']}}</a>
-                                </li>
+                        <ul class="nav tab-nav tab-nav-s2 tab-nav-center mgb-r animated" data-animate="fadeInUp" data-delay=".4">
+                            @foreach($faqs as $key => $category)
+                                <li><a class="@if($key == 0) active @endif" data-bs-toggle="tab" href="#data{{$category['id']}}">{{$category['question']}}</a></li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <div class="tab-content animate" data-animate="fadeInUp" data-delay=".5">
-                            @foreach($faqs as $data)
-                                <div class="tab-panel fade"
-                                     id="general-questions{{$data['id']}}">
-                                    <div class="row gutter-vr-50px">
-                                        @foreach($data->ques as $key)
-                                            <div class="col-md-6">
-                                                <div class="nk-block-text">
-                                                    <h5 class="title title-sm">{{$key['ask']}}</h5>
-                                                    <p>{{$key['response']}}</p>
+                        <div class="tab-content animated" data-animate="fadeInUp" data-delay=".5">
+                            @foreach($faqs as $key => $category_question)
+                                <div class="tab-pane fade @if($key == 0) active show @endif" id="data{{$category_question['id']}}">
+                                @foreach($category_question->ques as $questions)
+                                            @if ($category_question['id'] == $questions['faq_id'])
+                                                <div class="row gutter-vr-50px">
+                                                    <div class="col-md-6">
+                                                        <div class="nk-block-text">
+                                                            <h5 class="title title-sm">{{$questions['ask']}}</h5>
+                                                            <p>Once ICO period is launched, You can purchased Token with Etherum, Bitcoin or Litecoin. You can also tempor incididunt ut labore et dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
+                                            @endif
+                                @endforeach
                                 </div>
                             @endforeach
                         </div>
@@ -48,6 +45,7 @@
         </div>
         <div class="ui-mask-left ui-mask-s5"></div>
     </section>
+
 @endif
 
 

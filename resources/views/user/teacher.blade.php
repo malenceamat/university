@@ -119,11 +119,9 @@
 @endif--}}
 
 @if($hide['teacher_hide'] == 'on')
-<div class="nk-preview">
     <div class="nk-block-head text-center">
         <h4>Команда цифровой кафедры</h4>
     </div>
-    <div class="tab-content nk-preview-content">
         <div class="tab-pane fade show active" id="team-rg-default-02">
             <section class="section bg-white" id="teacher">
                 <div class="container">
@@ -145,6 +143,4 @@
                 </div>
             </section>
         </div>
-    </div>
-</div>
 @endif
