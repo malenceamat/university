@@ -9,7 +9,7 @@ class BlockHideController extends Controller
 {
     public function index()
     {
-        $data = BlockHide::first();
+        $data = BlockHide::firstOrCreate();
         return view('admin.hide.hide',compact('data'));
     }
 }

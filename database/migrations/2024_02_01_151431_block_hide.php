@@ -16,17 +16,15 @@ class BlockHide extends Migration
         Schema::create('block_hide', function (Blueprint $table) {
             $table->id();
             $table->string('banner_hide')->nullable();
-            $table->string('possibilities_hide')->nullable();
-            $table->string('statistics_hide')->nullable();
-            $table->string('audience_hide')->nullable();
-            $table->string('cards_hide')->nullable();
-            $table->string('stages_hide')->nullable();
-            $table->string('selection_hide')->nullable();
-            $table->string('additional_hide')->nullable();
-            $table->string('team_hide')->nullable();
-            $table->string('result_hide')->nullable();
             $table->string('partners_hide')->nullable();
+            $table->string('about_us_hide')->nullable();
+            $table->string('advantagesh')->nullable();
+            $table->string('gives_hide')->nullable();
+            $table->string('stages_hide')->nullable();
+            $table->string('programs_hide')->nullable();
+            $table->string('faqs_hide')->nullable();
             $table->string('contact_hide')->nullable();
+            $table->string('teacher_hide')->nullable();
             $table->timestamps();
         });
     }
