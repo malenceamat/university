@@ -40,28 +40,19 @@
                             </div>
                         @endif
                         <div class="widget-content widget-content-area">
-                            @yield('about_us')
-                            @yield('allcards')
-                            @yield('stages')
-                            @yield('allstages')
-                            @yield('cards')
-                            @yield('additional')
-                            @yield('team')
-                            @yield('allteam')
-                            @yield('result')
-                            @yield('partners')
-                            @yield('allpartners')
-                            @yield('contact')
-                            @yield('zagolovok')
-                            @yield('audience')
-                            @yield('statistics')
-                            @yield('allstatistics')
-                            @yield('possibilities')
-                            @yield('allpossibilities')
                             @yield('banner')
-                            @yield('hide')
+                            @yield('about_us')
+                            @yield('audience')
+                            @yield('result')
                             @yield('selection')
+                            @yield('allstages')
+                            @yield('stages')
+                            @yield('allcards')
+                            @yield('cards')
                             @yield('faq')
+                            @yield('allpossibilities')
+                            @yield('contact')
+                            @yield('hide')
                         </div>
                     </div>
                 </div>

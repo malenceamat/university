@@ -53,8 +53,8 @@
                     <li class="{{ (request()->is('faq')) ? 'active' : '' }}">
                         <a href="/faq"> FAQS </a>
                     </li>
-                    <li class="{{ (request()->is('allteam')) ? 'active' : '' }}">
-                        <a href="/allteam"> Контакты </a>
+                    <li class="{{ (request()->is('contact')) ? 'active' : '' }}">
+                        <a href="/contact"> Контакты </a>
                     </li>
                     <li class="{{ (request()->is('hide')) ? 'active' : '' }}">
                         <a href="/hide"> Настройка блоков </a>
