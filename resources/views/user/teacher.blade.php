@@ -46,7 +46,7 @@
         border-color: #0d2fa7;
     }
 </style>
-@if($hide['teacher_hide'] == 'on')
+{{--@if($hide['teacher_hide'] == 'on')
     <section class="container my-4 my-md-5 py-3" id="teacher">
         <div class="row pt-2 py-xl-3">
             <div class="col-lg-3 col-md-4">
@@ -116,4 +116,35 @@
             </div>
         </div>
     </section>
+@endif--}}
+
+@if($hide['teacher_hide'] == 'on')
+<div class="nk-preview">
+    <div class="nk-block-head text-center">
+        <h4>Команда цифровой кафедры</h4>
+    </div>
+    <div class="tab-content nk-preview-content">
+        <div class="tab-pane fade show active" id="team-rg-default-02">
+            <section class="section bg-white" id="teacher">
+                <div class="container">
+                    <div class="nk-block nk-block-team-list team-list">
+                        <div class="row justify-content-center">
+                            @foreach($team as $data)
+                            <div class="col-lg-2 col-md-2">
+                                <div class="team team-s4">
+                                    <div class="team-photo round-full team-photo-bg">
+                                        <img src={{asset('/storage/'. $data['image'])}} alt="team" class="round-full">
+                                    </div>
+                                    <h5 class="team-name title title-sm">{{$data['fio']}}</h5>
+                                    <span class="team-position">{{$data['job']}}</span>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
 @endif
