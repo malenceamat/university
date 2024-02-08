@@ -57,6 +57,8 @@
                             @yield('partners')
                             @yield('allteam')
                             @yield('team')
+                            @yield('dashboard')
+                            @yield('dashboard-create')
                         </div>
                     </div>
                 </div>

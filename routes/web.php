@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlockHideController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -81,6 +82,14 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/contact/{id}',[ContactController::class,'delete']);
 
     Route::post('/hide_save',[BlockHideController::class,'create']);
+
+
+    Route::get('/dashboard',[DashboardController::class,'index']);
+    Route::get('/dashboard-create/{id?}' ,[DashboardController::class,'new']);
+    Route::post('/dashboard-create/save',[DashboardController::class, 'create']);
+    Route::post('/dashboard-create/edit', [DashboardController::class, 'update']);
+    Route::delete('/dashboard/{delete}',[DashboardController::class, 'delete']);
+
 
 });
 
