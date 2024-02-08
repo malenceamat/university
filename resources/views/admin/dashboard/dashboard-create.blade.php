@@ -22,22 +22,28 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="base">Плановые значения</label>
-                                            <input type="number" class="form-control mb-3"
-                                                   placeholder="Плановые значения"
-                                                   id="base" name="base"
-                                                   value="{{$data['base']}}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                             <label for="special">Фактические значения</label>
                                             <input type="number" class="form-control mb-3"
                                                    placeholder="Фактические значения"
                                                    id="special" name="special"
                                                    value="{{$data['special']}}">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="base">Плановые значения</label>
+                                            <input type="number" class="form-control mb-3"
+                                                   placeholder="Плановые значения"
+                                                   id="base" name="base"
+                                                   value="{{$data['base']}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Название</label>
+                                            <input type="text" class="form-control mb-3"
+                                                   placeholder="Название"
+                                                   id="name" name="name"
+                                                   value="{{$data['name']}}">
+                                        </div>
                                     </div>
+
                                     <input type="hidden" name="id" value="{{$data['id']}}">
                                     <div class="col-md-6">
 
@@ -47,15 +53,15 @@
                                                     <div class="widget-header">
                                                         <div class="row">
                                                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                                                <h4> Текст в кнопке "Подробнее" </h4>
+                                                                <h4> Описание </h4>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="widget-content widget-content-area">
 
                                                         <div id="editor-container">
-                                                            <label for="hiddenArea">{!! $data['name'] !!}</label>
-                                                            <textarea name="name" style="display:none"
+                                                            <label for="hiddenArea">{!! $data['sub_name'] !!}</label>
+                                                            <textarea name="sub_name" style="display:none"
                                                                       id="hiddenArea"></textarea>
                                                         </div>
                                                     </div>
@@ -82,15 +88,6 @@
                 </div>
             @endif
         </form>
-        @if(isset($data->id))
-            <div class="" style="float: right;height: auto">
-                <form method="POST" action="/stages/{{$data->id}}">
-                    @csrf
-                    {{method_field('DELETE')}}
-                    <button class="btn btn-danger mb-2 me-4">Удалить карточку</button>
-                </form>
-            </div>
-        @endif
     </div>
 
 
@@ -113,7 +110,7 @@
         $(document).ready(function(){
             $("#save").on("submit", function () {
                 let value = $('.ql-editor').html();
-                $(this).append("<textarea name='name' style='display:none'>"+value+"</textarea>");
+                $(this).append("<textarea name='sub_name' style='display:none'>"+value+"</textarea>");
             });
         });
     </script>

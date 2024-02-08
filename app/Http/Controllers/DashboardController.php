@@ -32,7 +32,7 @@ class DashboardController extends Controller
     public function update(Request $req)
     {
         $data = Dashboard::find($req->id);
-
+        $data->sub_name = $req->sub_name;
         $data -> name = $req->name;
         $data -> base = $req->base;
         $data -> special = $req->special;

@@ -29,6 +29,7 @@
             @foreach($data as $me)
             <tr>
                 <td class="text-center sem" style="text-align: left!important;">{!! $me['name'] !!}
+                        <span>{!! $me['sub_name'] !!}</span>
                 </td>
                 <td class="text-center">
                     <span class="text-center">{{$me['special']}}</span>

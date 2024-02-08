@@ -20,6 +20,7 @@ class Dashboard extends Migration
             $table->longText('special')->nullable();
             $table->longText('result')->nullable();
             $table->longText('percent')->nullable();
+            $table->longText('sub_name')->nullable();
             $table->timestamps();
         });
     }
