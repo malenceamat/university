@@ -46,6 +46,12 @@
     .btn {
         border: none;
     }
+    .card-footer {
+        height: 127px!important;
+    }
+    .card-body {
+        height: 467px!important;
+    }
 </style>
 @if($hide['programs_hide'] == 'on')
     <section id="programs" tabindex="-1" class="overflow-hidden my-4 my-md-5 py-3">
@@ -125,7 +131,7 @@
                                     <div class="card-footer py-4 fs-sm">
                                         <div class="d-flex align-items-top position-relative">
                                             <div class="d-table rounded-3 flex-shrink-0 me-3">
-                                                <img src={{asset("assets/img/shield-done.png")}} s
+                                                <img src={{asset("assets/img/sh.jpg")}} s
                                                      class="d-inline-block mb-2" width="48"
                                                      style="background-color: white">
                                             </div>
