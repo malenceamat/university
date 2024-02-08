@@ -21,13 +21,13 @@ class StatisticsSeeder extends Seeder
         //персонализированный контент
 
         Faq::create([
-            'question' => 'Категория 1',
+            'question' => 'Цифровая кафедра',
         ]);
         Faq::create([
-            'question' => 'Категория 2',
+            'question' => 'Студентам',
         ]);
         Faq::create([
-            'question' => 'Категория 3',
+            'question' => 'Обучение',
         ]);
     }
 }

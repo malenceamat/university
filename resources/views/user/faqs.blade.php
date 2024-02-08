@@ -12,9 +12,11 @@
             <div class="nk-block">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-10">
-                        <ul class="nav tab-nav tab-nav-s2 tab-nav-center mgb-r animated" data-animate="fadeInUp" data-delay=".4">
+                        <ul class="nav tab-nav tab-nav-s2 tab-nav-center mgb-r animated" data-animate="fadeInUp"
+                            data-delay=".4">
                             @foreach($faqs as $key => $category)
-                                <li><a class="@if($key == 0) active @endif" data-bs-toggle="tab" href="#data{{$category['id']}}">{{$category['question']}}</a></li>
+                                <li><a class="@if($key == 0) active @endif" data-bs-toggle="tab"
+                                       href="#data{{$category['id']}}">{{$category['question']}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -23,19 +25,20 @@
                     <div class="col-lg-10">
                         <div class="tab-content animated" data-animate="fadeInUp" data-delay=".5">
                             @foreach($faqs as $key => $category_question)
-                                <div class="tab-pane fade @if($key == 0) active show @endif" id="data{{$category_question['id']}}">
-                                @foreach($category_question->ques as $questions)
+                                <div class="tab-pane fade @if($key == 0) active show @endif"
+                                     id="data{{$category_question['id']}}">
+                                    <div class="row gutter-vr-50px">
+                                        @foreach($category_question->ques as $questions)
                                             @if ($category_question['id'] == $questions['faq_id'])
-                                                <div class="row gutter-vr-50px">
-                                                    <div class="col-md-6">
-                                                        <div class="nk-block-text">
-                                                            <h5 class="title title-sm">{{$questions['ask']}}</h5>
-                                                            <p>{{$questions['response']}}</p>
-                                                        </div>
+                                                <div class="col-md-6">
+                                                    <div class="nk-block-text">
+                                                        <h5 class="title title-sm">{{$questions['ask']}}</h5>
+                                                        <p>{{$questions['response']}}</p>
                                                     </div>
                                                 </div>
                                             @endif
-                                @endforeach
+                                        @endforeach
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
