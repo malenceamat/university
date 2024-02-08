@@ -46,6 +46,9 @@
         border-color: #0d2fa7;
     }
 </style>
+
+<link rel="stylesheet" href={{asset('assets/css/plugins.css')}}>
+
 {{--@if($hide['teacher_hide'] == 'on')
     <section class="container my-4 my-md-5 py-3" id="teacher">
         <div class="row pt-2 py-xl-3">
@@ -118,8 +121,8 @@
     </section>
 @endif--}}
 
-@if($hide['teacher_hide'] == 'on')
-    <div class="nk-block-head text-center">
+
+    {{--<div class="nk-block-head text-center">
         <h4>Команда цифровой кафедры</h4>
     </div>
         <div class="tab-pane fade show active" id="team-rg-default-02">
@@ -142,5 +145,65 @@
                     </div>
                 </div>
             </section>
+        </div>--}}
+@if($hide['teacher_hide'] == 'on')
+<div class="testimonial-area pt-100 pb-100" id="teacher">
+    <!-- Container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row justify-content-center text-center">
+            <!-- col -->
+            <div class="col-lg-8 col-md-12 mb-50">
+                <div class="section-title">
+                    <h2 class="title">Команда цифровой кафедры</h2>
+                    <div class="title-bdr">
+                        <div class="left-bdr"></div>
+                        <div class="right-bdr"></div>
+                    </div>
+                    <p>Вы можете увидеть наших преподавателей.</p>
+                </div>
+            </div>
+            <!-- /col -->
         </div>
+        <!-- /row -->
+    </div>
+    <!-- /Container -->
+    <!-- Container -->
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col-lg-12">
+                <div class="testimonial-item-wrap-1 testimonial-carousel-1">
+                    @foreach($team as $data)
+
+                    <div class="testimonial-item">
+                        <div class="testimonial-author">
+                            <img src={{asset('/storage/'. $data['image'])}} s style="width: 30%;" alt="small-avatar">
+                            <h3 class="author__title"><a href="https://minobr.novreg.ru/" target="_blank">{{$data['fio']}}</a></h3>
+                        </div>
+                    </div>
+
+                    @endforeach
+
+                </div>
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /Container -->
+</div>
 @endif
+
+<!-- Vendor Js -->
+<script src={{asset("/assets/js/vendors.js")}}></script>
+<!-- /Vendor js -->
+
+<!-- Plugins Js -->
+<script src={{asset("/assets/js/plugins.js")}}></script>
+<!-- /Plugins Js -->
+
+<!-- Main JS -->
+<script src={{asset("/assets/js/main.js")}}></script>
+<!-- /Main JS -->
