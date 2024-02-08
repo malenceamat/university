@@ -45,6 +45,8 @@
     .right-arrow:hover:before {
         border-color: #0d2fa7;
     }
+
+
 </style>
 
 <link rel="stylesheet" href={{asset('assets/css/plugins.css')}}>
@@ -122,30 +124,7 @@
 @endif--}}
 
 
-    {{--<div class="nk-block-head text-center">
-        <h4>Команда цифровой кафедры</h4>
-    </div>
-        <div class="tab-pane fade show active" id="team-rg-default-02">
-            <section class="section bg-white" id="teacher">
-                <div class="container">
-                    <div class="nk-block nk-block-team-list team-list">
-                        <div class="row justify-content-center">
-                            @foreach($team as $data)
-                            <div class="col-lg-2 col-md-2">
-                                <div class="team team-s4">
-                                    <div class="team-photo round-full team-photo-bg">
-                                        <img src={{asset('/storage/'. $data['image'])}} alt="team" class="round-full">
-                                    </div>
-                                    <h5 class="team-name title title-sm">{{$data['fio']}}</h5>
-                                    <span class="team-position">{{$data['job']}}</span>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>--}}
+
 @if($hide['teacher_hide'] == 'on')
 <div class="testimonial-area pt-100 pb-100" id="teacher">
     <!-- Container -->
@@ -153,15 +132,11 @@
         <!-- row -->
         <div class="row justify-content-center text-center">
             <!-- col -->
-            <div class="col-lg-8 col-md-12 mb-50">
-                <div class="section-title">
-                    <h2 class="title">Команда цифровой кафедры</h2>
-                    <div class="title-bdr">
-                        <div class="left-bdr"></div>
-                        <div class="right-bdr"></div>
-                    </div>
-                    <p>Вы можете увидеть наших преподавателей.</p>
-                </div>
+            <div class="section-head section-head-s3 wide-auto-sm text-center">
+                <h6 class="title title-xs title-xs-s3 tc-primary animated" data-animate="fadeInUp" data-delay=".1">
+                    Наши преподаватели</h6>
+                <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">Команда цифровой кафедры</h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".3">Здесь вы можете увидеть наших преподавателей</p>
             </div>
             <!-- /col -->
         </div>
@@ -170,29 +145,24 @@
     <!-- /Container -->
     <!-- Container -->
     <div class="container-fluid">
-        <!-- row -->
         <div class="row">
-            <!-- col -->
-            <div class="col-lg-12">
+            <div class="container">
                 <div class="testimonial-item-wrap-1 testimonial-carousel-1">
                     @foreach($team as $data)
-
-                    <div class="testimonial-item">
-                        <div class="testimonial-author">
-                            <img src={{asset('/storage/'. $data['image'])}} s style="width: 30%;" alt="small-avatar">
-                            <h3 class="author__title"><a href="https://minobr.novreg.ru/" target="_blank">{{$data['fio']}}</a></h3>
+                        <div style="width: 50%;">
+                            <div class="team team-s4">
+                                <div class="team-photo round-full team-photo-bg">
+                                    <img src={{asset('/storage/'. $data['image'])}} alt="team" class="round-full">
+                                </div>
+                                <h5 class="team-name title title-sm">{{$data['fio']}}</h5>
+                                <span class="team-position" style="text-align: left;width: 200px;">{{$data['job']}}</span>
+                            </div>
                         </div>
-                    </div>
-
                     @endforeach
-
                 </div>
             </div>
-            <!-- /col -->
         </div>
-        <!-- /row -->
     </div>
-    <!-- /Container -->
 </div>
 @endif
 

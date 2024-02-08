@@ -73,7 +73,7 @@
 
     =============================================*/
 
-	// testimonial-carousel 
+	// testimonial-carousel
 	$('.testimonial-carousel').owlCarousel({
 		loop: true,
 		items: 1,
@@ -84,7 +84,7 @@
 		navText: ["<i class='la la-angle-left'></i>", "<i class='la la-angle-right'></i>"]
 	});
 
-	// testimonial-carousel-2	
+	// testimonial-carousel-2
 	$('.testimonial-carousel-2').owlCarousel({
 		loop: true,
 		items: 3,
@@ -106,7 +106,7 @@
 		}
 	});
 
-	// testimonial-carousel-1 
+	// testimonial-carousel-1
 	$('.testimonial-carousel-1').owlCarousel({
 		loop: true,
 		items: 5,
@@ -114,7 +114,6 @@
 		dots: true,
 		smartSpeed: 500,
 		autoplay: false,
-		margin: 30,
 		autoHeight: true,
 		responsive: {
 			320: {
@@ -135,7 +134,7 @@
 		}
 	});
 
-	// testimonial-carousel-4 
+	// testimonial-carousel-4
 	$('.testimonial-carousel-4').owlCarousel({
 		loop: true,
 		items: 1,
@@ -183,7 +182,7 @@
 	/*===========================================
 
 	                   Countdown
-	                   
+
 	=============================================*/
 
 	$('[data-countdown]').each(function () {
