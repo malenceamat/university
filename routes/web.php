@@ -83,7 +83,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/hide_save',[BlockHideController::class,'create']);
 
-
     Route::get('/dashboard',[DashboardController::class,'index']);
     Route::get('/dashboard-create/{id?}' ,[DashboardController::class,'new']);
     Route::post('/dashboard-create/save',[DashboardController::class, 'create']);

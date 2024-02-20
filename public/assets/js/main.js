@@ -89,7 +89,7 @@
 		loop: true,
 		items: 3,
 		nav: false,
-		dots: false,
+		dots: true,
 		smartSpeed: 500,
 		autoplay: false,
 		margin: 30,
@@ -111,9 +111,10 @@
 		loop: true,
 		items: 5,
 		nav: false,
-		dots: true,
+		dots: false,
 		smartSpeed: 500,
 		autoplay: false,
+		margin: 30,
 		autoHeight: true,
 		responsive: {
 			320: {
@@ -133,6 +134,31 @@
 			}
 		}
 	});
+
+    $('.testimonial-carousel-3').owlCarousel({
+        loop: true,
+        items: 4,
+        nav: false,
+        dots: true,
+        smartSpeed: 500,
+        autoplay: false,
+        margin: 30,
+        autoHeight: true,
+        responsive: {
+            320: {
+                items: 1,
+            },
+            767: {
+                items: 2,
+            },
+            992: {
+                items: 3,
+            },
+            1025: {
+                items: 4,
+            }
+        }
+    });
 
 	// testimonial-carousel-4
 	$('.testimonial-carousel-4').owlCarousel({

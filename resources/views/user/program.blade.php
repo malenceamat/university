@@ -46,17 +46,32 @@
     .btn {
         border: none;
     }
+
     .card-footer {
-        height: 127px!important;
+        height: 127px !important;
     }
+
     .card-body {
-        height: 467px!important;
+        height: 467px !important;
     }
 </style>
 @if($hide['programs_hide'] == 'on')
     <section id="programs" tabindex="-1" class="overflow-hidden my-4 my-md-5 py-3">
+
         <div class="container">
-            <h2 class="h1 mb-5 text-center">Образовательные программы</h2>
+            <div class="row justify-content-center text-center">
+                <div class="section-head section-head-s3 wide-auto-sm text-center">
+                    <h6 class="title title-xs title-xs-s3 tc-primary animated" data-animate="fadeInUp" data-delay=".1">
+                        Наши программы</h6>
+                    <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">Образовательные программы</h2>
+                    <p class="animated" data-animate="fadeInUp" data-delay=".3">Здесь вы можете увидеть наши
+                        основные программы</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
             <div class="position-relative">
 
                 <div class="swiper overflow-visible" data-swiper-options='{
@@ -126,7 +141,6 @@
                                             <span class="text-primary link-collapse-default">Подробнее</span>
                                         </a>
                                     </div>
-
 
                                     <div class="card-footer py-4 fs-sm">
                                         <div class="d-flex align-items-top position-relative">

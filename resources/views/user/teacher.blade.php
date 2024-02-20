@@ -46,7 +46,6 @@
         border-color: #0d2fa7;
     }
 
-
 </style>
 
 <link rel="stylesheet" href={{asset('assets/css/plugins.css')}}>
@@ -65,9 +64,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="container">
-                <div class="testimonial-item-wrap-1 testimonial-carousel-1">
+                <div class="testimonial-item-wrap-1 testimonial-carousel-2">
                     @foreach($team as $data)
-                        <div style="width: 50%;">
+                        <div style="height: 50%">
                             <div class="team team-s4">
                                 <div class="team-photo round-full team-photo-bg">
                                     <img src={{asset('/storage/'. $data['image'])}} alt="team" class="round-full">
