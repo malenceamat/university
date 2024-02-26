@@ -89,6 +89,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/dashboard-create/edit', [DashboardController::class, 'update']);
     Route::delete('/dashboard/{delete}',[DashboardController::class, 'delete']);
 
+    Route::post('/save',[CardsController::class, 'store'])->name('save');
+
 
 });
 

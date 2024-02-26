@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Audience;
 use App\Models\Banner;
 use App\Models\Card;
+use App\Models\HeadProgramm;
 use App\Models\TextInCards;
 use Illuminate\Database\Seeder;
 use Str;
@@ -239,6 +240,9 @@ class CardsSeeder extends Seeder
             1. Выполнять сложные запросы в виде программ и вложенных запросов, создание таблиц и представлений;
             2. Иметь навыки настройки встроенных систем резервного копирования (Системы администрирования СУБД, средства выполнения запросов данных к БД).
             '
+        ]);
+        HeadProgramm::create([
+           'head_block' => 'Программы профессиональной переподготовки'
         ]);
     }
 }

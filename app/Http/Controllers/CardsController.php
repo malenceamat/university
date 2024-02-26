@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Helpers\BaseHelperController;
+use App\Models\Banner;
 use App\Models\Card;
+use App\Models\HeadProgramm;
 use App\Models\TextInCards;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +17,15 @@ class CardsController extends Controller
     public function index()
     {
         $card = Card::get();
-        return view('admin.cards.allcards',compact('card'));
+        $data = HeadProgramm::firstOrCreate();
+        return view('admin.cards.allcards',compact('card','data'));
+    }
+    public function store(Request $req)
+    {
+        $data = HeadProgramm::find(1);
+        $data->head_block = $req->head_block;
+        $data->save();
+        return redirect('allcards');
     }
     public function delete($id)
     {

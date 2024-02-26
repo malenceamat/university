@@ -9,6 +9,7 @@ use App\Models\BlockHide;
 use App\Models\Card;
 use App\Models\Contact;
 use App\Models\Faq;
+use App\Models\HeadProgramm;
 use App\Models\partner;
 use App\Models\Possibilities;
 use App\Models\Question;
@@ -36,7 +37,9 @@ class ShowController extends Controller
         $stages = Stages::get();
         $team = Team::get();
         $cards = Card::with('TextInCards')->get();
+        $head_block = HeadProgramm::firstOrCreate();
 
-        return view('site.general', compact('hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
+
+        return view('site.general', compact('head_block','hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }
 }

@@ -1,22 +1,24 @@
 @extends('admin.main')
 @section('allcards')
     <style>
-        .card
-        {
+        .card {
             width: 100%;
             height: 100%;
             object-fit: none;
         }
-        img{
+
+        img {
             width: 100%;
             height: 40%;
             object-fit: cover;
         }
+
         .card-body {
             overflow: hidden;
             position: relative;
             height: 20px;
         }
+
         .card-body:after {
             content: "";
             text-align: right;
@@ -29,30 +31,44 @@
             pointer-events: none;
         }
     </style>
-<form action="/cards">
-    @csrf
-    <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Создать карточку</button>
-</form>
-        <div class="col-xxl-12">
-            <div class="row">
-                @foreach($card as $data)
+    <form action="{{Route ('save')}}" method="POST" id="save">
+        @csrf
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="head_block">Оглавление блока</label>
+                <input type="text" class="form-control mb-3"
+                       id="head_block" name="head_block"
+                       value="{{$data['head_block']}}">
+            </div>
+        </div>
+        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Сменить оглавление</button>
+    </form>
+
+
+    <div class="col-xxl-12">
+        <div class="row">
+            @foreach($card as $data)
                 <div class="col-sm-3" style="padding: 10px">
                     <div class="card">
-                        <img src="{{asset('/storage/'. $data['image'])}}"  alt="...">
+                        <img src="{{asset('/storage/'. $data['image'])}}" alt="...">
                         <div class="card-body">
                             <h5 class="card-title mb-3">{{$data->head}}</h5>
                         </div>
-                            <div>
-                                <form method="get" action="/cards/{{$data->id}}">
-                                    @csrf
-                                    <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Редактировать</button>
-                                </form>
-                            </div>
+                        <div>
+                            <form method="get" action="/cards/{{$data->id}}">
+                                @csrf
+                                <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Редактировать
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
+    </div>
+    <a href="/cards">
+        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Создать карточку</button>
+    </a>
 @endsection
 
 

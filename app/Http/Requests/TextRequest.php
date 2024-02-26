@@ -36,7 +36,7 @@ class TextRequest extends FormRequest
     {
         return [
             'image.required' => 'Изображение обязательно',
-            'head.required' => 'Название команды обязательно',
+            'head.required' => 'Заголовок обязательный',
             'underhead.required' => 'Подтекст заголовка обязателен',
             'basic.required' => 'Основной текст обязателен',
             'qualification.required' => 'Текст квалификации обязателен',

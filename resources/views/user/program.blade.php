@@ -63,7 +63,7 @@
                 <div class="section-head section-head-s3 wide-auto-sm text-center">
                     <h6 class="title title-xs title-xs-s3 tc-primary animated" data-animate="fadeInUp" data-delay=".1">
                         Наши программы</h6>
-                    <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">Образовательные программы</h2>
+                    <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">{{$head_block['head_block']}}</h2>
                     <p class="animated" data-animate="fadeInUp" data-delay=".3">Здесь вы можете увидеть наши
                         основные программы</p>
                 </div>
