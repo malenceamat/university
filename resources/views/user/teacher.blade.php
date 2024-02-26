@@ -66,13 +66,13 @@
             <div class="container">
                 <div class="testimonial-item-wrap-1 testimonial-carousel-2">
                     @foreach($team as $data)
-                        <div style="height: 50%">
+                        <div>
                             <div class="team team-s4">
                                 <div class="team-photo round-full team-photo-bg">
                                     <img src={{asset('/storage/'. $data['image'])}} alt="team" class="round-full">
                                 </div>
-                                <h5 class="team-name title title-sm">{{$data['fio']}}</h5>
-                                <span class="team-position" style="text-align: left;width: 200px;">{{$data['job']}}</span>
+                                <h5 class="team-name title title-sm" style="text-align: center!important;">{{$data['fio']}}</h5>
+                                <span class="team-position" style="text-align: center;width: 200px;">{{$data['job']}}</span>
                             </div>
                         </div>
                     @endforeach
