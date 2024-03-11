@@ -8,6 +8,7 @@ use App\Models\Audience;
 use App\Models\Contact;
 use App\Models\Form;
 use App\Http\Requests;
+use App\Models\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use function Sodium\compare;
@@ -16,15 +17,20 @@ class ContactController extends Controller
 {
     public function index()
     {
+        $social = Social::firstOrCreate();
         $data = Form::get();
         $contact = Contact::firstOrCreate();
-        return view('admin.contact.contact-create',compact('contact','data'));
+        return view('admin.contact.contact-create',compact('contact','data','social'));
     }
     public function create(Contactrequest $req)
     {
         $contact = Contact::find(1);
         $contact->email = $req->email;
         $contact->phone = $req->phone;
+
+        $social = Social::find(1);
+        $social->link = $req->link;
+        $social->save();
 
         $contact->save();
         return redirect('contact');

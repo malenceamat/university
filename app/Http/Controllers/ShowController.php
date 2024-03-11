@@ -15,6 +15,7 @@ use App\Models\Possibilities;
 use App\Models\Question;
 use App\Models\Result;
 use App\Models\Selection;
+use App\Models\Social;
 use App\Models\Stages;
 use App\Models\Statistics;
 use App\Models\Team;
@@ -38,8 +39,8 @@ class ShowController extends Controller
         $team = Team::get();
         $cards = Card::with('TextInCards')->get();
         $head_block = HeadProgramm::firstOrCreate();
+        $social = Social::get();
 
-
-        return view('site.general', compact('head_block','hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
+        return view('site.general', compact('social','head_block','hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }
 }

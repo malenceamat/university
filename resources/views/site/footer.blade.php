@@ -11,11 +11,11 @@
                                 <img src="images/logo-novgu-white.png" width="150" alt="logo">
                             </a>
                             <ul class="social">
-                                <li class="animated" data-animate="fadeInUp" data-delay=".45"><a href="v2.php.html#"><em class="social-icon fab fa-bitcoin"></em></a></li>
-                                <li class="animated" data-animate="fadeInUp" data-delay=".25"><a href="v2.php.html#"><em class="social-icon fab fa-facebook-f"></em></a></li>
-                                <li class="animated" data-animate="fadeInUp" data-delay=".3"><a href="v2.php.html#"><em class="social-icon fab fa-twitter"></em></a></li>
-                                <li class="animated" data-animate="fadeInUp" data-delay=".35"><a href="v2.php.html#"><em class="social-icon fab fa-medium-m"></em></a></li>
-                                <li class="animated" data-animate="fadeInUp" data-delay=".4"><a href="v2.php.html#"><em class="social-icon fab fa-github"></em></a></li>
+                                @foreach($social as $soc)
+                                <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                                    <a href="{{$soc['link']}}"><em class="social-icon fab fa-vk"></em></a>
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div><!-- .col -->

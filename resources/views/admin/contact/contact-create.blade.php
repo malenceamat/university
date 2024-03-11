@@ -51,6 +51,16 @@
                                                    value="{{$contact['phone']}}">
                                         </div>
                                     </div>
+
+                                    <div class="container">
+                                        <div class="form-group">
+                                            <label for="social">Соц сеть</label>
+                                            <input id="social" type="text" name="link" value="{{$social['link']}}"
+                                                   placeholder="https://vk.com/" class="form-control" required>
+
+                                        </div>
+                                    </div>
+
                                     <input type="hidden" name="id" value="{{$contact['id']}}">
                                 </div>
                             </div>
