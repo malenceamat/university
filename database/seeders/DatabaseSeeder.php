@@ -31,7 +31,8 @@ class DatabaseSeeder extends Seeder
             ZagolovokSeeder::class,
             TextInCardsSeeder::class,
             HideSeeder::class,
-            DashboardSeeder::class
+            DashboardSeeder::class,
+            SocialSeeder::class
         ]);
     }
 }

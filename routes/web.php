@@ -4,6 +4,7 @@ use App\Http\Controllers\BlockHideController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TeamGroupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardsController;
 use App\Http\Controllers\TextController;
@@ -91,7 +92,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/save',[CardsController::class, 'store'])->name('save');
 
+    Route::get('/team_group',[TeamGroupController::class,'index']);
 
+    Route::post('/team_group_create', [TeamGroupController::class, 'create']);
+
+    Route::get('/program_team', [TeamGroupController::class, 'show']);
+
+    Route::delete('/program_team/{delete}', [TeamGroupController::class, 'delete']);
 });
 
 require __DIR__.'/auth.php';

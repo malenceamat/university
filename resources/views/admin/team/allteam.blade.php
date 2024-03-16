@@ -34,10 +34,15 @@
     </style>
 
 
-    <form action="/team">
-        @csrf
-        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Создать команду</button>
-    </form>
+    <a href="/team">
+        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Добавить преподавателя</button>
+    </a>
+    <a href="/team_group">
+        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Создать группу</button>
+    </a>
+    <a href="/program_team">
+        <button class="btn btn-outline-secondary mb-2 me-4" style="margin: 10px">Обзор всех групп</button>
+    </a>
     <div class="col-xxl-12">
         <div class="row">
             @foreach($team as $data)

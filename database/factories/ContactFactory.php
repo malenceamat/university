@@ -15,8 +15,8 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'phone' => '+79606708940',
-            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => '8 (816) 297 42 25',
+            'email' => 'dpo@novsu.ru'
         ];
     }
 }
