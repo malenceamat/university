@@ -12,8 +12,11 @@
              aria-labelledby="animated-underline-home-tab">
             <div class="row">
                 <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
-                    <form method="POST" action="/team_group_create">
+                    <form @if (isset($programs->id)) action="/team_group_update" @else action="/team_group_create" @endif method="POST" >
                         @csrf
+                        @if($programs->id)
+                            @method('post')
+                        @endif
                         <div class="form">
                             <div class="row">
                                 <div class="col-md-6">
@@ -22,7 +25,7 @@
                                         <input type="text" class="form-control mb-3"
                                                placeholder="Название группы"
                                                id="name_team" name="name"
-                                               value="">
+                                               value="{{$programs['name']}}">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -44,6 +47,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" name="id" value="{{$programs['id']}}">
                     </form>
                 </div>
             </div>

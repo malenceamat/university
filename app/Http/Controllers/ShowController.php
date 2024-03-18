@@ -12,6 +12,7 @@ use App\Models\Faq;
 use App\Models\HeadProgramm;
 use App\Models\partner;
 use App\Models\Possibilities;
+use App\Models\Program;
 use App\Models\Question;
 use App\Models\Result;
 use App\Models\Selection;
@@ -40,7 +41,9 @@ class ShowController extends Controller
         $cards = Card::with('TextInCards')->get();
         $head_block = HeadProgramm::firstOrCreate();
         $social = Social::get();
+        $programs = Team::with('programs')->first();
+        dd($programs);
 
-        return view('site.general', compact('social','head_block','hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
+        return view('site.general', compact('social','programs','head_block','hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }
 }

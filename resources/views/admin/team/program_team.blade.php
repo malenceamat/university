@@ -20,7 +20,7 @@
                             {{method_field('DELETE')}}
                             <button class="btn btn-danger mb-2">Удалить</button>
                         </form>
-                        <form method="POST" action="/edit/{{$program->id}}">
+                        <form method="GET" action="/team_group/{{$program->id}}">
                             @csrf
                             <button class="btn btn-primary mb-2">Редактировать</button>
                         </form>

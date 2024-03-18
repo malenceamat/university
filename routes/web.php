@@ -92,7 +92,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/save',[CardsController::class, 'store'])->name('save');
 
-    Route::get('/team_group',[TeamGroupController::class,'index']);
+  //  Route::get('/team_group',[TeamGroupController::class,'index']);
+
+    Route::get('/team_group/{id?}',[TeamGroupController::class,'index']);
+
+
+    Route::post('/team_group_update',[TeamGroupController::class,'update']);
 
     Route::post('/team_group_create', [TeamGroupController::class, 'create']);
 

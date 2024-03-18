@@ -48,7 +48,6 @@
         </div>
         <div class="ui-mask-left ui-mask-s5"></div>
     </section>
-
 @endif
 
 

@@ -17,12 +17,6 @@ class TeamsSeeder extends Seeder
      */
     public function run()
     {
-        Team::create([
-            'image' => 'teachers/telina.png',
-            'fio' => 'Телина Ирина Сергеевна',
-            'job' => 'Доцент, руководитель программы',
-            'merits' => 'Преподаватель'
-        ]);
 
         Team::create([
             'image' => 'teachers/levickin.png',
