@@ -53,14 +53,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/allpartners',[PartnersController::class, 'show']);
     Route::delete('/partners/{delete}',[PartnersController::class, 'delete']);
     Route::post('/partners/edit',[PartnersController::class,'update']);
-
     Route::get('/team/{id?}' ,[TeamController::class,'index']);
     Route::post('/team/save',[TeamController::class, 'create']);
     Route::get('/allteam' ,[TeamController::class,'show']);
     Route::delete('/team/{delete}',[TeamController::class, 'delete']);
     Route::post('/team/edit',[TeamController::class,'update']);
-
-
     Route::get('/contact' ,[ContactController::class,'index']);
     Route::post('/contact',[ContactController::class, 'create'])->name('contact');
     Route::get('/allaudience' ,[ZagolovokController::class,'index']);
@@ -78,31 +75,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/faq_edit/{id}',[FaqController::class,'show'])->name('qwe');
     Route::post('/question',[FaqController::class,'question'])->name('response');
     Route::delete('/ask_delete/{id}',[FaqController::class,'delete_ask']);
-
     Route::post('/form',[ContactController::class,'contact'])->name('form');
     Route::delete('/contact/{id}',[ContactController::class,'delete']);
-
     Route::post('/hide_save',[BlockHideController::class,'create']);
-
     Route::get('/dashboard',[DashboardController::class,'index']);
     Route::get('/dashboard-create/{id?}' ,[DashboardController::class,'new']);
     Route::post('/dashboard-create/save',[DashboardController::class, 'create']);
     Route::post('/dashboard-create/edit', [DashboardController::class, 'update']);
     Route::delete('/dashboard/{delete}',[DashboardController::class, 'delete']);
-
     Route::post('/save',[CardsController::class, 'store'])->name('save');
-
-  //  Route::get('/team_group',[TeamGroupController::class,'index']);
-
     Route::get('/team_group/{id?}',[TeamGroupController::class,'index']);
-
-
     Route::post('/team_group_update',[TeamGroupController::class,'update']);
-
     Route::post('/team_group_create', [TeamGroupController::class, 'create']);
-
     Route::get('/program_team', [TeamGroupController::class, 'show']);
-
     Route::delete('/program_team/{delete}', [TeamGroupController::class, 'delete']);
 });
 
