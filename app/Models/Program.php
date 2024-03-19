@@ -14,6 +14,6 @@ class Program extends Model
 
     public function teachers()
     {
-        return $this->belongsToMany(Team::class);
+        return $this->belongsToMany(Team::class,'program_team');
     }
 }

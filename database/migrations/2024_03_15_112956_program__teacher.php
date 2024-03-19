@@ -15,8 +15,8 @@ class ProgramTeacher extends Migration
     {
         Schema::create('program_team', function (Blueprint $table) {
             $table->id();
-            $table->string('program_id')->nullable();
-            $table->string('team_id')->nullable();
+            $table->unsignedBigInteger('program_id')->nullable();
+            $table->unsignedBigInteger('team_id')->nullable();
             $table->timestamps();
         });
     }

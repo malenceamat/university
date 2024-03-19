@@ -37,12 +37,13 @@ class ShowController extends Controller
         $ince = Audience::get();
         $banner = Banner::get();
         $stages = Stages::get();
-        $team = Team::get();
+        $team = Team::with('programs')->get();;
         $cards = Card::with('TextInCards')->get();
         $head_block = HeadProgramm::firstOrCreate();
         $social = Social::get();
-        $programs = Team::with('programs')->first();
-        dd($programs);
+        $programs = Program::with('teachers')->get();
+
+
 
         return view('site.general', compact('social','programs','head_block','hide','team','faqs','partners','record','addit','select','aud','ince','banner','stages','cards'));
     }

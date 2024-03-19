@@ -87,6 +87,13 @@
 <script src={{asset("/assets/js/plugins.js")}}></script>
 <script src={{asset("/assets/js/main.js")}}></script>
 --}}
+
+
+<style>
+    .photo {
+
+    }
+</style>
 @if($hide['teacher_hide'] == 'on')
     <section class="section bg-white pb-0 ov-v" id="teacher">
         <div class="container">
@@ -111,39 +118,23 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <div class="tab-content animated" data-animate="fadeInUp" data-delay=".5">
-                            @foreach($programs as $key => $data)
+                            @foreach($programs as $key => $category_question)
                                 <div class="tab-pane fade @if($key == 0) active show @endif"
-                                     id="data{{$data['id']}}">
+                                     id="data{{$category_question['id']}}">
                                     <div class="row gutter-vr-50px">
-                                        {{--@foreach($team as $data)
-                                            <div>
-                                                <div class="team team-s4">
-                                                    <div class="team-photo round-full team-photo-bg">
-                                                        <img src={{asset('/storage/'. $data['image'])}} alt="team" class="round-full">
+                                        @foreach($category_question->teachers as $questions)
+                                                <div class="col-md-3">
+                                                    <div class="photo team-photo team-photo-bg">
+                                                        <img src={{asset('/storage/'. $questions['image'])}} alt="team" class="round-full" width="20px" height="20px">
                                                     </div>
-                                                    <h5 class="team-name title title-sm" style="text-align: center!important;">{{$data['fio']}}</h5>
-                                                    <span class="team-position" style="text-align: center;width: 200px;">{{$data['job']}}</span>
-                                                </div>
-                                            </div>
-                                        @endforeach--}}
-                                        {{--@foreach($data->teachers as $qwe)
-
-                                        @endforeach--}}
-                                        {{$data->teacher}}
-
-
-                                        {{--@foreach($data->teachers as $qwe)
-                                            @if ($data['id'] == $qwe['program_id'])
-                                                <div class="col-md-6">
                                                     <div class="nk-block-text">
-                                                        --}}{{--<h5 class="title title-sm">{!! $qwe['ask'] !!}</h5>
-                                                        <p>{!! $qwe['response'] !!}</p>--}}{{--
+                                                        <h5 class="title title-sm">{!! $questions['fio'] !!}</h5>
+                                                        <p>{!! $questions['job'] !!}</p>
                                                     </div>
                                                 </div>
-                                            @endif
-                                        @endforeach--}}
+                                        @endforeach
                                     </div>
                                 </div>
                             @endforeach
@@ -155,9 +146,3 @@
         <div class="ui-mask-left ui-mask-s5"></div>
     </section>
 @endif
-
-
-
-
-
-
