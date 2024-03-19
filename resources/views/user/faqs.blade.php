@@ -16,7 +16,7 @@
                             data-delay=".4">
                             @foreach($faqs as $key => $category)
                                 <li><a class="@if($key == 0) active @endif" data-bs-toggle="tab"
-                                       href="#data{{$category['id']}}">{{$category['question']}}</a></li>
+                                       href="#data_teacher{{$category['id']}}">{{$category['question']}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -26,7 +26,7 @@
                         <div class="tab-content animated" data-animate="fadeInUp" data-delay=".5">
                             @foreach($faqs as $key => $category_question)
                                 <div class="tab-pane fade @if($key == 0) active show @endif"
-                                     id="data{{$category_question['id']}}">
+                                     id="data_teacher{{$category_question['id']}}">
                                     <div class="row gutter-vr-50px">
                                         @foreach($category_question->ques as $questions)
                                             @if ($category_question['id'] == $questions['faq_id'])
