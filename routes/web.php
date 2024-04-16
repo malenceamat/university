@@ -62,10 +62,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/contact',[ContactController::class, 'create'])->name('contact');
     Route::get('/allaudience' ,[ZagolovokController::class,'index']);
     Route::post('/allaudience',[ZagolovokController::class, 'create'])->name('zagolovok');
+
+
     Route::get('/audience/{id?}' ,[AudienceController::class,'index']);
     Route::post('/audience/save',[AudienceController::class, 'create']);
     Route::delete('/audience/{delete}',[AudienceController::class, 'delete']);
     Route::post('/audience/edit',[AudienceController::class,'update']);
+
+
     Route::get('/banner' ,[BannersController::class,'index']);
     Route::post('/banner',[BannersController::class, 'create'])->name('banner');
     Route::get('hide',[BlockHideController::class,'index']);

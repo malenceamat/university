@@ -15,7 +15,7 @@
     <link href={{asset("/layouts/vertical-dark-menu/css/light/plugins.css")}} rel="stylesheet" type="text/css" />
     <link href={{asset("/layouts/vertical-dark-menu/css/dark/plugins.css")}} rel="stylesheet" type="text/css" />
 </head>
-<body class="layout-boxed ">
+<body class="layout-boxed">
 @include('admin.navbar')
 <div class="main-container " id="container">
 
